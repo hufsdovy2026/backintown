@@ -45,12 +45,15 @@ async function testPostConnection() {
   statusElement.textContent = 'POST 연결 확인 중...';
 
   try {
-    const body = new URLSearchParams();
-    body.append('action', 'connectionTest');
-
     const response = await fetch(API_URL, {
       method: 'POST',
-      body: body
+      redirect: 'follow',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      body: JSON.stringify({
+        action: 'connectionTest'
+      })
     });
 
     if (!response.ok) {
@@ -65,15 +68,17 @@ async function testPostConnection() {
     ) {
       statusElement.textContent = 'POST 연결 성공';
     } else {
-      statusElement.textContent = 'POST 응답 오류';
+      statusElement.textContent =
+        'POST 응답 오류: ' + (data.message || '알 수 없는 오류');
     }
 
   } catch (error) {
-    statusElement.textContent = 'POST 연결 실패';
+    statusElement.textContent =
+      'POST 연결 실패: ' + error.message;
+
     console.error(error);
   }
 }
-
 document
   .getElementById('post-test-button')
   .addEventListener('click', testPostConnection);
