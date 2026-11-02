@@ -5,8 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BACK IN TOWN</title>
 </head>
+
 <body>
   <h1>BACK IN TOWN</h1>
   <p>2026 HUFS DOVY 정기공연 예매 페이지</p>
+
+  <p id="api-status">서버 연결 확인 중...</p>
+
+  <script>
+    const API_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSf_fLDEOt-IJnOsPGGady533sbDEFHNCl-3Nw7cXRgKN3-ekjHoTnBs6GKaCuBQTrTNKiwAvg6X1o8bzfshucj8aHngOY8q7HZF28Q8zwM0HNI6tWmQIfTK6mPxrHDiic4oBJ3jr2PNBZhs1umvrJqI9vHiNJ5dbN5m2wYaCZDgTOyyjzr_YgRElLWbbVokhvtRjg7OvDN1mEQ7sgAk8iEafNfgaC2OVN75Sp5Mt_8aAdRDYt2OsrU1BwPYI6puhNEsEKu8TQYYObTD6m6H80PMwxVhA&lib=M4ZWprx1YDump56AWZwFWuUv6Y-HkAiGr';
+
+    async function checkApi() {
+      const statusElement = document.getElementById('api-status');
+
+      try {
+        const response = await fetch(API_URL);
+
+        if (!response.ok) {
+          throw new Error('HTTP 오류: ' + response.status);
+        }
+
+        const data = await response.json();
+
+        if (data.success === true) {
+          statusElement.textContent = '서버 연결 성공';
+        } else {
+          statusElement.textContent = '서버 응답 오류';
+        }
+
+      } catch (error) {
+        statusElement.textContent = '서버 연결 실패';
+        console.error(error);
+      }
+    }
+
+    checkApi();
+  </script>
 </body>
 </html>
