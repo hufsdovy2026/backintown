@@ -3,87 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>BACK IN TOWN</title>
 </head>
 
 <body>
+
   <h1>BACK IN TOWN</h1>
   <p>2026 HUFS DOVY 정기공연 예매 페이지</p>
 
-  <p id="api-status">서버 연결 확인 중...</p>
-<button id="post-test-button">POST 연결 테스트</button>
-<p id="post-status"></p>
+  <hr>
+
+  <p id="api-status">GET 연결 확인 중...</p>
+
+  <button id="post-test-button">
+    POST 연결 테스트
+  </button>
+
+  <p id="post-status"></p>
+
+
   <script>
+
     const API_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSf_fLDEOt-IJnOsPGGady533sbDEFHNCl-3Nw7cXRgKN3-ekjHoTnBs6GKaCuBQTrTNKiwAvg6X1o8bzfshucj8aHngOY8q7HZF28Q8zwM0HNI6tWmQIfTK6mPxrHDiic4oBJ3jr2PNBZhs1umvrJqI9vHiNJ5dbN5m2wYaCZDgTOyyjzr_YgRElLWbbVokhvtRjg7OvDN1mEQ7sgAk8iEafNfgaC2OVN75Sp5Mt_8aAdRDYt2OsrU1BwPYI6puhNEsEKu8TQYYObTD6m6H80PMwxVhA&lib=M4ZWprx1YDump56AWZwFWuUv6Y-HkAiGr';
 
+
     async function checkApi() {
-      const statusElement = document.getElementById('api-status');
+
+      const statusElement =
+        document.getElementById('api-status');
 
       try {
-        const response = await fetch(API_URL);
 
-        if (!response.ok) {
-          throw new Error('HTTP 오류: ' + response.status);
-        }
+        const response =
+          await fetch(API_URL);
 
-        const data = await response.json();
+        const data =
+          await response.json();
 
         if (data.success === true) {
-          statusElement.textContent = '서버 연결 성공';
+
+          statusElement.textContent =
+            'GET 연결 성공';
+
         } else {
-          statusElement.textContent = '서버 응답 오류';
+
+          statusElement.textContent =
+            'GET 응답 오류';
+
         }
 
       } catch (error) {
-        statusElement.textContent = '서버 연결 실패';
-        console.error(error);
+
+        statusElement.textContent =
+          'GET 연결 실패: ' + error.message;
+
       }
-    }
-async function testPostConnection() {
-  const statusElement = document.getElementById('post-status');
 
-  statusElement.textContent = 'POST 연결 확인 중...';
-
-  try {
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      redirect: 'follow',
-      headers: {
-        'Content-Type': 'text/plain;charset=utf-8'
-      },
-      body: JSON.stringify({
-        action: 'connectionTest'
-      })
-    });
-
-    if (!response.ok) {
-      throw new Error('HTTP 오류: ' + response.status);
     }
 
-    const data = await response.json();
 
-    if (
-      data.success === true &&
-      data.message === 'POST connection success'
-    ) {
-      statusElement.textContent = 'POST 연결 성공';
-    } else {
+    async function testPostConnection() {
+
+      const statusElement =
+        document.getElementById('post-status');
+
       statusElement.textContent =
-        'POST 응답 오류: ' + (data.message || '알 수 없는 오류');
+        'POST 연결 확인 중...';
+
+      try {
+
+        const response =
+          await fetch(API_URL, {
+
+            method: 'POST',
+
+            headers: {
+              'Content-Type':
+                'text/plain;charset=utf-8'
+            },
+
+            body: JSON.stringify({
+              action: 'connectionTest'
+            })
+
+          });
+
+
+        const text =
+          await response.text();
+
+
+        statusElement.textContent =
+          '서버 응답: ' + text;
+
+
+      } catch (error) {
+
+        statusElement.textContent =
+          'POST 연결 실패: ' + error.message;
+
+      }
+
     }
 
-  } catch (error) {
-    statusElement.textContent =
-      'POST 연결 실패: ' + error.message;
 
-    console.error(error);
-  }
-}
-document
-  .getElementById('post-test-button')
-  .addEventListener('click', testPostConnection);
-    
+    document
+      .getElementById('post-test-button')
+      .addEventListener(
+        'click',
+        testPostConnection
+      );
+
+
     checkApi();
+
   </script>
+
 </body>
 </html>
