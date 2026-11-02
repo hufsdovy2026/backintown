@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BACK IN TOWN Ticket</title>
+</head>
+
+<body>
+
+  <h1>BACK IN TOWN</h1>
+
+  <p id="loading">티켓 정보를 불러오는 중...</p>
+
+  <div id="ticket" style="display: none;">
+
+    <p>
+      예매번호:
+      <strong id="reservation-number"></strong>
+    </p>
+
+    <p>
+      예매자:
+      <strong id="name"></strong>
+    </p>
+
+    <p>
+      연락처:
+      <strong id="phone"></strong>
+    </p>
+
+    <p>
+      예매매수:
+      <strong id="quantity"></strong>
+    </p>
+
+    <p>
+      결제금액:
+      <strong id="total-price"></strong>
+    </p>
+
+    <p>
+      예매상태:
+      <strong id="status"></strong>
+    </p>
+
+  </div>
+
+
+  <script>
+
+    const API_URL = 'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
+
+    async function loadTicket() {
+
+      const params =
+        new URLSearchParams(window.location.search);
+
+      const token =
+        params.get('token');
+
+
+      if (!token) {
+
+        document.getElementById('loading').textContent =
+          '유효하지 않은 티켓 주소입니다.';
+
+        return;
+      }
+
+
+      try {
+
+        const response =
+          await fetch(
+            API_URL +
+            '?action=getReservation&token=' +
+            encodeURIComponent(token)
+          );
+
+        const data =
+          await response.json();
+
+
+        if (!data.success) {
+
+          throw new Error(
+            data.message || '티켓을 찾을 수 없습니다.'
+          );
+
+        }
+
+
+        const reservation =
+          data.reservation;
+
+
+        document.getElementById(
+          'reservation-number'
+        ).textContent =
+          reservation.reservationNumber;
+
+
+        document.getElementById(
+          'name'
+        ).textContent =
+          reservation.name;
+
+
+        document.getElementById(
+          'phone'
+        ).textContent =
+          reservation.phone;
+
+
+        document.getElementById(
+          'quantity'
+        ).textContent =
+          reservation.quantity + '매';
+
+
+        document.getElementById(
+          'total-price'
+        ).textContent =
+          Number(
+            reservation.totalPrice
+          ).toLocaleString('ko-KR') + '원';
+
+
+        document.getElementById(
+          'status'
+        ).textContent =
+          reservation.status;
+
+
+        document.getElementById(
+          'loading'
+        ).style.display =
+          'none';
+
+
+        document.getElementById(
+          'ticket'
+        ).style.display =
+          'block';
+
+
+      } catch (error) {
+
+        document.getElementById(
+          'loading'
+        ).textContent =
+          '티켓 정보를 불러오지 못했습니다.';
+
+      }
+
+    }
+
+
+    loadTicket();
+
+  </script>
+
+</body>
+</html>
