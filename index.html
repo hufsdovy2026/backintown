@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>BACK IN TOWN</title>
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
+
 
     html,
     body {
@@ -17,8 +25,10 @@
       padding: 0;
     }
 
+
     body {
       min-height: 100vh;
+
       background: #111111;
       color: #f4f1eb;
 
@@ -31,12 +41,24 @@
         sans-serif;
     }
 
+
+    /* =========================
+       PAGE
+    ========================= */
+
     .page {
       width: 100%;
+
       max-width: 700px;
+
       margin: 0 auto;
-      padding: 42px 22px 70px;
+
+      padding:
+        42px
+        22px
+        70px;
     }
+
 
 
     /* =========================
@@ -46,11 +68,12 @@
     .hero {
       display: flex;
       flex-direction: column;
-      gap: 0;
     }
+
 
     .poster-placeholder {
       width: 100%;
+
       aspect-ratio: 2 / 3;
 
       display: flex;
@@ -59,23 +82,28 @@
 
       flex-shrink: 0;
 
+      margin-bottom: 28px;
+
       border: 1px solid #393939;
+
       background: #181818;
       color: #55534f;
 
       font-size: 10px;
       font-weight: 600;
+
       letter-spacing: 0.1em;
 
       object-fit: cover;
-
-      margin-bottom: 28px;
     }
+
 
     .hero-content {
       width: 100%;
+
       min-width: 0;
     }
+
 
 
     /* =========================
@@ -84,50 +112,70 @@
 
     .ticket-title {
       width: 100%;
+
       margin: 0;
 
-      font-size: clamp(52px, 9vw, 72px);
+      font-size: 60px;
       font-weight: 900;
 
       line-height: 0.95;
+
       letter-spacing: -0.06em;
 
       white-space: nowrap;
     }
 
+
     .ticket-description {
       width: 100%;
 
-      margin: 16px 0 0;
+      margin:
+        16px
+        0
+        0;
 
       color: #a9a7a2;
 
-      font-size: clamp(12px, 2.1vw, 15px);
+      font-size: 13px;
       font-weight: 500;
 
       line-height: 1.4;
+
+      letter-spacing: normal;
+      word-spacing: normal;
 
       white-space: nowrap;
     }
 
 
+
     /* =========================
-       INFO
+       EVENT INFO
     ========================= */
 
     .event-info {
-      padding: 24px 0;
-
-      border-top: 1px solid #393939;
-      border-bottom: 1px solid #393939;
-
       margin-top: 44px;
+
+      padding:
+        24px
+        0;
+
+      border-top:
+        1px solid #393939;
+
+      border-bottom:
+        1px solid #393939;
     }
+
 
     .info-row {
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        flex-start;
 
       gap: 24px;
 
@@ -136,9 +184,11 @@
       line-height: 1.5;
     }
 
+
     .info-row:last-child {
       margin-bottom: 0;
     }
+
 
     .info-label {
       flex-shrink: 0;
@@ -147,6 +197,7 @@
 
       font-size: 14px;
     }
+
 
     .info-value {
       min-width: 0;
@@ -159,10 +210,13 @@
       font-weight: 500;
     }
 
+
     .info-address {
       color: #777570;
+
       font-size: 12px;
     }
+
 
 
     /* =========================
@@ -183,6 +237,7 @@
 
       font-size: 15px;
       font-weight: 800;
+
       letter-spacing: -0.02em;
 
       transition:
@@ -190,39 +245,226 @@
         opacity 0.15s ease;
     }
 
+
     .submit-button:hover {
       opacity: 0.9;
     }
 
+
     .submit-button:active {
       transform: scale(0.99);
     }
+
 
     #open-reservation-button {
       margin-top: 34px;
     }
 
 
+
     /* =========================
-       RESERVATION SECTION
+       LOOKUP
+    ========================= */
+
+    .lookup-section {
+      margin-top: 50px;
+
+      padding-top: 28px;
+
+      border-top:
+        1px solid #272727;
+    }
+
+
+    .lookup-title {
+      margin:
+        0
+        0
+        8px;
+
+      font-size: 20px;
+      font-weight: 800;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .lookup-description {
+      margin:
+        0
+        0
+        22px;
+
+      color: #777570;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+
+    .lookup-fields {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 10px;
+    }
+
+
+    .lookup-button {
+      width: 100%;
+      height: 50px;
+
+      margin-top: 12px;
+
+      border:
+        1px solid #555555;
+
+      border-radius: 3px;
+
+      background: transparent;
+
+      color: #f4f1eb;
+
+      cursor: pointer;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+
+    .lookup-button:hover {
+      background: #181818;
+    }
+
+
+    #lookup-result {
+      margin-top: 20px;
+    }
+
+
+    .lookup-message {
+      color: #8f8d88;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+
+    .reservation-card {
+      padding:
+        17px
+        0;
+
+      border-top:
+        1px solid #303030;
+    }
+
+
+    .reservation-card:first-child {
+      border-top:
+        1px solid #393939;
+    }
+
+
+    .reservation-card-top {
+      display: flex;
+
+      align-items: center;
+
+      justify-content:
+        space-between;
+
+      gap: 12px;
+    }
+
+
+    .lookup-reservation-number {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+
+    .lookup-status {
+      flex-shrink: 0;
+
+      color: #a9a7a2;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    .lookup-detail {
+      margin-top: 7px;
+
+      color: #777570;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    .ticket-link {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 13px;
+
+      padding:
+        9px
+        14px;
+
+      border:
+        1px solid #555555;
+
+      border-radius: 3px;
+
+      color: #f4f1eb;
+
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+
+    /* =========================
+       RESERVATION FORM
     ========================= */
 
     #reservation-section {
       margin-top: 54px;
+
       scroll-margin-top: 30px;
     }
 
+
     .section-title {
-      margin: 0 0 28px;
+      margin:
+        0
+        0
+        28px;
 
       font-size: 22px;
       font-weight: 700;
+
       letter-spacing: -0.03em;
     }
+
 
     .field {
       margin-bottom: 25px;
     }
+
 
     .field label {
       display: block;
@@ -235,18 +477,24 @@
       font-weight: 600;
     }
 
+
     input {
       width: 100%;
       height: 51px;
 
-      padding: 0 14px;
+      padding:
+        0
+        14px;
 
-      border: 1px solid #3b3b3b;
+      border:
+        1px solid #3b3b3b;
+
       border-radius: 3px;
 
       outline: none;
 
       background: #181818;
+
       color: #f4f1eb;
 
       font-size: 16px;
@@ -256,14 +504,18 @@
         background-color 0.15s ease;
     }
 
+
     input::placeholder {
       color: #5f5f5f;
     }
 
+
     input:focus {
       border-color: #efede7;
+
       background: #1c1c1c;
     }
+
 
 
     /* =========================
@@ -272,14 +524,20 @@
 
     input[type="number"] {
       appearance: textfield;
-      -moz-appearance: textfield;
+
+      -moz-appearance:
+        textfield;
     }
+
 
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
+
       -webkit-appearance: none;
+
       margin: 0;
     }
+
 
 
     /* =========================
@@ -290,13 +548,18 @@
       margin-top: 38px;
       margin-bottom: 18px;
 
-      padding: 22px 18px;
+      padding:
+        22px
+        18px;
 
-      border: 1px solid #4a4a4a;
+      border:
+        1px solid #4a4a4a;
+
       border-radius: 6px;
 
       background: #181818;
     }
+
 
     .payment-label {
       margin-bottom: 10px;
@@ -307,6 +570,7 @@
       font-weight: 600;
     }
 
+
     .account-number {
       color: #f4f1eb;
 
@@ -316,6 +580,7 @@
       line-height: 1.5;
     }
 
+
     .account-holder {
       margin-top: 2px;
 
@@ -324,6 +589,7 @@
       font-size: 13px;
     }
 
+
     .payment-total {
       margin-top: 24px;
 
@@ -331,6 +597,7 @@
 
       font-size: 14px;
     }
+
 
     #total-price {
       margin-left: 4px;
@@ -341,15 +608,21 @@
       font-weight: 800;
     }
 
+
     .copy-button {
       margin-top: 18px;
 
-      padding: 10px 14px;
+      padding:
+        10px
+        14px;
 
-      border: 1px solid #555555;
+      border:
+        1px solid #555555;
+
       border-radius: 4px;
 
       background: transparent;
+
       color: #f4f1eb;
 
       font-size: 12px;
@@ -358,17 +631,24 @@
       cursor: pointer;
     }
 
+
     .payment-notice {
-      margin: 0 0 22px;
+      margin:
+        0
+        0
+        22px;
 
       color: #8f8d88;
 
       font-size: 12px;
+
       line-height: 1.7;
     }
 
+
     .payment-confirmation {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
@@ -378,10 +658,12 @@
       color: #d0cdc6;
 
       font-size: 13px;
+
       line-height: 1.5;
 
       cursor: pointer;
     }
+
 
     .payment-confirmation input {
       width: 18px;
@@ -395,6 +677,7 @@
     }
 
 
+
     /* =========================
        NOTICE
     ========================= */
@@ -405,8 +688,10 @@
       color: #74726e;
 
       font-size: 11px;
+
       line-height: 1.65;
     }
+
 
 
     /* =========================
@@ -415,20 +700,23 @@
 
     .footer {
       margin-top: 58px;
+
       padding-top: 18px;
 
-      border-top: 1px solid #272727;
+      border-top:
+        1px solid #272727;
 
       color: #55534f;
 
       font-size: 10px;
+
       letter-spacing: 0.06em;
     }
 
 
+
     /* =========================================================
        MOBILE
-       휴대폰
     ========================================================= */
 
     @media (max-width: 480px) {
@@ -442,45 +730,42 @@
           70px;
       }
 
+
       .poster-placeholder {
         margin-bottom: 24px;
       }
 
-      .ticket-title {
-        font-size: clamp(46px, 13.5vw, 58px);
-        line-height: 1;
-      }
-
-      .ticket-description {
-        margin-top: 16px;
-
-        font-size: clamp(12px, 3.35vw, 14.5px);
-
-        line-height: 1.4;
-
-        letter-spacing: normal;
-        word-spacing: normal;
-      }
 
       .event-info {
         margin-top: 42px;
-        padding: 22px 0;
+
+        padding:
+          22px
+          0;
       }
+
 
       .info-label {
         font-size: 14px;
       }
 
+
       .info-value {
         font-size: 16px;
+      }
+
+
+      .lookup-fields {
+        grid-template-columns:
+          1fr;
       }
 
     }
 
 
+
     /* =========================================================
        WIDE DESKTOP
-       브라우저 폭이 넓어졌을 때
     ========================================================= */
 
     @media (min-width: 900px) {
@@ -494,6 +779,7 @@
           90px;
       }
 
+
       .hero {
         display: grid;
 
@@ -506,59 +792,50 @@
         align-items: start;
       }
 
+
       .poster-placeholder {
         width: 100%;
 
         margin-bottom: 0;
       }
 
+
       .hero-content {
         padding-top: 6px;
       }
 
-      .ticket-title {
-        font-size: clamp(64px, 6vw, 96px);
-
-        line-height: 0.92;
-
-        letter-spacing: -0.065em;
-
-        white-space: normal;
-      }
-
-      .ticket-description {
-        margin-top: 28px;
-
-        font-size: clamp(14px, 1.3vw, 18px);
-
-        line-height: 1.5;
-
-        white-space: normal;
-      }
 
       .event-info {
-        margin-top: 72px;
+        margin-top: 68px;
 
         padding:
           28px
           0;
 
-        border-top: none;
+        border-top:
+          1px solid #393939;
+
+        border-bottom:
+          1px solid #393939;
       }
 
+
       .info-row {
-        justify-content: flex-start;
+        justify-content:
+          flex-start;
 
         gap: 34px;
 
         margin-bottom: 22px;
       }
 
+
       .info-label {
         width: 72px;
 
         font-size: 16px;
       }
+
 
       .info-value {
         flex: 1;
@@ -570,9 +847,11 @@
         line-height: 1.5;
       }
 
+
       .info-address {
         font-size: 15px;
       }
+
 
       #open-reservation-button {
         width: 220px;
@@ -583,6 +862,22 @@
         font-size: 18px;
       }
 
+
+      .lookup-section {
+        margin-top: 54px;
+      }
+
+
+      .lookup-title {
+        font-size: 23px;
+      }
+
+
+      .lookup-description {
+        font-size: 13px;
+      }
+
+
       #reservation-section {
         max-width: 760px;
 
@@ -592,21 +887,25 @@
           0;
       }
 
-      .section-title {
-        font-size: 27px;
 
+      .section-title {
         margin-bottom: 34px;
+
+        font-size: 27px;
       }
+
 
       .field {
         margin-bottom: 28px;
       }
+
 
       .field label {
         margin-bottom: 10px;
 
         font-size: 14px;
       }
+
 
       input {
         height: 58px;
@@ -618,7 +917,10 @@
         font-size: 17px;
       }
 
-      #reservation-section .submit-button {
+
+      #reservation-section
+      .submit-button {
+
         height: 62px;
 
         font-size: 17px;
@@ -628,6 +930,7 @@
 
   </style>
 </head>
+
 
 
 <body>
@@ -642,32 +945,33 @@
     <section class="hero">
 
 
-      <!-- 포스터 완성 전 임시 영역 -->
-
       <div class="poster-placeholder">
         POSTER
       </div>
 
 
+
       <div class="hero-content">
 
 
-        <!-- TITLE -->
-
-        <h1 class="ticket-title">
+        <h1
+          class="ticket-title"
+          id="main-title"
+        >
           BACK IN TOWN
         </h1>
 
 
-        <p class="ticket-description">
+        <p
+          class="ticket-description"
+          id="main-description"
+        >
           한국외국어대학교 중앙힙합동아리 HUFS DOVY 2026년 정기공연
         </p>
 
 
 
-        <!-- =========================
-             EVENT INFO
-        ========================== -->
+        <!-- EVENT INFO -->
 
         <section class="event-info">
 
@@ -683,6 +987,7 @@
             </span>
 
           </div>
+
 
 
           <div class="info-row">
@@ -704,6 +1009,7 @@
           </div>
 
 
+
           <div class="info-row">
 
             <span class="info-label">
@@ -721,9 +1027,7 @@
 
 
 
-        <!-- =========================
-             OPEN RESERVATION
-        ========================== -->
+        <!-- 예매 -->
 
         <button
           type="button"
@@ -735,6 +1039,73 @@
         </button>
 
 
+
+        <!-- =========================
+             LOOKUP
+        ========================== -->
+
+        <section class="lookup-section">
+
+
+          <h2 class="lookup-title">
+            내 예매 내역 확인
+          </h2>
+
+
+          <p class="lookup-description">
+            예매 시 입력한 예매자명과 연락처로 티켓을 다시 확인할 수 있습니다.
+          </p>
+
+
+
+          <form
+            id="lookup-form"
+          >
+
+
+            <div class="lookup-fields">
+
+
+              <input
+                type="text"
+                id="lookup-name"
+                placeholder="예매자명"
+                maxlength="50"
+                required
+              >
+
+
+              <input
+                type="tel"
+                id="lookup-phone"
+                placeholder="010-1234-5678"
+                inputmode="numeric"
+                maxlength="13"
+                required
+              >
+
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="lookup-button"
+              id="lookup-button"
+            >
+              티켓 확인
+            </button>
+
+
+          </form>
+
+
+          <div id="lookup-result"></div>
+
+
+        </section>
+
+
       </div>
 
     </section>
@@ -742,12 +1113,12 @@
 
 
     <!-- =========================
-         RESERVATION
+         RESERVATION FORM
     ========================== -->
 
     <section
       id="reservation-section"
-      style="display: none;"
+      style="display:none;"
     >
 
 
@@ -770,8 +1141,6 @@
 
 
 
-        <!-- 예매자명 -->
-
         <div class="field">
 
           <label for="name">
@@ -790,8 +1159,6 @@
         </div>
 
 
-
-        <!-- 연락처 -->
 
         <div class="field">
 
@@ -814,8 +1181,6 @@
 
 
 
-        <!-- 입금자명 -->
-
         <div class="field">
 
           <label for="depositorName">
@@ -833,8 +1198,6 @@
         </div>
 
 
-
-        <!-- 예매 매수 -->
 
         <div class="field">
 
@@ -855,10 +1218,6 @@
         </div>
 
 
-
-        <!-- =========================
-             PAYMENT BOX
-        ========================== -->
 
         <div class="payment-box">
 
@@ -906,14 +1265,11 @@
 
           예매자명과 입금자명은 동일하게 해주세요.<br>
 
-          입금이 확인되지 않을 경우
-          예매가 취소될 수 있습니다.
+          입금이 확인되지 않을 경우 예매가 취소될 수 있습니다.
 
         </p>
 
 
-
-        <!-- PAYMENT CONFIRM -->
 
         <label class="payment-confirmation">
 
@@ -930,8 +1286,6 @@
         </label>
 
 
-
-        <!-- SUBMIT -->
 
         <button
           class="submit-button"
@@ -965,12 +1319,282 @@
 
   <script>
 
+    const API_URL =
+      'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
+
+
     const UNIT_PRICE = 7000;
 
 
-    /* =========================
+
+    /* =========================================================
+       TITLE / DESCRIPTION AUTO FIT
+    ========================================================= */
+
+    function measureTextWidth(
+      element,
+      fontSize
+    ) {
+
+      const clone =
+        element.cloneNode(true);
+
+
+      clone.style.position =
+        'absolute';
+
+      clone.style.visibility =
+        'hidden';
+
+      clone.style.pointerEvents =
+        'none';
+
+      clone.style.width =
+        'max-content';
+
+      clone.style.maxWidth =
+        'none';
+
+      clone.style.whiteSpace =
+        'nowrap';
+
+      clone.style.fontSize =
+        fontSize + 'px';
+
+      clone.style.left =
+        '-99999px';
+
+      clone.style.top =
+        '-99999px';
+
+
+      document.body.appendChild(
+        clone
+      );
+
+
+      const width =
+        clone
+          .getBoundingClientRect()
+          .width;
+
+
+      clone.remove();
+
+
+      return width;
+
+    }
+
+
+
+    function fitTextToWidth(
+      element,
+      minimum,
+      maximum
+    ) {
+
+      const availableWidth =
+        element
+          .parentElement
+          .clientWidth;
+
+
+      let low =
+        minimum;
+
+
+      let high =
+        maximum;
+
+
+      for (
+        let i = 0;
+        i < 20;
+        i++
+      ) {
+
+        const middle =
+          (low + high) / 2;
+
+
+        const textWidth =
+          measureTextWidth(
+            element,
+            middle
+          );
+
+
+        if (
+          textWidth <=
+          availableWidth
+        ) {
+
+          low =
+            middle;
+
+        } else {
+
+          high =
+            middle;
+
+        }
+
+      }
+
+
+      element.style.fontSize =
+        low + 'px';
+
+    }
+
+
+
+    function fitHeroText() {
+
+      const title =
+        document.getElementById(
+          'main-title'
+        );
+
+
+      const description =
+        document.getElementById(
+          'main-description'
+        );
+
+
+      fitTextToWidth(
+        title,
+        36,
+        120
+      );
+
+
+      fitTextToWidth(
+        description,
+        9,
+        28
+      );
+
+    }
+
+
+
+    window.addEventListener(
+      'resize',
+      fitHeroText
+    );
+
+
+    if (
+      document.fonts
+      &&
+      document.fonts.ready
+    ) {
+
+      document.fonts.ready.then(
+        fitHeroText
+      );
+
+    } else {
+
+      window.addEventListener(
+        'load',
+        fitHeroText
+      );
+
+    }
+
+
+
+    /* =========================================================
+       PHONE FORMAT
+    ========================================================= */
+
+    function formatPhoneInput(
+      input
+    ) {
+
+      let value =
+        input.value
+          .replace(/\D/g, '')
+          .slice(0, 11);
+
+
+      if (
+        value.length <= 3
+      ) {
+
+        input.value =
+          value;
+
+      }
+
+      else if (
+        value.length <= 7
+      ) {
+
+        input.value =
+          value.slice(0, 3)
+          + '-'
+          + value.slice(3);
+
+      }
+
+      else {
+
+        input.value =
+          value.slice(0, 3)
+          + '-'
+          + value.slice(3, 7)
+          + '-'
+          + value.slice(7, 11);
+
+      }
+
+    }
+
+
+
+    const phoneInput =
+      document.getElementById(
+        'phone'
+      );
+
+
+    phoneInput.addEventListener(
+      'input',
+      function () {
+
+        formatPhoneInput(this);
+
+      }
+    );
+
+
+
+    const lookupPhoneInput =
+      document.getElementById(
+        'lookup-phone'
+      );
+
+
+    lookupPhoneInput
+      .addEventListener(
+        'input',
+        function () {
+
+          formatPhoneInput(this);
+
+        }
+      );
+
+
+
+    /* =========================================================
        PRICE
-    ========================== */
+    ========================================================= */
 
     const quantityInput =
       document.getElementById(
@@ -993,87 +1617,34 @@
 
 
       const total =
-        UNIT_PRICE * quantity;
+        UNIT_PRICE
+        * quantity;
 
 
-      totalPriceElement.textContent =
-        total.toLocaleString(
-          'ko-KR'
-        ) + '원';
+      totalPriceElement
+        .textContent =
+
+        total
+          .toLocaleString(
+            'ko-KR'
+          )
+        + '원';
 
     }
 
 
-    quantityInput.addEventListener(
-      'input',
-      updateTotalPrice
-    );
 
-
-
-    /* =========================
-       PHONE FORMAT
-    ========================== */
-
-    const phoneInput =
-      document.getElementById(
-        'phone'
+    quantityInput
+      .addEventListener(
+        'input',
+        updateTotalPrice
       );
 
 
-    phoneInput.addEventListener(
-      'input',
-      function () {
 
-
-        let value =
-          this.value
-            .replace(/\D/g, '')
-            .slice(0, 11);
-
-
-        if (
-          value.length <= 3
-        ) {
-
-          this.value =
-            value;
-
-        }
-
-
-        else if (
-          value.length <= 7
-        ) {
-
-          this.value =
-            value.slice(0, 3)
-            + '-'
-            + value.slice(3);
-
-        }
-
-
-        else {
-
-          this.value =
-            value.slice(0, 3)
-            + '-'
-            + value.slice(3, 7)
-            + '-'
-            + value.slice(7, 11);
-
-        }
-
-
-      }
-    );
-
-
-
-    /* =========================
-       COPY ACCOUNT
-    ========================== */
+    /* =========================================================
+       ACCOUNT COPY
+    ========================================================= */
 
     function copyAccount() {
 
@@ -1104,9 +1675,9 @@
 
 
 
-    /* =========================
-       OPEN FORM
-    ========================== */
+    /* =========================================================
+       OPEN RESERVATION
+    ========================================================= */
 
     function openReservation() {
 
@@ -1131,17 +1702,246 @@
 
 
       section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior:
+          'smooth',
+
+        block:
+          'start'
       });
 
     }
 
 
 
-    /* =========================
+    /* =========================================================
+       LOOKUP RESERVATION
+    ========================================================= */
+
+    const lookupForm =
+      document.getElementById(
+        'lookup-form'
+      );
+
+
+    lookupForm.addEventListener(
+      'submit',
+      async function (
+        event
+      ) {
+
+        event.preventDefault();
+
+
+        const button =
+          document.getElementById(
+            'lookup-button'
+          );
+
+
+        const result =
+          document.getElementById(
+            'lookup-result'
+          );
+
+
+        const name =
+          document
+            .getElementById(
+              'lookup-name'
+            )
+            .value
+            .trim();
+
+
+        const phone =
+          document
+            .getElementById(
+              'lookup-phone'
+            )
+            .value
+            .trim();
+
+
+        result.innerHTML =
+          '<p class="lookup-message">예매 내역을 확인하는 중...</p>';
+
+
+        button.disabled =
+          true;
+
+
+        try {
+
+          const url =
+            API_URL
+            + '?action=lookupReservations'
+            + '&name='
+            + encodeURIComponent(name)
+            + '&phone='
+            + encodeURIComponent(phone);
+
+
+          const response =
+            await fetch(url);
+
+
+          const data =
+            await response.json();
+
+
+          if (
+            !data.success
+          ) {
+
+            throw new Error(
+              data.message
+              ||
+              '예매 내역을 확인하지 못했습니다.'
+            );
+
+          }
+
+
+          const reservations =
+            data.reservations
+            || [];
+
+
+          if (
+            reservations.length === 0
+          ) {
+
+            result.innerHTML =
+              '<p class="lookup-message">일치하는 예매 내역이 없습니다. 예매자명과 연락처를 다시 확인해 주세요.</p>';
+
+
+            return;
+
+          }
+
+
+          result.innerHTML =
+            reservations
+              .map(
+                reservation => {
+
+                  return `
+                    <div class="reservation-card">
+
+                      <div class="reservation-card-top">
+
+                        <strong class="lookup-reservation-number">
+                          ${escapeHtml(reservation.reservationNumber)}
+                        </strong>
+
+                        <span class="lookup-status">
+                          ${escapeHtml(reservation.status)}
+                        </span>
+
+                      </div>
+
+                      <div class="lookup-detail">
+                        ${escapeHtml(String(reservation.quantity))}매 ·
+                        ${Number(reservation.totalPrice).toLocaleString('ko-KR')}원
+                      </div>
+
+                      <a
+                        class="ticket-link"
+                        href="${escapeAttribute(reservation.ticketUrl)}"
+                      >
+                        티켓 확인
+                      </a>
+
+                    </div>
+                  `;
+
+                }
+              )
+              .join('');
+
+
+        }
+
+        catch (
+          error
+        ) {
+
+          console.error(
+            error
+          );
+
+
+          result.innerHTML =
+            '<p class="lookup-message">예매 내역을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</p>';
+
+        }
+
+        finally {
+
+          button.disabled =
+            false;
+
+        }
+
+      }
+    );
+
+
+
+    /* =========================================================
+       SAFE HTML
+    ========================================================= */
+
+    function escapeHtml(
+      value
+    ) {
+
+      return String(value)
+
+        .replaceAll(
+          '&',
+          '&amp;'
+        )
+
+        .replaceAll(
+          '<',
+          '&lt;'
+        )
+
+        .replaceAll(
+          '>',
+          '&gt;'
+        )
+
+        .replaceAll(
+          '"',
+          '&quot;'
+        )
+
+        .replaceAll(
+          "'",
+          '&#039;'
+        );
+
+    }
+
+
+
+    function escapeAttribute(
+      value
+    ) {
+
+      return escapeHtml(
+        value
+      );
+
+    }
+
+
+
+    /* =========================================================
        PREVENT DOUBLE SUBMIT
-    ========================== */
+    ========================================================= */
 
     const submitReservationButton =
       document.getElementById(
@@ -1154,31 +1954,39 @@
         .closest('form');
 
 
-    reservationForm.addEventListener(
-      'submit',
-      function () {
+    reservationForm
+      .addEventListener(
+        'submit',
+        function () {
 
 
-        submitReservationButton.disabled =
-          true;
+          submitReservationButton
+            .disabled =
+            true;
 
 
-        submitReservationButton.textContent =
-          '처리 중...';
+          submitReservationButton
+            .textContent =
+            '처리 중...';
 
 
-        submitReservationButton.style.opacity =
-          '0.6';
+          submitReservationButton
+            .style
+            .opacity =
+            '0.6';
 
 
-        submitReservationButton.style.cursor =
-          'not-allowed';
+          submitReservationButton
+            .style
+            .cursor =
+            'not-allowed';
 
 
-      }
-    );
+        }
+      );
 
   </script>
 
 </body>
+
 </html>
