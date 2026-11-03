@@ -288,19 +288,93 @@
       font-size: 10px;
       letter-spacing: 0.06em;
     }
+.ticket-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 42px;
+}
 
+.poster-placeholder {
+  width: 145px;
+  aspect-ratio: 2 / 3;
 
-    @media (max-width: 480px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      .page {
-        padding-top: 42px;
-      }
+  flex-shrink: 0;
 
-      .header {
-        margin-bottom: 36px;
-      }
+  border: 1px solid #393939;
+  background: #181818;
+  color: #55534f;
 
-    }
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+
+  object-fit: cover;
+}
+
+.header-text {
+  padding-top: 2px;
+  min-width: 0;
+}
+
+.ticket-title {
+  margin: 0;
+
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.ticket-description {
+  margin: 18px 0 0;
+
+  color: #a9a7a2;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+@media (max-width: 480px) {
+
+  .page {
+    padding-top: 42px;
+  }
+
+  .header {
+    margin-bottom: 36px;
+  }
+
+  .ticket-header {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 42px;
+  }
+
+  .poster-placeholder {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+  }
+
+  .header-text {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .ticket-title {
+    font-size: 48px;
+  }
+
+  .ticket-description {
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+}
   </style>
 </head>
 
@@ -309,16 +383,28 @@
 
   <main class="page">
 
-    <header class="header">
-      <h1 class="brand">
-        BACK<br>
-        IN TOWN
-      </h1>
+   <header class="ticket-header">
 
-      <p class="subtitle">
-        2026 HUFS DOVY 정기공연 · 사전예매
-      </p>
-    </header>
+  <!-- 포스터 완성 전 임시 영역 -->
+  <div class="poster-placeholder">
+    POSTER
+  </div>
+
+  <div class="header-text">
+
+    <h1 class="ticket-title">
+      BACK<br>
+      IN TOWN
+    </h1>
+
+    <p class="ticket-description">
+      한국외국어대학교 중앙힙합동아리<br>
+      HUFS DOVY 2026년 정기공연
+    </p>
+
+  </div>
+
+</header>
 
 
     <!--
@@ -363,8 +449,19 @@
 
 </section>
 
-
-    <section>
+<button
+  type="button"
+  class="submit-button"
+  id="open-reservation-button"
+  onclick="openReservation()"
+  style="margin-bottom: 36px;"
+>
+  예매하기
+</button>
+    <section
+  id="reservation-section"
+  style="display: none;"
+>
 
       <h2 class="section-title">
         사전예매
@@ -631,6 +728,23 @@ function copyAccount() {
     .catch(() => {
       alert('계좌번호 복사에 실패했습니다.');
     });
+
+}
+    function openReservation() {
+
+  const section =
+    document.getElementById('reservation-section');
+
+  const button =
+    document.getElementById('open-reservation-button');
+
+  section.style.display = 'block';
+  button.style.display = 'none';
+
+  section.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
 
 }
   </script>
