@@ -43,27 +43,57 @@
        HEADER
     ========================= */
 
-    .header {
+    .ticket-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+
       margin-bottom: 42px;
     }
 
-    .brand {
+    .poster-placeholder {
+      width: 145px;
+      aspect-ratio: 2 / 3;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border: 1px solid #393939;
+      background: #181818;
+      color: #55534f;
+
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+
+      object-fit: cover;
+    }
+
+    .header-text {
+      padding-top: 2px;
+      min-width: 0;
+    }
+
+    .ticket-title {
       margin: 0;
 
-      font-size: clamp(42px, 12vw, 66px);
+      font-size: 44px;
       font-weight: 900;
       line-height: 0.92;
       letter-spacing: -0.055em;
     }
 
-    .subtitle {
-      margin: 16px 0 0;
+    .ticket-description {
+      margin: 18px 0 0;
 
       color: #a9a7a2;
 
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.04em;
+      line-height: 1.7;
     }
 
 
@@ -140,6 +170,7 @@
       color: #777570;
 
       font-size: 12px;
+      flex-shrink: 0;
     }
 
     .info-value {
@@ -218,14 +249,32 @@
     }
 
 
+    /* =========================
+       MOBILE
+    ========================= */
+
     @media (max-width: 480px) {
 
       .page {
         padding-top: 42px;
       }
 
-      .header {
+      .ticket-header {
+        gap: 16px;
         margin-bottom: 36px;
+      }
+
+      .poster-placeholder {
+        width: 115px;
+      }
+
+      .ticket-title {
+        font-size: 34px;
+      }
+
+      .ticket-description {
+        margin-top: 14px;
+        font-size: 11px;
       }
 
       #reservation-number {
@@ -241,16 +290,28 @@
 
   <main class="page">
 
-    <header class="header">
+    <header class="ticket-header">
 
-      <h1 class="brand">
-        BACK<br>
-        IN TOWN
-      </h1>
+      <!--
+        포스터가 완성되기 전 임시 영역
+      -->
+      <div class="poster-placeholder">
+        POSTER
+      </div>
 
-      <p class="subtitle">
-        2026 HUFS DOVY 정기공연 · TICKET
-      </p>
+      <div class="header-text">
+
+        <h1 class="ticket-title">
+          BACK<br>
+          IN TOWN
+        </h1>
+
+        <p class="ticket-description">
+          한국외국어대학교 중앙힙합동아리<br>
+          HUFS DOVY 2026년 정기공연
+        </p>
+
+      </div>
 
     </header>
 
@@ -279,31 +340,34 @@
       <div class="ticket-info">
 
         <div class="info-row">
-  <span class="info-label">
-    일시
-  </span>
+          <span class="info-label">
+            일시
+          </span>
 
-  <strong class="info-value">
-    2026년 11월 21일 (토) 오후 6:00
-  </strong>
-</div>
+          <strong class="info-value">
+            2026년 11월 21일 (토) 오후 6:00
+          </strong>
+        </div>
 
-<div class="info-row">
-  <span class="info-label">
-    장소
-  </span>
 
-  <strong class="info-value">
-    예림당 아트홀<br>
-    <span style="
-      color: #777570;
-      font-size: 12px;
-      font-weight: 500;
-    ">
-      서울특별시 강남구 언주로 337
-    </span>
-  </strong>
-</div>
+        <div class="info-row">
+          <span class="info-label">
+            장소
+          </span>
+
+          <strong class="info-value">
+            예림당 아트홀<br>
+
+            <span style="
+              color: #777570;
+              font-size: 12px;
+              font-weight: 500;
+            ">
+              서울특별시 강남구 언주로 337
+            </span>
+          </strong>
+        </div>
+
 
         <div class="info-row">
           <span class="info-label">
