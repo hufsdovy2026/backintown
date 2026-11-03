@@ -10,128 +10,117 @@
 <body>
 
   <h1>BACK IN TOWN</h1>
-  <p>2026 HUFS DOVY 정기공연 예매 페이지</p>
+  <p>2026 HUFS DOVY 정기공연 사전예매</p>
 
   <hr>
 
-  <p id="api-status">GET 연결 확인 중...</p>
-
-  <button id="post-test-button">
-    POST 연결 테스트
-  </button>
-
-  <p id="post-status"></p>
-<form
-  action="https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec"
-  method="POST"
-  target="_blank"
->
-  <input
-    type="hidden"
-    name="action"
-    value="reservationTest"
+  <form
+    action="https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec"
+    method="POST"
+    target="_blank"
   >
 
-  <button type="submit">
-    예매 생성 테스트
-  </button>
-</form>
+    <input
+      type="hidden"
+      name="action"
+      value="createReservation"
+    >
+
+
+    <p>
+      <label>
+        예매자명<br>
+        <input
+          type="text"
+          name="name"
+          required
+          maxlength="50"
+        >
+      </label>
+    </p>
+
+
+    <p>
+      <label>
+        연락처<br>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="010-1234-5678"
+          required
+        >
+      </label>
+    </p>
+
+
+    <p>
+      <label>
+        입금자명<br>
+        <input
+          type="text"
+          name="depositorName"
+          required
+          maxlength="50"
+        >
+      </label>
+    </p>
+
+
+    <p>
+      <label>
+        예매 매수<br>
+        <input
+          id="quantity"
+          type="number"
+          name="quantity"
+          value="1"
+          min="1"
+          step="1"
+          required
+        >
+      </label>
+    </p>
+
+
+    <p>
+      결제 예정 금액:
+      <strong id="total-price">7,000원</strong>
+    </p>
+
+
+    <button type="submit">
+      예매 신청
+    </button>
+
+  </form>
+
 
   <script>
+    const UNIT_PRICE = 7000;
 
-    const API_URL = 'https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnSf_fLDEOt-IJnOsPGGady533sbDEFHNCl-3Nw7cXRgKN3-ekjHoTnBs6GKaCuBQTrTNKiwAvg6X1o8bzfshucj8aHngOY8q7HZF28Q8zwM0HNI6tWmQIfTK6mPxrHDiic4oBJ3jr2PNBZhs1umvrJqI9vHiNJ5dbN5m2wYaCZDgTOyyjzr_YgRElLWbbVokhvtRjg7OvDN1mEQ7sgAk8iEafNfgaC2OVN75Sp5Mt_8aAdRDYt2OsrU1BwPYI6puhNEsEKu8TQYYObTD6m6H80PMwxVhA&lib=M4ZWprx1YDump56AWZwFWuUv6Y-HkAiGr';
+    const quantityInput =
+      document.getElementById('quantity');
+
+    const totalPriceElement =
+      document.getElementById('total-price');
 
 
-    async function checkApi() {
+    function updateTotalPrice() {
+      const quantity =
+        Number(quantityInput.value) || 0;
 
-      const statusElement =
-        document.getElementById('api-status');
+      const total =
+        UNIT_PRICE * quantity;
 
-      try {
-
-        const response =
-          await fetch(API_URL);
-
-        const data =
-          await response.json();
-
-        if (data.success === true) {
-
-          statusElement.textContent =
-            'GET 연결 성공';
-
-        } else {
-
-          statusElement.textContent =
-            'GET 응답 오류';
-
-        }
-
-      } catch (error) {
-
-        statusElement.textContent =
-          'GET 연결 실패: ' + error.message;
-
-      }
-
+      totalPriceElement.textContent =
+        total.toLocaleString('ko-KR') + '원';
     }
 
 
-    async function testPostConnection() {
-
-      const statusElement =
-        document.getElementById('post-status');
-
-      statusElement.textContent =
-        'POST 연결 확인 중...';
-
-      try {
-
-        const response =
-          await fetch(API_URL, {
-
-            method: 'POST',
-
-            headers: {
-              'Content-Type':
-                'text/plain;charset=utf-8'
-            },
-
-            body: JSON.stringify({
-              action: 'connectionTest'
-            })
-
-          });
-
-
-        const text =
-          await response.text();
-
-
-        statusElement.textContent =
-          '서버 응답: ' + text;
-
-
-      } catch (error) {
-
-        statusElement.textContent =
-          'POST 연결 실패: ' + error.message;
-
-      }
-
-    }
-
-
-    document
-      .getElementById('post-test-button')
-      .addEventListener(
-        'click',
-        testPostConnection
-      );
-
-
-    checkApi();
-
+    quantityInput.addEventListener(
+      'input',
+      updateTotalPrice
+    );
   </script>
 
 </body>
