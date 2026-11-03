@@ -607,6 +607,29 @@
           'status'
         ).textContent =
           reservation.status;
+        const statusElement =
+  document.getElementById('status');
+
+statusElement.classList.remove(
+  'status-pending',
+  'status-confirmed',
+  'status-cancelled'
+);
+
+const currentStatus =
+  String(reservation.status).trim();
+
+if (currentStatus === '입금 확인 중') {
+  statusElement.classList.add('status-pending');
+}
+
+if (currentStatus === '입금 확인') {
+  statusElement.classList.add('status-confirmed');
+}
+
+if (currentStatus === '취소') {
+  statusElement.classList.add('status-cancelled');
+}
 const paymentInfo =
   document.getElementById('payment-info');
 
