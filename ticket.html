@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>BACK IN TOWN Ticket</title>
 
@@ -19,6 +23,7 @@
 
     body {
       min-height: 100vh;
+
       background: #111111;
       color: #f4f1eb;
 
@@ -31,9 +36,15 @@
         sans-serif;
     }
 
+
+    /* =========================
+       PAGE
+    ========================= */
+
     .page {
       width: 100%;
       max-width: 520px;
+
       margin: 0 auto;
       padding: 54px 22px 70px;
     }
@@ -46,10 +57,11 @@
     .ticket-header {
       display: flex;
       align-items: flex-start;
-      gap: 22px;
 
+      gap: 22px;
       margin-bottom: 42px;
     }
+
 
     .poster-placeholder {
       width: 145px;
@@ -62,6 +74,7 @@
       flex-shrink: 0;
 
       border: 1px solid #393939;
+
       background: #181818;
       color: #55534f;
 
@@ -72,19 +85,25 @@
       object-fit: cover;
     }
 
+
     .header-text {
-      padding-top: 2px;
+      flex: 1;
       min-width: 0;
+      padding-top: 2px;
     }
+
 
     .ticket-title {
       margin: 0;
 
       font-size: 44px;
       font-weight: 900;
+
       line-height: 0.92;
+
       letter-spacing: -0.055em;
     }
+
 
     .ticket-description {
       margin: 18px 0 0;
@@ -93,6 +112,7 @@
 
       font-size: 12px;
       font-weight: 500;
+
       line-height: 1.7;
     }
 
@@ -121,11 +141,13 @@
       border-top: 1px solid #393939;
     }
 
+
     .ticket-top {
       padding: 28px 0 26px;
 
       border-bottom: 1px solid #393939;
     }
+
 
     .ticket-label {
       margin-bottom: 9px;
@@ -134,53 +156,27 @@
 
       font-size: 11px;
       font-weight: 600;
+
       letter-spacing: 0.08em;
     }
+
+
+    .reservation-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 16px;
+    }
+
 
     #reservation-number {
       display: block;
 
       font-size: 32px;
       font-weight: 800;
+
       letter-spacing: -0.04em;
-    }
-
-
-    /* =========================
-       TICKET INFO
-    ========================= */
-
-    .ticket-info {
-      padding: 24px 0;
-
-      border-bottom: 1px solid #393939;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-
-      gap: 20px;
-
-      padding: 11px 0;
-    }
-
-    .info-label {
-      color: #777570;
-
-      font-size: 12px;
-      flex-shrink: 0;
-    }
-
-    .info-value {
-      color: #f4f1eb;
-
-      text-align: right;
-
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.4;
     }
 
 
@@ -188,22 +184,9 @@
        STATUS
     ========================= */
 
-    .status-section {
-      padding: 28px 0;
-    }
-
-    .status-title {
-      margin-bottom: 13px;
-
-      color: #777570;
-
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-    }
-
     #status {
       display: inline-block;
+      flex-shrink: 0;
 
       padding: 10px 14px;
 
@@ -215,24 +198,148 @@
 
       font-size: 13px;
       font-weight: 700;
+
+      white-space: nowrap;
     }
-#status.status-pending {
-  border-color: #5a5a5a;
-  background: #2a2a2a;
-  color: #d8d8d8;
-}
 
-#status.status-confirmed {
-  border-color: #2f6fed;
-  background: #2f6fed;
-  color: #ffffff;
-}
 
-#status.status-cancelled {
-  border-color: #d64545;
-  background: #d64545;
-  color: #ffffff;
-}
+    #status.status-pending {
+      border-color: #5a5a5a;
+
+      background: #2a2a2a;
+      color: #d8d8d8;
+    }
+
+
+    #status.status-confirmed {
+      border-color: #2f6fed;
+
+      background: #2f6fed;
+      color: #ffffff;
+    }
+
+
+    #status.status-cancelled {
+      border-color: #d64545;
+
+      background: #d64545;
+      color: #ffffff;
+    }
+
+
+    /* =========================
+       INFO
+    ========================= */
+
+    .ticket-info {
+      padding: 24px 0;
+
+      border-bottom: 1px solid #393939;
+    }
+
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 20px;
+
+      padding: 11px 0;
+    }
+
+
+    .info-label {
+      flex-shrink: 0;
+
+      color: #777570;
+
+      font-size: 12px;
+    }
+
+
+    .info-value {
+      color: #f4f1eb;
+
+      text-align: right;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      line-height: 1.4;
+    }
+
+
+    .venue-address {
+      color: #777570;
+
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+
+    /* =========================
+       PAYMENT
+    ========================= */
+
+    #payment-info {
+      display: none;
+
+      margin: 6px 0 24px;
+      padding: 18px;
+
+      border: 1px solid #393939;
+      border-radius: 4px;
+
+      background: #181818;
+    }
+
+
+    .payment-label {
+      margin-bottom: 8px;
+
+      color: #777570;
+
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+
+    .payment-account {
+      color: #f4f1eb;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      line-height: 1.7;
+    }
+
+
+    .payment-holder {
+      color: #a9a7a2;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+
+    .small-button {
+      margin-top: 14px;
+      padding: 9px 12px;
+
+      border: 1px solid #555555;
+      border-radius: 4px;
+
+      background: transparent;
+      color: #f4f1eb;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
 
     /* =========================
        NOTICE
@@ -244,7 +351,25 @@
       color: #74726e;
 
       font-size: 11px;
+
       line-height: 1.7;
+    }
+
+
+    #save-ticket-button {
+      margin-top: 14px;
+      padding: 10px 14px;
+
+      border: 1px solid #555555;
+      border-radius: 4px;
+
+      background: transparent;
+      color: #f4f1eb;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      cursor: pointer;
     }
 
 
@@ -261,6 +386,7 @@
       color: #55534f;
 
       font-size: 10px;
+
       letter-spacing: 0.06em;
     }
 
@@ -272,32 +398,85 @@
     @media (max-width: 480px) {
 
       .page {
-        padding-top: 42px;
+        padding:
+          42px
+          16px
+          70px;
       }
+
 
       .ticket-header {
         gap: 16px;
-        margin-bottom: 36px;
+        margin-bottom: 38px;
       }
+
 
       .poster-placeholder {
-        width: 115px;
+        width: 150px;
       }
+
+
+      .header-text {
+        flex: 1;
+
+        min-width: 0;
+        padding-top: 1px;
+      }
+
 
       .ticket-title {
-        font-size: 34px;
+        font-size:
+          clamp(
+            38px,
+            9.6vw,
+            43px
+          );
+
+        line-height: 0.94;
+
+        letter-spacing: -0.06em;
       }
 
+
       .ticket-description {
-        margin-top: 14px;
-        font-size: 11px;
+        margin-top: 16px;
+
+        font-size:
+          clamp(
+            10px,
+            2.65vw,
+            11.5px
+          );
+
+        line-height: 1.7;
+
+        white-space: nowrap;
       }
+
 
       #reservation-number {
         font-size: 28px;
       }
 
+
+      #status {
+        padding: 9px 13px;
+
+        font-size: 12px;
+      }
+
+
+      .info-label {
+        font-size: 12px;
+      }
+
+
+      .info-value {
+        font-size: 14px;
+      }
+
     }
+
   </style>
 </head>
 
@@ -306,14 +485,23 @@
 
   <main class="page">
 
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header class="ticket-header">
 
+
       <!--
-        포스터가 완성되기 전 임시 영역
+        실제 포스터 완성 후
+        이 div를 img로 교체하면 됨.
       -->
+
       <div class="poster-placeholder">
         POSTER
       </div>
+
 
       <div class="header-text">
 
@@ -321,6 +509,7 @@
           BACK<br>
           IN TOWN
         </h1>
+
 
         <p class="ticket-description">
           한국외국어대학교 중앙힙합동아리<br>
@@ -332,198 +521,206 @@
     </header>
 
 
+    <!-- =========================
+         LOADING
+    ========================== -->
+
     <p id="loading">
       티켓 정보를 불러오는 중...
     </p>
 
+
+    <!-- =========================
+         TICKET
+    ========================== -->
 
     <section
       id="ticket"
       style="display: none;"
     >
 
-  <div class="ticket-top">
 
-  <div class="ticket-label">
-    RESERVATION
-  </div>
+      <!-- 예약번호 / 상태 -->
 
-  <div style="
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-  ">
+      <div class="ticket-top">
 
-    <strong id="reservation-number"></strong>
-
-    <strong id="status"></strong>
-
-  </div>
-
-</div>
-
-
-      <div class="ticket-info">
-
-        <div class="info-row">
-          <span class="info-label">
-            일시
-          </span>
-
-          <strong class="info-value">
-            2026년 11월 21일 (토) 오후 6:00
-          </strong>
+        <div class="ticket-label">
+          RESERVATION
         </div>
 
 
-        <div class="info-row">
-          <span class="info-label">
-            장소
-          </span>
-
-          <strong class="info-value">
-            예림당 아트홀<br>
-
-            <span style="
-              color: #777570;
-              font-size: 12px;
-              font-weight: 500;
-            ">
-              서울특별시 강남구 언주로 337
-            </span>
-          </strong>
-        </div>
-
-
-        <div class="info-row">
-          <span class="info-label">
-            예매자
-          </span>
+        <div class="reservation-row">
 
           <strong
-            class="info-value"
-            id="name"
+            id="reservation-number"
           ></strong>
-        </div>
 
-
-        <div class="info-row">
-          <span class="info-label">
-            연락처
-          </span>
 
           <strong
-            class="info-value"
-            id="phone"
+            id="status"
           ></strong>
-        </div>
 
-
-        <div class="info-row">
-          <span class="info-label">
-            예매 매수
-          </span>
-
-          <strong
-            class="info-value"
-            id="quantity"
-          ></strong>
-        </div>
-
-
-        <div class="info-row">
-          <span class="info-label">
-            결제 금액
-          </span>
-
-          <strong
-            class="info-value"
-            id="total-price"
-          ></strong>
         </div>
 
       </div>
 
 
+      <!-- =========================
+           TICKET INFO
+      ========================== -->
+
+      <div class="ticket-info">
 
 
-<div
-  id="payment-info"
-  style="
-    display: none;
-    margin: 6px 0 24px;
-    padding: 18px;
-    border: 1px solid #393939;
-    border-radius: 4px;
-    background: #181818;
-  "
->
+        <div class="info-row">
 
-  <div style="
-    margin-bottom: 8px;
-    color: #777570;
-    font-size: 11px;
-    font-weight: 600;
-  ">
-    입금 계좌
-  </div>
+          <span class="info-label">
+            일시
+          </span>
 
-  <div style="
-    color: #f4f1eb;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.7;
-  ">
-    토스뱅크 1002-7972-6507
-  </div>
 
-  <div style="
-    color: #a9a7a2;
-    font-size: 12px;
-    line-height: 1.7;
-  ">
-    예금주 진성재
-  </div>
-<button
-  type="button"
-  onclick="copyAccount()"
-  style="
-    margin-top: 14px;
-    padding: 9px 12px;
-    border: 1px solid #555555;
-    border-radius: 4px;
-    background: transparent;
-    color: #f4f1eb;
-    font-size: 11px;
-    font-weight: 700;
-    cursor: pointer;
-  "
->
-  계좌번호 복사
-</button>
-</div>
+          <strong class="info-value">
+            2026년 11월 21일 (토) 오후 6:00
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="info-label">
+            장소
+          </span>
+
+
+          <strong class="info-value">
+
+            예림당 아트홀<br>
+
+            <span class="venue-address">
+              서울특별시 강남구 언주로 337
+            </span>
+
+          </strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="info-label">
+            예매자
+          </span>
+
+
+          <strong
+            class="info-value"
+            id="name"
+          ></strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="info-label">
+            연락처
+          </span>
+
+
+          <strong
+            class="info-value"
+            id="phone"
+          ></strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="info-label">
+            예매 매수
+          </span>
+
+
+          <strong
+            class="info-value"
+            id="quantity"
+          ></strong>
+
+        </div>
+
+
+        <div class="info-row">
+
+          <span class="info-label">
+            결제 금액
+          </span>
+
+
+          <strong
+            class="info-value"
+            id="total-price"
+          ></strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           PAYMENT
+      ========================== -->
+
+      <div id="payment-info">
+
+        <div class="payment-label">
+          입금 계좌
+        </div>
+
+
+        <div class="payment-account">
+          토스뱅크 1002-7972-6507
+        </div>
+
+
+        <div class="payment-holder">
+          예금주 진성재
+        </div>
+
+
+        <button
+          type="button"
+          class="small-button"
+          onclick="copyAccount()"
+        >
+          계좌번호 복사
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           NOTICE
+      ========================== -->
+
       <p class="notice">
-  입금 확인 후 예매 상태가 변경됩니다.<br>
-  본 티켓 링크는 공연 당일까지 보관해 주세요.
-</p>
-<button
-  type="button"
-  id="save-ticket-button"
-  style="
-    margin-top: 14px;
-    padding: 10px 14px;
-    border: 1px solid #555555;
-    border-radius: 4px;
-    background: transparent;
-    color: #f4f1eb;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-  "
->
-  티켓 이미지 저장
-</button>
+        입금 확인 후 예매 상태가 변경됩니다.<br>
+        본 티켓 링크는 공연 당일까지 보관해 주세요.
+      </p>
+
+
+      <!-- =========================
+           SAVE IMAGE
+      ========================== -->
+
+      <button
+        type="button"
+        id="save-ticket-button"
+      >
+        티켓 이미지 저장
+      </button>
+
     </section>
 
 
@@ -534,16 +731,30 @@
   </main>
 
 
+  <!-- 이미지 저장 라이브러리 -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+  ></script>
+
+
   <script>
 
     const API_URL =
       'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
 
 
+    /* =========================
+       TICKET LOAD
+    ========================== */
+
     async function loadTicket() {
 
       const params =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+          window.location.search
+        );
+
 
       const token =
         params.get('token');
@@ -551,11 +762,12 @@
 
       if (!token) {
 
-        document.getElementById('loading').textContent =
-          '유효하지 않은 티켓 주소입니다.';
+        document
+          .getElementById('loading')
+          .textContent =
+            '유효하지 않은 티켓 주소입니다.';
 
         return;
-
       }
 
 
@@ -563,9 +775,9 @@
 
         const response =
           await fetch(
-            API_URL +
-            '?action=getReservation&token=' +
-            encodeURIComponent(token)
+            API_URL
+            + '?action=getReservation&token='
+            + encodeURIComponent(token)
           );
 
 
@@ -576,8 +788,8 @@
         if (!data.success) {
 
           throw new Error(
-            data.message ||
-            '티켓을 찾을 수 없습니다.'
+            data.message
+            || '티켓을 찾을 수 없습니다.'
           );
 
         }
@@ -587,213 +799,439 @@
           data.reservation;
 
 
-        document.getElementById(
-          'reservation-number'
-        ).textContent =
-          reservation.reservationNumber;
+        /* 예약번호 */
+
+        document
+          .getElementById(
+            'reservation-number'
+          )
+          .textContent =
+            reservation.reservationNumber;
 
 
-        document.getElementById(
-          'name'
-        ).textContent =
-          reservation.name;
+        /* 예매자 */
+
+        document
+          .getElementById('name')
+          .textContent =
+            reservation.name;
 
 
-        document.getElementById(
-          'phone'
-        ).textContent =
-          reservation.phone;
+        /* 연락처 */
+
+        document
+          .getElementById('phone')
+          .textContent =
+            reservation.phone;
 
 
-        document.getElementById(
-          'quantity'
-        ).textContent =
-          reservation.quantity + '매';
+        /* 매수 */
+
+        document
+          .getElementById('quantity')
+          .textContent =
+            reservation.quantity + '매';
 
 
-        document.getElementById(
-          'total-price'
-        ).textContent =
-          Number(
-            reservation.totalPrice
-          ).toLocaleString('ko-KR') + '원';
+        /* 결제금액 */
+
+        document
+          .getElementById(
+            'total-price'
+          )
+          .textContent =
+
+            Number(
+              reservation.totalPrice
+            )
+            .toLocaleString('ko-KR')
+            + '원';
 
 
-        document.getElementById(
-          'status'
-        ).textContent =
-          reservation.status;
+        /* 상태 */
+
         const statusElement =
-  document.getElementById('status');
-
-statusElement.classList.remove(
-  'status-pending',
-  'status-confirmed',
-  'status-cancelled'
-);
-
-const currentStatus =
-  String(reservation.status).trim();
-
-if (currentStatus === '입금 확인 중') {
-  statusElement.classList.add('status-pending');
-}
-
-if (currentStatus === '예매 확정') {
-  statusElement.classList.add('status-confirmed');
-}
-
-if (currentStatus === '예매 취소') {
-  statusElement.classList.add('status-cancelled');
-}
-const paymentInfo =
-  document.getElementById('payment-info');
-
-if (
-  String(reservation.status).trim() ===
-  '입금 확인 중'
-) {
-  paymentInfo.style.display = 'block';
-} else {
-  paymentInfo.style.display = 'none';
-}
-
-        document.getElementById(
-          'loading'
-        ).style.display =
-          'none';
+          document.getElementById(
+            'status'
+          );
 
 
-        document.getElementById(
-          'ticket'
-        ).style.display =
-          'block';
+        const currentStatus =
+          String(
+            reservation.status
+          ).trim();
+
+
+        statusElement.textContent =
+          currentStatus;
+
+
+        statusElement.classList.remove(
+          'status-pending',
+          'status-confirmed',
+          'status-cancelled'
+        );
+
+
+        if (
+          currentStatus
+          === '입금 확인 중'
+        ) {
+
+          statusElement
+            .classList
+            .add(
+              'status-pending'
+            );
+
+        }
+
+
+        if (
+          currentStatus
+          === '예매 확정'
+        ) {
+
+          statusElement
+            .classList
+            .add(
+              'status-confirmed'
+            );
+
+        }
+
+
+        if (
+          currentStatus
+          === '예매 취소'
+        ) {
+
+          statusElement
+            .classList
+            .add(
+              'status-cancelled'
+            );
+
+        }
+
+
+        /* 입금 계좌 표시 */
+
+        const paymentInfo =
+          document.getElementById(
+            'payment-info'
+          );
+
+
+        if (
+          currentStatus
+          === '입금 확인 중'
+        ) {
+
+          paymentInfo.style.display =
+            'block';
+
+        } else {
+
+          paymentInfo.style.display =
+            'none';
+
+        }
+
+
+        /* 로딩 종료 */
+
+        document
+          .getElementById(
+            'loading'
+          )
+          .style.display =
+            'none';
+
+
+        document
+          .getElementById(
+            'ticket'
+          )
+          .style.display =
+            'block';
 
 
       } catch (error) {
 
-        document.getElementById(
-          'loading'
-        ).textContent =
-          '티켓 정보를 불러오지 못했습니다.';
+        console.error(error);
+
+
+        document
+          .getElementById(
+            'loading'
+          )
+          .textContent =
+            '티켓 정보를 불러오지 못했습니다.';
 
       }
 
     }
 
-function copyAccount() {
 
-  const accountNumber = '1002-7972-6507';
+    /* =========================
+       ACCOUNT COPY
+    ========================== */
 
-  navigator.clipboard
-    .writeText(accountNumber)
-    .then(() => {
-      alert('계좌번호가 복사되었습니다.');
-    })
-    .catch(() => {
-      alert('계좌번호 복사에 실패했습니다.');
-    });
+    function copyAccount() {
 
-}
-    const saveTicketButton =
-  document.getElementById('save-ticket-button');
-
-saveTicketButton.addEventListener('click', async function () {
-
-  try {
-
-    saveTicketButton.disabled = true;
-    saveTicketButton.textContent = '이미지 만드는 중...';
-
-    const ticketPage =
-      document.querySelector('.page');
-
-    const notice =
-  document.querySelector('.notice');
-
-// 저장 이미지에서는 안내문과 저장 버튼 숨김
-saveTicketButton.style.display = 'none';
-
-if (notice) {
-  notice.style.display = 'none';
-}
-
-const canvas =
-  await html2canvas(ticketPage, {
-        backgroundColor: '#111111',
-        scale: 2,
-        useCORS: true
-      });
-
-    saveTicketButton.style.display = '';
-if (notice) {
-  notice.style.display = '';
-}
-    const reservationNumber =
-      document.getElementById('reservation-number').textContent.trim();
-
-    canvas.toBlob(async function (blob) {
-
-      if (!blob) {
-        throw new Error('이미지 생성 실패');
-      }
-
-      const fileName =
-        `BACK_IN_TOWN_${reservationNumber}.png`;
-
-      const file =
-        new File(
-          [blob],
-          fileName,
-          { type: 'image/png' }
-        );
+      const accountNumber =
+        '1002-7972-6507';
 
 
-      // 아이폰 등 모바일에서 공유/저장 창 사용
-      if (
-        navigator.canShare &&
-        navigator.canShare({ files: [file] })
-      ) {
+      navigator.clipboard
+        .writeText(
+          accountNumber
+        )
+        .then(() => {
 
-        await navigator.share({
-          files: [file],
-          title: 'BACK IN TOWN Ticket'
+          alert(
+            '계좌번호가 복사되었습니다.'
+          );
+
+        })
+        .catch(() => {
+
+          alert(
+            '계좌번호 복사에 실패했습니다.'
+          );
+
         });
 
-      } else {
+    }
 
-        // PC 등에서는 PNG 다운로드
-        const link =
-          document.createElement('a');
 
-        link.download = fileName;
-        link.href = canvas.toDataURL('image/png');
+    /* =========================
+       SAVE TICKET IMAGE
+    ========================== */
 
-        link.click();
+    const saveTicketButton =
+      document.getElementById(
+        'save-ticket-button'
+      );
+
+
+    saveTicketButton.addEventListener(
+      'click',
+      async function () {
+
+        const notice =
+          document.querySelector(
+            '.notice'
+          );
+
+
+        try {
+
+          saveTicketButton.disabled =
+            true;
+
+
+          saveTicketButton.textContent =
+            '이미지 만드는 중...';
+
+
+          const ticketPage =
+            document.querySelector(
+              '.page'
+            );
+
+
+          /*
+            저장되는 이미지에서는
+            안내문 / 저장 버튼 제외
+          */
+
+          saveTicketButton.style.display =
+            'none';
+
+
+          if (notice) {
+
+            notice.style.display =
+              'none';
+
+          }
+
+
+          const canvas =
+            await html2canvas(
+              ticketPage,
+              {
+                backgroundColor:
+                  '#111111',
+
+                scale: 2,
+
+                useCORS: true
+              }
+            );
+
+
+          /*
+            화면에서는 다시 표시
+          */
+
+          saveTicketButton.style.display =
+            '';
+
+
+          if (notice) {
+
+            notice.style.display =
+              '';
+
+          }
+
+
+          const reservationNumber =
+            document
+              .getElementById(
+                'reservation-number'
+              )
+              .textContent
+              .trim();
+
+
+          canvas.toBlob(
+
+            async function (blob) {
+
+              if (!blob) {
+
+                throw new Error(
+                  '이미지 생성 실패'
+                );
+
+              }
+
+
+              const fileName =
+                `BACK_IN_TOWN_${reservationNumber}.png`;
+
+
+              const file =
+                new File(
+                  [blob],
+                  fileName,
+                  {
+                    type:
+                      'image/png'
+                  }
+                );
+
+
+              /*
+                모바일:
+                공유 / 저장 창
+              */
+
+              if (
+                navigator.canShare
+                &&
+                navigator.canShare({
+                  files: [file]
+                })
+              ) {
+
+                await navigator.share({
+                  files: [file],
+                  title:
+                    'BACK IN TOWN Ticket'
+                });
+
+              }
+
+              /*
+                PC:
+                PNG 다운로드
+              */
+
+              else {
+
+                const link =
+                  document.createElement(
+                    'a'
+                  );
+
+
+                link.download =
+                  fileName;
+
+
+                link.href =
+                  canvas.toDataURL(
+                    'image/png'
+                  );
+
+
+                link.click();
+
+              }
+
+
+              saveTicketButton.disabled =
+                false;
+
+
+              saveTicketButton.textContent =
+                '티켓 이미지 저장';
+
+            },
+
+            'image/png'
+
+          );
+
+
+        } catch (error) {
+
+          console.error(error);
+
+
+          saveTicketButton.style.display =
+            '';
+
+
+          if (notice) {
+
+            notice.style.display =
+              '';
+
+          }
+
+
+          saveTicketButton.disabled =
+            false;
+
+
+          saveTicketButton.textContent =
+            '티켓 이미지 저장';
+
+
+          alert(
+            '티켓 이미지 저장에 실패했습니다.'
+          );
+
+        }
 
       }
+    );
 
-      saveTicketButton.disabled = false;
-      saveTicketButton.textContent = '티켓 이미지 저장';
 
-    }, 'image/png');
+    /* =========================
+       START
+    ========================== */
 
-  } catch (error) {
-
-    console.error(error);
-
-    saveTicketButton.style.display = '';
-    saveTicketButton.disabled = false;
-    saveTicketButton.textContent = '티켓 이미지 저장';
-
-    alert('티켓 이미지 저장에 실패했습니다.');
-
-  }
-
-});
     loadTicket();
 
   </script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
 </body>
+
 </html>
