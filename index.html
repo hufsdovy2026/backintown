@@ -288,109 +288,112 @@
       font-size: 10px;
       letter-spacing: 0.06em;
     }
-.ticket-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  margin-bottom: 42px;
-}
 
-.poster-placeholder {
-  width: 145px;
-  aspect-ratio: 2 / 3;
+    .ticket-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      margin-bottom: 42px;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .poster-placeholder {
+      width: 145px;
+      aspect-ratio: 2 / 3;
 
-  flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  border: 1px solid #393939;
-  background: #181818;
-  color: #55534f;
+      flex-shrink: 0;
 
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+      border: 1px solid #393939;
+      background: #181818;
+      color: #55534f;
 
-  object-fit: cover;
-}
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
 
-.header-text {
-  padding-top: 2px;
-  min-width: 0;
-}
+      object-fit: cover;
+    }
 
-.ticket-title {
-  margin: 0;
+    .header-text {
+      padding-top: 2px;
+      min-width: 0;
+    }
 
-  font-size: 44px;
-  font-weight: 900;
-  line-height: 0.92;
-  letter-spacing: -0.055em;
-}
+    .ticket-title {
+      margin: 0;
 
-.ticket-description {
-  margin: 18px 0 0;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+    }
 
-  color: #a9a7a2;
+    .ticket-description {
+      margin: 18px 0 0;
 
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.7;
-}
-@media (max-width: 480px) {
-.info-label {
-  font-size: 14px;
-}
+      color: #a9a7a2;
 
-.info-value {
-  font-size: 16px;
-}
-  .page {
-    padding-top: 42px;
-  }
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
 
-  .header {
-    margin-bottom: 36px;
-  }
+    @media (max-width: 480px) {
 
-  .ticket-header {
-    flex-direction: column;
-    gap: 24px;
-    margin-bottom: 42px;
-  }
+      .info-label {
+        font-size: 14px;
+      }
 
-  .poster-placeholder {
-    width: 100%;
-    aspect-ratio: 2 / 3;
-  }
+      .info-value {
+        font-size: 16px;
+      }
 
-  .header-text {
-    width: 100%;
-    padding-top: 0;
-  }
+      .page {
+        padding-top: 42px;
+      }
 
-.ticket-title {
-  width: 100%;
-  font-size: clamp(46px, 13.5vw, 58px);
-  line-height: 1;
-  letter-spacing: -0.06em;
-  white-space: nowrap;
-}
+      .header {
+        margin-bottom: 36px;
+      }
 
-  .ticket-description {
-  width: 100%;
-  margin-top: 16px;
-  font-size: clamp(12px, 3.35vw, 14.5px);
-  line-height: 1.4;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: nowrap;
-  display: block;
-}
+      .ticket-header {
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 42px;
+      }
 
-}
+      .poster-placeholder {
+        width: 100%;
+        aspect-ratio: 2 / 3;
+      }
+
+      .header-text {
+        width: 100%;
+        padding-top: 0;
+      }
+
+      .ticket-title {
+        width: 100%;
+        font-size: clamp(46px, 13.5vw, 58px);
+        line-height: 1;
+        letter-spacing: -0.06em;
+        white-space: nowrap;
+      }
+
+      .ticket-description {
+        width: 100%;
+        margin-top: 16px;
+        font-size: clamp(12px, 3.35vw, 14.5px);
+        line-height: 1.4;
+        letter-spacing: normal;
+        word-spacing: normal;
+        white-space: nowrap;
+        display: block;
+      }
+    }
   </style>
 </head>
 
@@ -399,26 +402,26 @@
 
   <main class="page">
 
-   <header class="ticket-header">
+    <header class="ticket-header">
 
-  <!-- 포스터 완성 전 임시 영역 -->
-  <div class="poster-placeholder">
-    POSTER
-  </div>
+      <!-- 포스터 완성 전 임시 영역 -->
+      <div class="poster-placeholder">
+        POSTER
+      </div>
 
-  <div class="header-text">
+      <div class="header-text">
 
-    <h1 class="ticket-title">
-  BACK IN TOWN
-</h1>
+        <h1 class="ticket-title">
+          BACK IN TOWN
+        </h1>
 
-    <p class="ticket-description">
-  한국외국어대학교 중앙힙합동아리 HUFS DOVY 2026년 정기공연
-</p>
+        <p class="ticket-description">
+          한국외국어대학교 중앙힙합동아리 HUFS DOVY 2026년 정기공연
+        </p>
 
-  </div>
+      </div>
 
-</header>
+    </header>
 
 
     <!--
@@ -434,45 +437,54 @@
 
     <section class="event-info">
 
-  <div class="info-row">
-    <span class="info-label">일시</span>
-    <span class="info-value">
-      2026년 11월 21일 (토) 오후 6:00
-    </span>
-  </div>
+      <div class="info-row">
+        <span class="info-label">일시</span>
 
-  <div class="info-row">
-    <span class="info-label">장소</span>
-    <span class="info-value">
-      예림당 아트홀<br>
-      <span style="color:#777570; font-size:12px;">
-        서울특별시 강남구 언주로 337
-      </span>
-    </span>
-  </div>
+        <span class="info-value">
+          2026년 11월 21일 (토) 오후 6:00
+        </span>
+      </div>
 
-  <div class="info-row">
-  <span class="info-label">가격</span>
-  <span class="info-value">
-    사전예매 7,000원 · 현장예매 10,000원
-  </span>
-</div>
 
-</section>
+      <div class="info-row">
+        <span class="info-label">장소</span>
 
-<button
-  type="button"
-  class="submit-button"
-  id="open-reservation-button"
-  onclick="openReservation()"
-  style="margin-bottom: 36px;"
->
-  예매하기
-</button>
+        <span class="info-value">
+          예림당 아트홀<br>
+
+          <span style="color:#777570; font-size:12px;">
+            서울특별시 강남구 언주로 337
+          </span>
+        </span>
+      </div>
+
+
+      <div class="info-row">
+        <span class="info-label">가격</span>
+
+        <span class="info-value">
+          사전예매 7,000원 · 현장예매 10,000원
+        </span>
+      </div>
+
+    </section>
+
+
+    <button
+      type="button"
+      class="submit-button"
+      id="open-reservation-button"
+      onclick="openReservation()"
+      style="margin-bottom: 36px;"
+    >
+      예매하기
+    </button>
+
+
     <section
-  id="reservation-section"
-  style="display: none;"
->
+      id="reservation-section"
+      style="display: none;"
+    >
 
       <h2 class="section-title">
         사전예매
@@ -492,6 +504,7 @@
 
 
         <div class="field">
+
           <label for="name">
             예매자명
           </label>
@@ -504,27 +517,32 @@
             required
             maxlength="50"
           >
+
         </div>
 
 
         <div class="field">
+
           <label for="phone">
             연락처
           </label>
 
           <input
-  type="tel"
-  id="phone"
-  name="phone"
-  placeholder="010-1234-5678"
-  inputmode="numeric"
-  maxlength="13"
-  required
->
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="010-1234-5678"
+            inputmode="numeric"
+            autocomplete="tel"
+            maxlength="13"
+            required
+          >
+
         </div>
 
 
         <div class="field">
+
           <label for="depositorName">
             입금자명
           </label>
@@ -536,10 +554,12 @@
             required
             maxlength="50"
           >
+
         </div>
 
 
         <div class="field">
+
           <label for="quantity">
             예매 매수
           </label>
@@ -553,139 +573,146 @@
             step="1"
             required
           >
+
         </div>
 
 
-<div style="
-  margin-top: 38px;
-  margin-bottom: 18px;
-  padding: 22px 18px;
-  border: 1px solid #4a4a4a;
-  border-radius: 6px;
-  background: #181818;
-">
+        <div style="
+          margin-top: 38px;
+          margin-bottom: 18px;
+          padding: 22px 18px;
+          border: 1px solid #4a4a4a;
+          border-radius: 6px;
+          background: #181818;
+        ">
 
-  <div style="
-    margin-bottom: 10px;
-    color: #8f8d88;
-    font-size: 12px;
-    font-weight: 600;
-  ">
-    입금 계좌
-  </div>
-
-  <div style="
-    color: #f4f1eb;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1.5;
-  ">
-    토스뱅크 1002-7972-6507
-  </div>
-
-  <div style="
-    margin-top: 2px;
-    color: #a9a7a2;
-    font-size: 13px;
-  ">
-    예금주 진성재
-  </div>
+          <div style="
+            margin-bottom: 10px;
+            color: #8f8d88;
+            font-size: 12px;
+            font-weight: 600;
+          ">
+            입금 계좌
+          </div>
 
 
-  <div style="
-    margin-top: 24px;
-    color: #b9b6b0;
-    font-size: 14px;
-  ">
-    입금하실 금액
-
-    <strong
-      id="total-price"
-      style="
-        margin-left: 4px;
-        color: #f4f1eb;
-        font-size: 22px;
-        font-weight: 800;
-      "
-    >
-      7,000원
-    </strong>
-  </div>
+          <div style="
+            color: #f4f1eb;
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.5;
+          ">
+            토스뱅크 1002-7972-6507
+          </div>
 
 
-  <button
-    type="button"
-    onclick="copyAccount()"
-    style="
-      margin-top: 18px;
-      padding: 10px 14px;
-      border: 1px solid #555555;
-      border-radius: 4px;
-      background: transparent;
-      color: #f4f1eb;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-    "
-  >
-    계좌번호 복사
-  </button>
-
-</div>
+          <div style="
+            margin-top: 2px;
+            color: #a9a7a2;
+            font-size: 13px;
+          ">
+            예금주 진성재
+          </div>
 
 
-<p style="
-  margin: 0 0 22px;
-  color: #8f8d88;
-  font-size: 12px;
-  line-height: 1.7;
-">
-  예매자명과 입금자명은 동일하게 해주세요.<br>
-  입금이 확인되지 않을 경우 예매가 취소될 수 있습니다.
-</p>
+          <div style="
+            margin-top: 24px;
+            color: #b9b6b0;
+            font-size: 14px;
+          ">
+
+            입금하실 금액
+
+            <strong
+              id="total-price"
+              style="
+                margin-left: 4px;
+                color: #f4f1eb;
+                font-size: 22px;
+                font-weight: 800;
+              "
+            >
+              7,000원
+            </strong>
+
+          </div>
 
 
-<label style="
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-  color: #d0cdc6;
-  font-size: 13px;
-  line-height: 1.5;
-  cursor: pointer;
-">
+          <button
+            type="button"
+            onclick="copyAccount()"
+            style="
+              margin-top: 18px;
+              padding: 10px 14px;
+              border: 1px solid #555555;
+              border-radius: 4px;
+              background: transparent;
+              color: #f4f1eb;
+              font-size: 12px;
+              font-weight: 700;
+              cursor: pointer;
+            "
+          >
+            계좌번호 복사
+          </button>
 
-  <input
-    type="checkbox"
-    name="paymentConfirmed"
-    required
-    style="
-      width: 18px;
-      height: 18px;
-      margin: 0;
-      flex-shrink: 0;
-      accent-color: #f1eee7;
-    "
-  >
+        </div>
 
-  <span>
-    위 계좌로 입금을 완료하였습니다.
-  </span>
 
-</label>
+        <p style="
+          margin: 0 0 22px;
+          color: #8f8d88;
+          font-size: 12px;
+          line-height: 1.7;
+        ">
+          예매자명과 입금자명은 동일하게 해주세요.<br>
+          입금이 확인되지 않을 경우 예매가 취소될 수 있습니다.
+        </p>
+
+
+        <label style="
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 28px;
+          color: #d0cdc6;
+          font-size: 13px;
+          line-height: 1.5;
+          cursor: pointer;
+        ">
+
+          <input
+            type="checkbox"
+            name="paymentConfirmed"
+            required
+            style="
+              width: 18px;
+              height: 18px;
+              margin: 0;
+              flex-shrink: 0;
+              accent-color: #f1eee7;
+            "
+          >
+
+          <span>
+            위 계좌로 입금을 완료하였습니다.
+          </span>
+
+        </label>
+
+
         <button
-  class="submit-button"
-  type="submit"
-  id="submit-reservation-button"
->
-  예매 신청
-</button>
+          class="submit-button"
+          type="submit"
+          id="submit-reservation-button"
+        >
+          예매 신청
+        </button>
 
 
         <p class="notice">
-  예매 완료 후 발급되는 티켓 링크는 공연 당일까지 보관해 주세요.
-</p>
+          예매 완료 후 발급되는 티켓 링크는 공연 당일까지 보관해 주세요.
+        </p>
 
       </form>
 
@@ -702,6 +729,7 @@
   <script>
 
     const UNIT_PRICE = 7000;
+
 
     const quantityInput =
       document.getElementById('quantity');
@@ -728,71 +756,136 @@
       'input',
       updateTotalPrice
     );
-function copyAccount() {
-function formatPhone(input) {
-  let value = input.value.replace(/\D/g, '').slice(0, 11);
 
-  if (value.length <= 3) {
-    input.value = value;
-  } else if (value.length <= 7) {
-    input.value = value.slice(0, 3) + '-' + value.slice(3);
-  } else {
-    input.value =
-      value.slice(0, 3) +
-      '-' +
-      value.slice(3, 7) +
-      '-' +
-      value.slice(7);
-  }
-}
-  const phoneInput = document.getElementById('phone');
 
-phoneInput.addEventListener('input', function () {
-  formatPhone(this);
-});
-  const accountNumber = '1002-7972-6507';
+    /* =========================
+       연락처 자동 하이픈
+    ========================= */
 
-  navigator.clipboard
-    .writeText(accountNumber)
-    .then(() => {
-      alert('계좌번호가 복사되었습니다.');
-    })
-    .catch(() => {
-      alert('계좌번호 복사에 실패했습니다.');
-    });
+    const phoneInput =
+      document.getElementById('phone');
 
-}
+
+    phoneInput.addEventListener(
+      'input',
+      function () {
+
+        let value =
+          this.value
+            .replace(/\D/g, '')
+            .slice(0, 11);
+
+
+        if (value.length <= 3) {
+
+          this.value = value;
+
+        } else if (value.length <= 7) {
+
+          this.value =
+            value.slice(0, 3)
+            + '-'
+            + value.slice(3);
+
+        } else {
+
+          this.value =
+            value.slice(0, 3)
+            + '-'
+            + value.slice(3, 7)
+            + '-'
+            + value.slice(7, 11);
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       계좌번호 복사
+    ========================= */
+
+    function copyAccount() {
+
+      const accountNumber =
+        '1002-7972-6507';
+
+
+      navigator.clipboard
+        .writeText(accountNumber)
+        .then(() => {
+
+          alert('계좌번호가 복사되었습니다.');
+
+        })
+        .catch(() => {
+
+          alert('계좌번호 복사에 실패했습니다.');
+
+        });
+
+    }
+
+
+    /* =========================
+       예매 폼 열기
+    ========================= */
+
     function openReservation() {
 
-  const section =
-    document.getElementById('reservation-section');
+      const section =
+        document.getElementById('reservation-section');
 
-  const button =
-    document.getElementById('open-reservation-button');
+      const button =
+        document.getElementById('open-reservation-button');
 
-  section.style.display = 'block';
-  button.style.display = 'none';
 
-  section.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+      section.style.display = 'block';
+      button.style.display = 'none';
 
-}
+
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+    }
+
+
+    /* =========================
+       중복 제출 방지
+    ========================= */
+
     const submitReservationButton =
-  document.getElementById('submit-reservation-button');
+      document.getElementById(
+        'submit-reservation-button'
+      );
 
-const reservationForm =
-  submitReservationButton.closest('form');
 
-reservationForm.addEventListener('submit', function () {
+    const reservationForm =
+      submitReservationButton.closest('form');
 
-  submitReservationButton.disabled = true;
-  submitReservationButton.textContent = '처리 중...';
-  submitReservationButton.style.opacity = '0.6';
-  submitReservationButton.style.cursor = 'not-allowed';
 
-});
+    reservationForm.addEventListener(
+      'submit',
+      function () {
+
+        submitReservationButton.disabled =
+          true;
+
+        submitReservationButton.textContent =
+          '처리 중...';
+
+        submitReservationButton.style.opacity =
+          '0.6';
+
+        submitReservationButton.style.cursor =
+          'not-allowed';
+
+      }
+    );
+
   </script>
 
 </body>
