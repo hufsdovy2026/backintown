@@ -397,85 +397,74 @@
 
     @media (max-width: 480px) {
 
-      .page {
-        padding:
-          42px
-          16px
-          70px;
-      }
+  .page {
+    padding:
+      42px
+      12px
+      70px;
+  }
 
+  .ticket-header {
+    gap: 14px;
+    margin-bottom: 38px;
+  }
 
-      .ticket-header {
-        gap: 16px;
-        margin-bottom: 38px;
-      }
+  .poster-placeholder {
+    width: 165px;
+  }
 
+  .header-text {
+    flex: 1;
+    min-width: 0;
+    padding-top: 0;
+  }
 
-      .poster-placeholder {
-        width: 150px;
-      }
+  .ticket-title {
+    font-size:
+      clamp(
+        42px,
+        11vw,
+        49px
+      );
 
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+  }
 
-      .header-text {
-        flex: 1;
+  .ticket-description {
+    margin-top: 16px;
 
-        min-width: 0;
-        padding-top: 1px;
-      }
+    font-size:
+      clamp(
+        11px,
+        2.9vw,
+        12.5px
+      );
 
+    line-height: 1.6;
+    letter-spacing: -0.02em;
 
-      .ticket-title {
-        font-size:
-          clamp(
-            38px,
-            9.6vw,
-            43px
-          );
+    white-space: nowrap;
+  }
 
-        line-height: 0.94;
+  #reservation-number {
+    font-size: 28px;
+  }
 
-        letter-spacing: -0.06em;
-      }
+  #status {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
 
+  .info-label {
+    font-size: 12px;
+  }
 
-      .ticket-description {
-        margin-top: 16px;
+  .info-value {
+    font-size: 14px;
+  }
 
-        font-size:
-          clamp(
-            10px,
-            2.65vw,
-            11.5px
-          );
-
-        line-height: 1.7;
-
-        white-space: nowrap;
-      }
-
-
-      #reservation-number {
-        font-size: 28px;
-      }
-
-
-      #status {
-        padding: 9px 13px;
-
-        font-size: 12px;
-      }
-
-
-      .info-label {
-        font-size: 12px;
-      }
-
-
-      .info-value {
-        font-size: 14px;
-      }
-
-    }
+}
 
   </style>
 </head>
