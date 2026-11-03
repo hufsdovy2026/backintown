@@ -33,53 +33,24 @@
 
     .page {
       width: 100%;
-      max-width: 520px;
+      max-width: 700px;
       margin: 0 auto;
-      padding: 54px 22px 70px;
+      padding: 42px 22px 70px;
     }
 
 
     /* =========================
-       HEADER
+       HERO
     ========================= */
 
-    .header {
-      margin-bottom: 44px;
-    }
-
-    .brand {
-      margin: 0;
-
-      font-size: clamp(42px, 12vw, 66px);
-      font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -0.055em;
-    }
-
-    .subtitle {
-      margin: 16px 0 0;
-
-      color: #a9a7a2;
-
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-
-    /* =========================
-       POSTER
-    ========================= */
-
-    .ticket-header {
+    .hero {
       display: flex;
-      align-items: flex-start;
-      gap: 22px;
-      margin-bottom: 42px;
+      flex-direction: column;
+      gap: 0;
     }
 
     .poster-placeholder {
-      width: 145px;
+      width: 100%;
       aspect-ratio: 2 / 3;
 
       display: flex;
@@ -97,31 +68,46 @@
       letter-spacing: 0.1em;
 
       object-fit: cover;
+
+      margin-bottom: 28px;
     }
 
-    .header-text {
-      padding-top: 2px;
+    .hero-content {
+      width: 100%;
       min-width: 0;
-      flex: 1;
     }
+
+
+    /* =========================
+       TITLE
+    ========================= */
 
     .ticket-title {
+      width: 100%;
       margin: 0;
 
-      font-size: 44px;
+      font-size: clamp(52px, 9vw, 72px);
       font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -0.055em;
+
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+
+      white-space: nowrap;
     }
 
     .ticket-description {
-      margin: 18px 0 0;
+      width: 100%;
+
+      margin: 16px 0 0;
 
       color: #a9a7a2;
 
-      font-size: 12px;
+      font-size: clamp(12px, 2.1vw, 15px);
       font-weight: 500;
-      line-height: 1.7;
+
+      line-height: 1.4;
+
+      white-space: nowrap;
     }
 
 
@@ -130,22 +116,23 @@
     ========================= */
 
     .event-info {
-      padding: 22px 0;
+      padding: 24px 0;
 
       border-top: 1px solid #393939;
       border-bottom: 1px solid #393939;
 
-      margin-bottom: 42px;
+      margin-top: 44px;
     }
 
     .info-row {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      align-items: flex-start;
 
-      margin-bottom: 10px;
+      gap: 24px;
 
-      font-size: 13px;
+      margin-bottom: 14px;
+
       line-height: 1.5;
     }
 
@@ -154,19 +141,76 @@
     }
 
     .info-label {
+      flex-shrink: 0;
+
       color: #777570;
+
+      font-size: 14px;
     }
 
     .info-value {
+      min-width: 0;
+
       color: #f4f1eb;
+
       text-align: right;
+
+      font-size: 16px;
       font-weight: 500;
+    }
+
+    .info-address {
+      color: #777570;
+      font-size: 12px;
     }
 
 
     /* =========================
-       FORM
+       BUTTON
     ========================= */
+
+    .submit-button {
+      width: 100%;
+      height: 56px;
+
+      border: none;
+      border-radius: 3px;
+
+      background: #f1eee7;
+      color: #111111;
+
+      cursor: pointer;
+
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+
+      transition:
+        transform 0.08s ease,
+        opacity 0.15s ease;
+    }
+
+    .submit-button:hover {
+      opacity: 0.9;
+    }
+
+    .submit-button:active {
+      transform: scale(0.99);
+    }
+
+    #open-reservation-button {
+      margin-top: 34px;
+    }
+
+
+    /* =========================
+       RESERVATION SECTION
+    ========================= */
+
+    #reservation-section {
+      margin-top: 54px;
+      scroll-margin-top: 30px;
+    }
 
     .section-title {
       margin: 0 0 28px;
@@ -222,7 +266,9 @@
     }
 
 
-    /* number input 화살표 정리 */
+    /* =========================
+       NUMBER INPUT
+    ========================= */
 
     input[type="number"] {
       appearance: textfield;
@@ -237,66 +283,115 @@
 
 
     /* =========================
-       PRICE
+       PAYMENT
     ========================= */
 
-    .price-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
+    .payment-box {
       margin-top: 38px;
-      margin-bottom: 28px;
+      margin-bottom: 18px;
 
-      padding-top: 20px;
+      padding: 22px 18px;
 
-      border-top: 1px solid #393939;
+      border: 1px solid #4a4a4a;
+      border-radius: 6px;
+
+      background: #181818;
     }
 
-    .price-label {
+    .payment-label {
+      margin-bottom: 10px;
+
       color: #8f8d88;
 
       font-size: 12px;
+      font-weight: 600;
+    }
+
+    .account-number {
+      color: #f4f1eb;
+
+      font-size: 18px;
+      font-weight: 800;
+
+      line-height: 1.5;
+    }
+
+    .account-holder {
+      margin-top: 2px;
+
+      color: #a9a7a2;
+
+      font-size: 13px;
+    }
+
+    .payment-total {
+      margin-top: 24px;
+
+      color: #b9b6b0;
+
+      font-size: 14px;
     }
 
     #total-price {
-      font-size: 25px;
+      margin-left: 4px;
+
+      color: #f4f1eb;
+
+      font-size: 22px;
       font-weight: 800;
-      letter-spacing: -0.04em;
     }
 
+    .copy-button {
+      margin-top: 18px;
 
-    /* =========================
-       BUTTON
-    ========================= */
+      padding: 10px 14px;
 
-    .submit-button {
-      width: 100%;
-      height: 56px;
+      border: 1px solid #555555;
+      border-radius: 4px;
 
-      border: none;
-      border-radius: 3px;
+      background: transparent;
+      color: #f4f1eb;
 
-      background: #f1eee7;
-      color: #111111;
+      font-size: 12px;
+      font-weight: 700;
 
       cursor: pointer;
-
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-
-      transition:
-        transform 0.08s ease,
-        opacity 0.15s ease;
     }
 
-    .submit-button:hover {
-      opacity: 0.9;
+    .payment-notice {
+      margin: 0 0 22px;
+
+      color: #8f8d88;
+
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-    .submit-button:active {
-      transform: scale(0.99);
+    .payment-confirmation {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 28px;
+
+      color: #d0cdc6;
+
+      font-size: 13px;
+      line-height: 1.5;
+
+      cursor: pointer;
+    }
+
+    .payment-confirmation input {
+      width: 18px;
+      height: 18px;
+
+      margin: 0;
+
+      flex-shrink: 0;
+
+      accent-color: #f1eee7;
     }
 
 
@@ -331,11 +426,46 @@
     }
 
 
-    /* =========================
+    /* =========================================================
        MOBILE
-    ========================= */
+       휴대폰
+    ========================================================= */
 
     @media (max-width: 480px) {
+
+      .page {
+        max-width: 520px;
+
+        padding:
+          42px
+          22px
+          70px;
+      }
+
+      .poster-placeholder {
+        margin-bottom: 24px;
+      }
+
+      .ticket-title {
+        font-size: clamp(46px, 13.5vw, 58px);
+        line-height: 1;
+      }
+
+      .ticket-description {
+        margin-top: 16px;
+
+        font-size: clamp(12px, 3.35vw, 14.5px);
+
+        line-height: 1.4;
+
+        letter-spacing: normal;
+        word-spacing: normal;
+      }
+
+      .event-info {
+        margin-top: 42px;
+        padding: 22px 0;
+      }
 
       .info-label {
         font-size: 14px;
@@ -345,114 +475,127 @@
         font-size: 16px;
       }
 
-      .page {
-        padding-top: 42px;
-      }
-
-      .header {
-        margin-bottom: 36px;
-      }
-
-      .ticket-header {
-        flex-direction: column;
-        gap: 24px;
-        margin-bottom: 42px;
-      }
-
-      .poster-placeholder {
-        width: 100%;
-        aspect-ratio: 2 / 3;
-      }
-
-      .header-text {
-        width: 100%;
-        padding-top: 0;
-      }
-
-      .ticket-title {
-        width: 100%;
-        font-size: clamp(46px, 13.5vw, 58px);
-        line-height: 1;
-        letter-spacing: -0.06em;
-        white-space: nowrap;
-      }
-
-      .ticket-description {
-        width: 100%;
-        margin-top: 16px;
-
-        font-size: clamp(12px, 3.35vw, 14.5px);
-        line-height: 1.4;
-
-        letter-spacing: normal;
-        word-spacing: normal;
-
-        white-space: nowrap;
-        display: block;
-      }
     }
 
 
-    /* =========================
-       DESKTOP / LAPTOP
-    ========================= */
+    /* =========================================================
+       WIDE DESKTOP
+       브라우저 폭이 넓어졌을 때
+    ========================================================= */
 
-    @media (min-width: 769px) {
+    @media (min-width: 900px) {
 
       .page {
-        max-width: 760px;
-        padding: 64px 30px 90px;
+        max-width: 1280px;
+
+        padding:
+          48px
+          40px
+          90px;
       }
 
-      .ticket-header {
-        gap: 32px;
-        margin-bottom: 52px;
-        align-items: flex-start;
+      .hero {
+        display: grid;
+
+        grid-template-columns:
+          minmax(380px, 0.95fr)
+          minmax(430px, 1.05fr);
+
+        gap: 58px;
+
+        align-items: start;
       }
 
       .poster-placeholder {
-        width: 250px;
+        width: 100%;
+
+        margin-bottom: 0;
       }
 
-      .header-text {
-        flex: 1;
-        padding-top: 4px;
+      .hero-content {
+        padding-top: 6px;
       }
 
       .ticket-title {
-        font-size: 62px;
-        line-height: 0.94;
-        letter-spacing: -0.06em;
-        white-space: nowrap;
+        font-size: clamp(64px, 6vw, 96px);
+
+        line-height: 0.92;
+
+        letter-spacing: -0.065em;
+
+        white-space: normal;
       }
 
       .ticket-description {
-        margin-top: 20px;
-        font-size: 14px;
-        line-height: 1.6;
-        white-space: nowrap;
+        margin-top: 28px;
+
+        font-size: clamp(14px, 1.3vw, 18px);
+
+        line-height: 1.5;
+
+        white-space: normal;
       }
 
       .event-info {
-        padding: 28px 0;
-        margin-bottom: 48px;
+        margin-top: 72px;
+
+        padding:
+          28px
+          0;
+
+        border-top: none;
       }
 
       .info-row {
-        margin-bottom: 14px;
+        justify-content: flex-start;
+
+        gap: 34px;
+
+        margin-bottom: 22px;
       }
 
       .info-label {
-        font-size: 15px;
+        width: 72px;
+
+        font-size: 16px;
       }
 
       .info-value {
-        font-size: 17px;
+        flex: 1;
+
+        text-align: left;
+
+        font-size: 20px;
+
+        line-height: 1.5;
+      }
+
+      .info-address {
+        font-size: 15px;
+      }
+
+      #open-reservation-button {
+        width: 220px;
+        height: 64px;
+
+        margin-top: 34px;
+
+        font-size: 18px;
+      }
+
+      #reservation-section {
+        max-width: 760px;
+
+        margin:
+          80px
+          auto
+          0;
       }
 
       .section-title {
-        font-size: 26px;
-        margin-bottom: 32px;
+        font-size: 27px;
+
+        margin-bottom: 34px;
       }
 
       .field {
@@ -460,24 +603,27 @@
       }
 
       .field label {
-        font-size: 14px;
         margin-bottom: 10px;
+
+        font-size: 14px;
       }
 
       input {
         height: 58px;
-        padding: 0 17px;
+
+        padding:
+          0
+          17px;
+
         font-size: 17px;
       }
 
-      .submit-button {
+      #reservation-section .submit-button {
         height: 62px;
+
         font-size: 17px;
       }
 
-      .notice {
-        font-size: 12px;
-      }
     }
 
   </style>
@@ -488,78 +634,122 @@
 
   <main class="page">
 
-    <header class="ticket-header">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
 
       <!-- 포스터 완성 전 임시 영역 -->
+
       <div class="poster-placeholder">
         POSTER
       </div>
 
-      <div class="header-text">
+
+      <div class="hero-content">
+
+
+        <!-- TITLE -->
 
         <h1 class="ticket-title">
           BACK IN TOWN
         </h1>
 
+
         <p class="ticket-description">
           한국외국어대학교 중앙힙합동아리 HUFS DOVY 2026년 정기공연
         </p>
 
-      </div>
-
-    </header>
 
 
-    <section class="event-info">
+        <!-- =========================
+             EVENT INFO
+        ========================== -->
 
-      <div class="info-row">
-        <span class="info-label">일시</span>
-
-        <span class="info-value">
-          2026년 11월 21일 (토) 오후 6:00
-        </span>
-      </div>
+        <section class="event-info">
 
 
-      <div class="info-row">
-        <span class="info-label">장소</span>
+          <div class="info-row">
 
-        <span class="info-value">
-          예림당 아트홀<br>
+            <span class="info-label">
+              일시
+            </span>
 
-          <span style="color:#777570; font-size:12px;">
-            서울특별시 강남구 언주로 337
-          </span>
-        </span>
-      </div>
+            <span class="info-value">
+              2026년 11월 21일 (토) 오후 6:00
+            </span>
+
+          </div>
 
 
-      <div class="info-row">
-        <span class="info-label">가격</span>
+          <div class="info-row">
 
-        <span class="info-value">
-          사전예매 7,000원 · 현장예매 10,000원
-        </span>
+            <span class="info-label">
+              장소
+            </span>
+
+            <span class="info-value">
+
+              예림당 아트홀<br>
+
+              <span class="info-address">
+                서울특별시 강남구 언주로 337
+              </span>
+
+            </span>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <span class="info-label">
+              가격
+            </span>
+
+            <span class="info-value">
+              사전예매 7,000원 · 현장예매 10,000원
+            </span>
+
+          </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             OPEN RESERVATION
+        ========================== -->
+
+        <button
+          type="button"
+          class="submit-button"
+          id="open-reservation-button"
+          onclick="openReservation()"
+        >
+          예매하기
+        </button>
+
+
       </div>
 
     </section>
 
 
-    <button
-      type="button"
-      class="submit-button"
-      id="open-reservation-button"
-      onclick="openReservation()"
-      style="margin-bottom: 36px;"
-    >
-      예매하기
-    </button>
 
+    <!-- =========================
+         RESERVATION
+    ========================== -->
 
     <section
       id="reservation-section"
       style="display: none;"
     >
+
 
       <h2 class="section-title">
         사전예매
@@ -571,12 +761,16 @@
         method="POST"
       >
 
+
         <input
           type="hidden"
           name="action"
           value="createReservation"
         >
 
+
+
+        <!-- 예매자명 -->
 
         <div class="field">
 
@@ -595,6 +789,9 @@
 
         </div>
 
+
+
+        <!-- 연락처 -->
 
         <div class="field">
 
@@ -616,6 +813,9 @@
         </div>
 
 
+
+        <!-- 입금자명 -->
+
         <div class="field">
 
           <label for="depositorName">
@@ -632,6 +832,9 @@
 
         </div>
 
+
+
+        <!-- 예매 매수 -->
 
         <div class="field">
 
@@ -652,61 +855,34 @@
         </div>
 
 
-        <div style="
-          margin-top: 38px;
-          margin-bottom: 18px;
-          padding: 22px 18px;
-          border: 1px solid #4a4a4a;
-          border-radius: 6px;
-          background: #181818;
-        ">
 
-          <div style="
-            margin-bottom: 10px;
-            color: #8f8d88;
-            font-size: 12px;
-            font-weight: 600;
-          ">
+        <!-- =========================
+             PAYMENT BOX
+        ========================== -->
+
+        <div class="payment-box">
+
+
+          <div class="payment-label">
             입금 계좌
           </div>
 
 
-          <div style="
-            color: #f4f1eb;
-            font-size: 18px;
-            font-weight: 800;
-            line-height: 1.5;
-          ">
+          <div class="account-number">
             토스뱅크 1002-7972-6507
           </div>
 
 
-          <div style="
-            margin-top: 2px;
-            color: #a9a7a2;
-            font-size: 13px;
-          ">
+          <div class="account-holder">
             예금주 진성재
           </div>
 
 
-          <div style="
-            margin-top: 24px;
-            color: #b9b6b0;
-            font-size: 14px;
-          ">
+          <div class="payment-total">
 
             입금하실 금액
 
-            <strong
-              id="total-price"
-              style="
-                margin-left: 4px;
-                color: #f4f1eb;
-                font-size: 22px;
-                font-weight: 800;
-              "
-            >
+            <strong id="total-price">
               7,000원
             </strong>
 
@@ -715,58 +891,36 @@
 
           <button
             type="button"
+            class="copy-button"
             onclick="copyAccount()"
-            style="
-              margin-top: 18px;
-              padding: 10px 14px;
-              border: 1px solid #555555;
-              border-radius: 4px;
-              background: transparent;
-              color: #f4f1eb;
-              font-size: 12px;
-              font-weight: 700;
-              cursor: pointer;
-            "
           >
             계좌번호 복사
           </button>
 
+
         </div>
 
 
-        <p style="
-          margin: 0 0 22px;
-          color: #8f8d88;
-          font-size: 12px;
-          line-height: 1.7;
-        ">
+
+        <p class="payment-notice">
+
           예매자명과 입금자명은 동일하게 해주세요.<br>
-          입금이 확인되지 않을 경우 예매가 취소될 수 있습니다.
+
+          입금이 확인되지 않을 경우
+          예매가 취소될 수 있습니다.
+
         </p>
 
 
-        <label style="
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          margin-bottom: 28px;
-          color: #d0cdc6;
-          font-size: 13px;
-          line-height: 1.5;
-          cursor: pointer;
-        ">
+
+        <!-- PAYMENT CONFIRM -->
+
+        <label class="payment-confirmation">
 
           <input
             type="checkbox"
             name="paymentConfirmed"
             required
-            style="
-              width: 18px;
-              height: 18px;
-              margin: 0;
-              flex-shrink: 0;
-              accent-color: #f1eee7;
-            "
           >
 
           <span>
@@ -775,6 +929,9 @@
 
         </label>
 
+
+
+        <!-- SUBMIT -->
 
         <button
           class="submit-button"
@@ -785,20 +942,25 @@
         </button>
 
 
+
         <p class="notice">
           예매 완료 후 발급되는 티켓 링크는 공연 당일까지 보관해 주세요.
         </p>
+
 
       </form>
 
     </section>
 
 
+
     <footer class="footer">
       HUFS DOVY · BACK IN TOWN
     </footer>
 
+
   </main>
+
 
 
   <script>
@@ -806,23 +968,38 @@
     const UNIT_PRICE = 7000;
 
 
+    /* =========================
+       PRICE
+    ========================== */
+
     const quantityInput =
-      document.getElementById('quantity');
+      document.getElementById(
+        'quantity'
+      );
+
 
     const totalPriceElement =
-      document.getElementById('total-price');
+      document.getElementById(
+        'total-price'
+      );
 
 
     function updateTotalPrice() {
 
       const quantity =
-        Number(quantityInput.value) || 0;
+        Number(
+          quantityInput.value
+        ) || 0;
+
 
       const total =
         UNIT_PRICE * quantity;
 
+
       totalPriceElement.textContent =
-        total.toLocaleString('ko-KR') + '원';
+        total.toLocaleString(
+          'ko-KR'
+        ) + '원';
 
     }
 
@@ -833,17 +1010,21 @@
     );
 
 
+
     /* =========================
-       연락처 자동 하이픈
-    ========================= */
+       PHONE FORMAT
+    ========================== */
 
     const phoneInput =
-      document.getElementById('phone');
+      document.getElementById(
+        'phone'
+      );
 
 
     phoneInput.addEventListener(
       'input',
       function () {
+
 
         let value =
           this.value
@@ -851,18 +1032,29 @@
             .slice(0, 11);
 
 
-        if (value.length <= 3) {
+        if (
+          value.length <= 3
+        ) {
 
-          this.value = value;
+          this.value =
+            value;
 
-        } else if (value.length <= 7) {
+        }
+
+
+        else if (
+          value.length <= 7
+        ) {
 
           this.value =
             value.slice(0, 3)
             + '-'
             + value.slice(3);
 
-        } else {
+        }
+
+
+        else {
 
           this.value =
             value.slice(0, 3)
@@ -873,13 +1065,15 @@
 
         }
 
+
       }
     );
 
 
+
     /* =========================
-       계좌번호 복사
-    ========================= */
+       COPY ACCOUNT
+    ========================== */
 
     function copyAccount() {
 
@@ -888,36 +1082,52 @@
 
 
       navigator.clipboard
-        .writeText(accountNumber)
+        .writeText(
+          accountNumber
+        )
         .then(() => {
 
-          alert('계좌번호가 복사되었습니다.');
+          alert(
+            '계좌번호가 복사되었습니다.'
+          );
 
         })
         .catch(() => {
 
-          alert('계좌번호 복사에 실패했습니다.');
+          alert(
+            '계좌번호 복사에 실패했습니다.'
+          );
 
         });
 
     }
 
 
+
     /* =========================
-       예매 폼 열기
-    ========================= */
+       OPEN FORM
+    ========================== */
 
     function openReservation() {
 
       const section =
-        document.getElementById('reservation-section');
+        document.getElementById(
+          'reservation-section'
+        );
+
 
       const button =
-        document.getElementById('open-reservation-button');
+        document.getElementById(
+          'open-reservation-button'
+        );
 
 
-      section.style.display = 'block';
-      button.style.display = 'none';
+      section.style.display =
+        'block';
+
+
+      button.style.display =
+        'none';
 
 
       section.scrollIntoView({
@@ -928,9 +1138,10 @@
     }
 
 
+
     /* =========================
-       중복 제출 방지
-    ========================= */
+       PREVENT DOUBLE SUBMIT
+    ========================== */
 
     const submitReservationButton =
       document.getElementById(
@@ -939,24 +1150,30 @@
 
 
     const reservationForm =
-      submitReservationButton.closest('form');
+      submitReservationButton
+        .closest('form');
 
 
     reservationForm.addEventListener(
       'submit',
       function () {
 
+
         submitReservationButton.disabled =
           true;
+
 
         submitReservationButton.textContent =
           '처리 중...';
 
+
         submitReservationButton.style.opacity =
           '0.6';
 
+
         submitReservationButton.style.cursor =
           'not-allowed';
+
 
       }
     );
