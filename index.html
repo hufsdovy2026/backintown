@@ -513,13 +513,14 @@
           </label>
 
           <input
-            id="phone"
-            type="tel"
-            name="phone"
-            placeholder="010-1234-5678"
-            autocomplete="tel"
-            required
-          >
+  type="tel"
+  name="phone"
+  placeholder="010-1234-5678"
+  inputmode="numeric"
+  maxlength="13"
+  oninput="formatPhone(this)"
+  required
+>
         </div>
 
 
@@ -728,7 +729,22 @@
       updateTotalPrice
     );
 function copyAccount() {
+function formatPhone(input) {
+  let value = input.value.replace(/\D/g, '').slice(0, 11);
 
+  if (value.length <= 3) {
+    input.value = value;
+  } else if (value.length <= 7) {
+    input.value = value.slice(0, 3) + '-' + value.slice(3);
+  } else {
+    input.value =
+      value.slice(0, 3) +
+      '-' +
+      value.slice(3, 7) +
+      '-' +
+      value.slice(7);
+  }
+}
   const accountNumber = '1002-7972-6507';
 
   navigator.clipboard
