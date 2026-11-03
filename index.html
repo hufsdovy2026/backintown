@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -9,7 +10,9 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>BACK IN TOWN</title>
+  <title>
+    BACK IN TOWN
+  </title>
 
 
   <style>
@@ -42,13 +45,13 @@
     }
 
 
+
     /* =========================
        PAGE
     ========================= */
 
     .page {
       width: 100%;
-
       max-width: 700px;
 
       margin: 0 auto;
@@ -84,7 +87,8 @@
 
       margin-bottom: 28px;
 
-      border: 1px solid #393939;
+      border:
+        1px solid #393939;
 
       background: #181818;
       color: #55534f;
@@ -100,7 +104,6 @@
 
     .hero-content {
       width: 100%;
-
       min-width: 0;
     }
 
@@ -258,6 +261,31 @@
 
     #open-reservation-button {
       margin-top: 34px;
+    }
+
+
+
+    /* =========================
+       SOLD OUT
+    ========================= */
+
+    #open-reservation-button:disabled {
+      background: #292929;
+      color: #777570;
+
+      cursor: not-allowed;
+
+      opacity: 1;
+    }
+
+
+    #open-reservation-button:disabled:hover {
+      opacity: 1;
+    }
+
+
+    #open-reservation-button:disabled:active {
+      transform: none;
     }
 
 
@@ -929,6 +957,7 @@
     }
 
   </style>
+
 </head>
 
 
@@ -1323,7 +1352,8 @@
       'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
 
 
-    const UNIT_PRICE = 7000;
+    const UNIT_PRICE =
+      7000;
 
 
 
@@ -1337,7 +1367,9 @@
     ) {
 
       const clone =
-        element.cloneNode(true);
+        element.cloneNode(
+          true
+        );
 
 
       clone.style.position =
@@ -1368,9 +1400,10 @@
         '-99999px';
 
 
-      document.body.appendChild(
-        clone
-      );
+      document.body
+        .appendChild(
+          clone
+        );
 
 
       const width =
@@ -1415,7 +1448,8 @@
       ) {
 
         const middle =
-          (low + high) / 2;
+          (low + high)
+          / 2;
 
 
         const textWidth =
@@ -1453,15 +1487,17 @@
     function fitHeroText() {
 
       const title =
-        document.getElementById(
-          'main-title'
-        );
+        document
+          .getElementById(
+            'main-title'
+          );
 
 
       const description =
-        document.getElementById(
-          'main-description'
-        );
+        document
+          .getElementById(
+            'main-description'
+          );
 
 
       fitTextToWidth(
@@ -1493,9 +1529,11 @@
       document.fonts.ready
     ) {
 
-      document.fonts.ready.then(
-        fitHeroText
-      );
+      document.fonts
+        .ready
+        .then(
+          fitHeroText
+        );
 
     } else {
 
@@ -1518,12 +1556,19 @@
 
       let value =
         input.value
-          .replace(/\D/g, '')
-          .slice(0, 11);
+          .replace(
+            /\D/g,
+            ''
+          )
+          .slice(
+            0,
+            11
+          );
 
 
       if (
-        value.length <= 3
+        value.length <=
+        3
       ) {
 
         input.value =
@@ -1532,24 +1577,39 @@
       }
 
       else if (
-        value.length <= 7
+        value.length <=
+        7
       ) {
 
         input.value =
-          value.slice(0, 3)
+          value.slice(
+            0,
+            3
+          )
           + '-'
-          + value.slice(3);
+          + value.slice(
+            3
+          );
 
       }
 
       else {
 
         input.value =
-          value.slice(0, 3)
+          value.slice(
+            0,
+            3
+          )
           + '-'
-          + value.slice(3, 7)
+          + value.slice(
+            3,
+            7
+          )
           + '-'
-          + value.slice(7, 11);
+          + value.slice(
+            7,
+            11
+          );
 
       }
 
@@ -1558,26 +1618,31 @@
 
 
     const phoneInput =
-      document.getElementById(
-        'phone'
+      document
+        .getElementById(
+          'phone'
+        );
+
+
+    phoneInput
+      .addEventListener(
+        'input',
+        function () {
+
+          formatPhoneInput(
+            this
+          );
+
+        }
       );
-
-
-    phoneInput.addEventListener(
-      'input',
-      function () {
-
-        formatPhoneInput(this);
-
-      }
-    );
 
 
 
     const lookupPhoneInput =
-      document.getElementById(
-        'lookup-phone'
-      );
+      document
+        .getElementById(
+          'lookup-phone'
+        );
 
 
     lookupPhoneInput
@@ -1585,7 +1650,9 @@
         'input',
         function () {
 
-          formatPhoneInput(this);
+          formatPhoneInput(
+            this
+          );
 
         }
       );
@@ -1597,15 +1664,17 @@
     ========================================================= */
 
     const quantityInput =
-      document.getElementById(
-        'quantity'
-      );
+      document
+        .getElementById(
+          'quantity'
+        );
 
 
     const totalPriceElement =
-      document.getElementById(
-        'total-price'
-      );
+      document
+        .getElementById(
+          'total-price'
+        );
 
 
     function updateTotalPrice() {
@@ -1633,7 +1702,6 @@
     }
 
 
-
     quantityInput
       .addEventListener(
         'input',
@@ -1656,20 +1724,149 @@
         .writeText(
           accountNumber
         )
-        .then(() => {
+        .then(
+          () => {
 
-          alert(
-            '계좌번호가 복사되었습니다.'
+            alert(
+              '계좌번호가 복사되었습니다.'
+            );
+
+          }
+        )
+        .catch(
+          () => {
+
+            alert(
+              '계좌번호 복사에 실패했습니다.'
+            );
+
+          }
+        );
+
+    }
+
+
+
+    /* =========================================================
+       SALES STATUS
+    ========================================================= */
+
+    async function checkSalesStatus() {
+
+      const button =
+        document
+          .getElementById(
+            'open-reservation-button'
           );
 
-        })
-        .catch(() => {
 
-          alert(
-            '계좌번호 복사에 실패했습니다.'
+      try {
+
+        const response =
+          await fetch(
+
+            API_URL
+            + '?action=getSalesStatus'
+            + '&t='
+            + Date.now()
+
           );
 
-        });
+
+        const data =
+          await response.json();
+
+
+        if (
+          !data.success
+          ||
+          !data.salesStatus
+        ) {
+
+          throw new Error(
+            data.message
+            ||
+            '판매 현황을 확인하지 못했습니다.'
+          );
+
+        }
+
+
+        const salesStatus =
+          data.salesStatus;
+
+
+
+        /* 매진 */
+
+        if (
+          salesStatus.soldOut
+        ) {
+
+          button.textContent =
+            'SOLD OUT';
+
+
+          button.disabled =
+            true;
+
+
+          button.dataset.soldOut =
+            'true';
+
+
+          document
+            .getElementById(
+              'reservation-section'
+            )
+            .style
+            .display =
+            'none';
+
+
+          return false;
+
+        }
+
+
+
+        /* 예매 가능 */
+
+        button.textContent =
+          '예매하기';
+
+
+        button.disabled =
+          false;
+
+
+        button.dataset.soldOut =
+          'false';
+
+
+        return true;
+
+
+      } catch (error) {
+
+
+        console.error(
+          '판매 현황 확인 실패:',
+          error
+        );
+
+
+        /*
+          판매현황 조회에 오류가 나도
+          예매 자체는 막지 않음.
+
+          실제 313장 제한은
+          Apps Script에서 다시 검사함.
+        */
+
+        return true;
+
+      }
 
     }
 
@@ -1679,18 +1876,39 @@
        OPEN RESERVATION
     ========================================================= */
 
-    function openReservation() {
+    async function openReservation() {
+
+
+      /*
+        클릭 순간 한 번 더
+        매진 여부 확인
+      */
+
+      const available =
+        await checkSalesStatus();
+
+
+      if (
+        !available
+      ) {
+
+        return;
+
+      }
+
 
       const section =
-        document.getElementById(
-          'reservation-section'
-        );
+        document
+          .getElementById(
+            'reservation-section'
+          );
 
 
       const button =
-        document.getElementById(
-          'open-reservation-button'
-        );
+        document
+          .getElementById(
+            'open-reservation-button'
+          );
 
 
       section.style.display =
@@ -1702,11 +1920,13 @@
 
 
       section.scrollIntoView({
+
         behavior:
           'smooth',
 
         block:
           'start'
+
       });
 
     }
@@ -1718,173 +1938,202 @@
     ========================================================= */
 
     const lookupForm =
-      document.getElementById(
-        'lookup-form'
-      );
+      document
+        .getElementById(
+          'lookup-form'
+        );
 
 
-    lookupForm.addEventListener(
-      'submit',
-      async function (
-        event
-      ) {
+    lookupForm
+      .addEventListener(
 
-        event.preventDefault();
+        'submit',
 
-
-        const button =
-          document.getElementById(
-            'lookup-button'
-          );
-
-
-        const result =
-          document.getElementById(
-            'lookup-result'
-          );
-
-
-        const name =
-          document
-            .getElementById(
-              'lookup-name'
-            )
-            .value
-            .trim();
-
-
-        const phone =
-          document
-            .getElementById(
-              'lookup-phone'
-            )
-            .value
-            .trim();
-
-
-        result.innerHTML =
-          '<p class="lookup-message">예매 내역을 확인하는 중...</p>';
-
-
-        button.disabled =
-          true;
-
-
-        try {
-
-          const url =
-            API_URL
-            + '?action=lookupReservations'
-            + '&name='
-            + encodeURIComponent(name)
-            + '&phone='
-            + encodeURIComponent(phone);
-
-
-          const response =
-            await fetch(url);
-
-
-          const data =
-            await response.json();
-
-
-          if (
-            !data.success
-          ) {
-
-            throw new Error(
-              data.message
-              ||
-              '예매 내역을 확인하지 못했습니다.'
-            );
-
-          }
-
-
-          const reservations =
-            data.reservations
-            || [];
-
-
-          if (
-            reservations.length === 0
-          ) {
-
-            result.innerHTML =
-              '<p class="lookup-message">일치하는 예매 내역이 없습니다. 예매자명과 연락처를 다시 확인해 주세요.</p>';
-
-
-            return;
-
-          }
-
-
-          result.innerHTML =
-            reservations
-              .map(
-                reservation => {
-
-                  return `
-                    <div class="reservation-card">
-
-                      <div class="reservation-card-top">
-
-                        <strong class="lookup-reservation-number">
-                          ${escapeHtml(reservation.reservationNumber)}
-                        </strong>
-
-                        <span class="lookup-status">
-                          ${escapeHtml(reservation.status)}
-                        </span>
-
-                      </div>
-
-                      <div class="lookup-detail">
-                        ${escapeHtml(String(reservation.quantity))}매 ·
-                        ${Number(reservation.totalPrice).toLocaleString('ko-KR')}원
-                      </div>
-
-                      <a
-                        class="ticket-link"
-                        href="${escapeAttribute(reservation.ticketUrl)}"
-                      >
-                        티켓 확인
-                      </a>
-
-                    </div>
-                  `;
-
-                }
-              )
-              .join('');
-
-
-        }
-
-        catch (
-          error
+        async function (
+          event
         ) {
 
-          console.error(
-            error
-          );
+
+          event.preventDefault();
+
+
+          const button =
+            document
+              .getElementById(
+                'lookup-button'
+              );
+
+
+          const result =
+            document
+              .getElementById(
+                'lookup-result'
+              );
+
+
+          const name =
+            document
+              .getElementById(
+                'lookup-name'
+              )
+              .value
+              .trim();
+
+
+          const phone =
+            document
+              .getElementById(
+                'lookup-phone'
+              )
+              .value
+              .trim();
 
 
           result.innerHTML =
-            '<p class="lookup-message">예매 내역을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</p>';
+            '<p class="lookup-message">예매 내역을 확인하는 중...</p>';
 
-        }
-
-        finally {
 
           button.disabled =
-            false;
+            true;
+
+
+          try {
+
+
+            const url =
+              API_URL
+              + '?action=lookupReservations'
+              + '&name='
+              + encodeURIComponent(
+                name
+              )
+              + '&phone='
+              + encodeURIComponent(
+                phone
+              );
+
+
+            const response =
+              await fetch(
+                url
+              );
+
+
+            const data =
+              await response.json();
+
+
+            if (
+              !data.success
+            ) {
+
+              throw new Error(
+                data.message
+                ||
+                '예매 내역을 확인하지 못했습니다.'
+              );
+
+            }
+
+
+            const reservations =
+              data.reservations
+              || [];
+
+
+            if (
+              reservations.length
+              === 0
+            ) {
+
+              result.innerHTML =
+                '<p class="lookup-message">일치하는 예매 내역이 없습니다. 예매자명과 연락처를 다시 확인해 주세요.</p>';
+
+
+              return;
+
+            }
+
+
+            result.innerHTML =
+              reservations
+                .map(
+                  reservation => {
+
+                    return `
+                      <div class="reservation-card">
+
+                        <div class="reservation-card-top">
+
+                          <strong class="lookup-reservation-number">
+                            ${escapeHtml(
+                              reservation.reservationNumber
+                            )}
+                          </strong>
+
+                          <span class="lookup-status">
+                            ${escapeHtml(
+                              reservation.status
+                            )}
+                          </span>
+
+                        </div>
+
+                        <div class="lookup-detail">
+                          ${escapeHtml(
+                            String(
+                              reservation.quantity
+                            )
+                          )}매 ·
+                          ${Number(
+                            reservation.totalPrice
+                          ).toLocaleString(
+                            'ko-KR'
+                          )}원
+                        </div>
+
+                        <a
+                          class="ticket-link"
+                          href="${escapeAttribute(
+                            reservation.ticketUrl
+                          )}"
+                        >
+                          티켓 확인
+                        </a>
+
+                      </div>
+                    `;
+
+                  }
+                )
+                .join('');
+
+
+          } catch (
+            error
+          ) {
+
+
+            console.error(
+              error
+            );
+
+
+            result.innerHTML =
+              '<p class="lookup-message">예매 내역을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</p>';
+
+
+          } finally {
+
+
+            button.disabled =
+              false;
+
+          }
 
         }
 
-      }
-    );
+      );
 
 
 
@@ -1896,7 +2145,9 @@
       value
     ) {
 
-      return String(value)
+      return String(
+        value
+      )
 
         .replaceAll(
           '&',
@@ -1944,19 +2195,24 @@
     ========================================================= */
 
     const submitReservationButton =
-      document.getElementById(
-        'submit-reservation-button'
-      );
+      document
+        .getElementById(
+          'submit-reservation-button'
+        );
 
 
     const reservationForm =
       submitReservationButton
-        .closest('form');
+        .closest(
+          'form'
+        );
 
 
     reservationForm
       .addEventListener(
+
         'submit',
+
         function () {
 
 
@@ -1981,9 +2237,18 @@
             .cursor =
             'not-allowed';
 
-
         }
+
       );
+
+
+
+    /* =========================================================
+       INITIAL SALES STATUS
+    ========================================================= */
+
+    checkSalesStatus();
+
 
   </script>
 
