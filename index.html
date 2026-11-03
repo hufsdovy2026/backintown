@@ -127,13 +127,6 @@
       updateTotalPrice
     );
     window.addEventListener('message', function(event) {
-  const reservationFrame =
-    document.getElementById('reservationFrame');
-
-  if (event.source !== reservationFrame.contentWindow) {
-    return;
-  }
-
   if (
     event.data &&
     event.data.type ===
