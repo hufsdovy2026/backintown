@@ -745,6 +745,11 @@ function formatPhone(input) {
       value.slice(7);
   }
 }
+  const phoneInput = document.getElementById('phone');
+
+phoneInput.addEventListener('input', function () {
+  formatPhone(this);
+});
   const accountNumber = '1002-7972-6507';
 
   navigator.clipboard
