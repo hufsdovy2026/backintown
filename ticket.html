@@ -708,18 +708,27 @@ saveTicketButton.addEventListener('click', async function () {
     const ticketPage =
       document.querySelector('.page');
 
-    // 저장 버튼은 이미지에 나오지 않도록 잠시 숨김
-    saveTicketButton.style.display = 'none';
+    const notice =
+  document.querySelector('.notice');
 
-    const canvas =
-      await html2canvas(ticketPage, {
+// 저장 이미지에서는 안내문과 저장 버튼 숨김
+saveTicketButton.style.display = 'none';
+
+if (notice) {
+  notice.style.display = 'none';
+}
+
+const canvas =
+  await html2canvas(ticketPage, {
         backgroundColor: '#111111',
         scale: 2,
         useCORS: true
       });
 
     saveTicketButton.style.display = '';
-
+if (notice) {
+  notice.style.display = '';
+}
     const reservationNumber =
       document.getElementById('reservation-number').textContent.trim();
 
