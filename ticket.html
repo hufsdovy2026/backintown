@@ -5,52 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>BACK IN TOWN Ticket</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #111111;
+      color: #f4f1eb;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        "Apple SD Gothic Neo",
+        sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 54px 22px 70px;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .header {
+      margin-bottom: 42px;
+    }
+
+    .brand {
+      margin: 0;
+
+      font-size: clamp(42px, 12vw, 66px);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+
+      color: #a9a7a2;
+
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+
+    /* =========================
+       LOADING
+    ========================= */
+
+    #loading {
+      padding: 24px 0;
+
+      border-top: 1px solid #393939;
+
+      color: #8f8d88;
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       TICKET
+    ========================= */
+
+    #ticket {
+      border-top: 1px solid #393939;
+    }
+
+    .ticket-top {
+      padding: 28px 0 26px;
+
+      border-bottom: 1px solid #393939;
+    }
+
+    .ticket-label {
+      margin-bottom: 9px;
+
+      color: #777570;
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #reservation-number {
+      display: block;
+
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+
+    /* =========================
+       TICKET INFO
+    ========================= */
+
+    .ticket-info {
+      padding: 24px 0;
+
+      border-bottom: 1px solid #393939;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 20px;
+
+      padding: 11px 0;
+    }
+
+    .info-label {
+      color: #777570;
+
+      font-size: 12px;
+    }
+
+    .info-value {
+      color: #f4f1eb;
+
+      text-align: right;
+
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+
+    /* =========================
+       STATUS
+    ========================= */
+
+    .status-section {
+      padding: 28px 0;
+    }
+
+    .status-title {
+      margin-bottom: 13px;
+
+      color: #777570;
+
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    #status {
+      display: inline-block;
+
+      padding: 10px 14px;
+
+      border: 1px solid #444444;
+      border-radius: 999px;
+
+      background: #191919;
+      color: #f4f1eb;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       NOTICE
+    ========================= */
+
+    .notice {
+      margin-top: 6px;
+
+      color: #74726e;
+
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .footer {
+      margin-top: 54px;
+      padding-top: 18px;
+
+      border-top: 1px solid #272727;
+
+      color: #55534f;
+
+      font-size: 10px;
+      letter-spacing: 0.06em;
+    }
+
+
+    @media (max-width: 480px) {
+
+      .page {
+        padding-top: 42px;
+      }
+
+      .header {
+        margin-bottom: 36px;
+      }
+
+      #reservation-number {
+        font-size: 28px;
+      }
+
+    }
+  </style>
 </head>
+
 
 <body>
 
-  <h1>BACK IN TOWN</h1>
+  <main class="page">
 
-  <p id="loading">티켓 정보를 불러오는 중...</p>
+    <header class="header">
 
-  <div id="ticket" style="display: none;">
+      <h1 class="brand">
+        BACK<br>
+        IN TOWN
+      </h1>
 
-    <p>
-      예매번호:
-      <strong id="reservation-number"></strong>
+      <p class="subtitle">
+        2026 HUFS DOVY 정기공연 · TICKET
+      </p>
+
+    </header>
+
+
+    <p id="loading">
+      티켓 정보를 불러오는 중...
     </p>
 
-    <p>
-      예매자:
-      <strong id="name"></strong>
-    </p>
 
-    <p>
-      연락처:
-      <strong id="phone"></strong>
-    </p>
+    <section
+      id="ticket"
+      style="display: none;"
+    >
 
-    <p>
-      예매매수:
-      <strong id="quantity"></strong>
-    </p>
+      <div class="ticket-top">
 
-    <p>
-      결제금액:
-      <strong id="total-price"></strong>
-    </p>
+        <div class="ticket-label">
+          RESERVATION
+        </div>
 
-    <p>
-      예매상태:
-      <strong id="status"></strong>
-    </p>
+        <strong id="reservation-number"></strong>
 
-  </div>
+      </div>
+
+
+      <div class="ticket-info">
+
+        <div class="info-row">
+          <span class="info-label">
+            예매자
+          </span>
+
+          <strong
+            class="info-value"
+            id="name"
+          ></strong>
+        </div>
+
+
+        <div class="info-row">
+          <span class="info-label">
+            연락처
+          </span>
+
+          <strong
+            class="info-value"
+            id="phone"
+          ></strong>
+        </div>
+
+
+        <div class="info-row">
+          <span class="info-label">
+            예매 매수
+          </span>
+
+          <strong
+            class="info-value"
+            id="quantity"
+          ></strong>
+        </div>
+
+
+        <div class="info-row">
+          <span class="info-label">
+            결제 금액
+          </span>
+
+          <strong
+            class="info-value"
+            id="total-price"
+          ></strong>
+        </div>
+
+      </div>
+
+
+      <div class="status-section">
+
+        <div class="status-title">
+          STATUS
+        </div>
+
+        <strong id="status"></strong>
+
+      </div>
+
+
+      <p class="notice">
+        입금 확인 후 예매 상태가 변경됩니다.<br>
+        티켓 링크는 공연 당일까지 보관해 주세요.
+      </p>
+
+    </section>
+
+
+    <footer class="footer">
+      HUFS DOVY · BACK IN TOWN
+    </footer>
+
+  </main>
 
 
   <script>
 
-    const API_URL = 'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
+    const API_URL =
+      'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
+
 
     async function loadTicket() {
 
@@ -67,6 +375,7 @@
           '유효하지 않은 티켓 주소입니다.';
 
         return;
+
       }
 
 
@@ -79,6 +388,7 @@
             encodeURIComponent(token)
           );
 
+
         const data =
           await response.json();
 
@@ -86,7 +396,8 @@
         if (!data.success) {
 
           throw new Error(
-            data.message || '티켓을 찾을 수 없습니다.'
+            data.message ||
+            '티켓을 찾을 수 없습니다.'
           );
 
         }
