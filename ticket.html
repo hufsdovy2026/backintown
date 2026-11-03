@@ -575,7 +575,17 @@
           'status'
         ).textContent =
           reservation.status;
+const paymentInfo =
+  document.getElementById('payment-info');
 
+if (
+  String(reservation.status).trim() ===
+  '입금 확인 중'
+) {
+  paymentInfo.style.display = 'block';
+} else {
+  paymentInfo.style.display = 'none';
+}
 
         document.getElementById(
           'loading'
