@@ -626,7 +626,20 @@ if (
 
     }
 
+function copyAccount() {
 
+  const accountNumber = '1002-7972-6507';
+
+  navigator.clipboard
+    .writeText(accountNumber)
+    .then(() => {
+      alert('계좌번호가 복사되었습니다.');
+    })
+    .catch(() => {
+      alert('계좌번호 복사에 실패했습니다.');
+    });
+
+}
     loadTicket();
 
   </script>
