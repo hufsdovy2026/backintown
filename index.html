@@ -17,7 +17,6 @@
   <form
   action="https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec"
   method="POST"
-  target="reservationFrame"
 >
 
     <input
@@ -92,13 +91,6 @@
       예매 신청
     </button>
 
-  </form>
-  <iframe
-  name="reservationFrame"
-  id="reservationFrame"
-  style="display: none;"
-></iframe>
-
 
   <script>
     const UNIT_PRICE = 7000;
@@ -126,23 +118,7 @@
       'input',
       updateTotalPrice
     );
-    window.addEventListener('message', function(event) {
-  if (
-    event.data &&
-    event.data.type ===
-      'BACK_IN_TOWN_RESERVATION_SUCCESS'
-  ) {
-    const token = String(event.data.token || '');
 
-    if (!/^[a-f0-9]{32}$/i.test(token)) {
-      return;
-    }
-
-    window.location.href =
-      'ticket.html?token=' +
-      encodeURIComponent(token);
-  }
-});
   </script>
 
 </body>
