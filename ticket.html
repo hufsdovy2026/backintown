@@ -474,7 +474,6 @@
 
     /* =========================================================
        MOBILE
-       현재 모바일 디자인 유지
     ========================================================= */
 
     @media (max-width: 480px) {
@@ -569,217 +568,519 @@
 
     /* =========================================================
        LAPTOP / DESKTOP
-       모바일 티켓 비율 그대로 확대
     ========================================================= */
 
-   /* =========================================================
-   LAPTOP / DESKTOP
-   모바일 티켓 구조를 유지하면서 가로폭 확대
-========================================================= */
+    @media (min-width: 769px) {
 
-@media (min-width: 769px) {
+      .page {
+        width: 88vw;
 
-  .page {
-    width: 88vw;
-    max-width: 1080px;
+        max-width: 1080px;
 
-    margin: 0 auto;
+        margin: 0 auto;
 
-    padding:
-      60px
-      36px
-      90px;
-  }
+        padding:
+          60px
+          36px
+          90px;
+      }
 
 
-  .ticket-header {
-    gap: 36px;
-    margin-bottom: 54px;
-  }
+      .ticket-header {
+        gap: 36px;
 
+        margin-bottom: 54px;
+      }
 
-  .poster-placeholder {
-    width: 32%;
-    max-width: 300px;
-    min-width: 240px;
 
-    font-size: 13px;
-  }
+      .poster-placeholder {
+        width: 32%;
 
+        max-width: 300px;
+        min-width: 240px;
 
-  .header-text {
-    flex: 1;
-    min-width: 0;
+        font-size: 13px;
+      }
 
-    padding-top: 4px;
-  }
 
+      .header-text {
+        flex: 1;
 
-  .ticket-title {
-  width: 100%;
+        min-width: 0;
 
-  font-size: clamp(
-    82px,
-    8vw,
-    118px
-  );
+        padding-top: 4px;
+      }
 
-  line-height: 0.9;
-  letter-spacing: -0.07em;
 
-  white-space: nowrap;
-}
+      .ticket-title {
+        width: 100%;
 
+        font-size:
+          clamp(
+            82px,
+            8vw,
+            118px
+          );
 
-  .ticket-description {
-    margin-top: 26px;
+        line-height: 0.9;
 
-    font-size: clamp(
-      15px,
-      1.35vw,
-      19px
-    );
+        letter-spacing: -0.07em;
 
-    line-height: 1.7;
-  }
+        white-space: nowrap;
+      }
 
 
-  #loading {
-    padding:
-      32px
-      0;
+      .ticket-description {
+        margin-top: 26px;
 
-    font-size: 15px;
-  }
+        font-size:
+          clamp(
+            15px,
+            1.35vw,
+            19px
+          );
 
+        line-height: 1.7;
+      }
 
-  .ticket-top {
-    padding:
-      36px
-      0
-      34px;
-  }
 
+      #loading {
+        padding:
+          32px
+          0;
 
-  .ticket-label {
-    margin-bottom: 12px;
+        font-size: 15px;
+      }
 
-    font-size: 13px;
-  }
 
+      .ticket-top {
+        padding:
+          36px
+          0
+          34px;
+      }
 
-  #reservation-number {
-    font-size: 42px;
-  }
 
+      .ticket-label {
+        margin-bottom: 12px;
 
-  #status {
-    padding:
-      12px
-      18px;
+        font-size: 13px;
+      }
 
-    font-size: 15px;
-  }
 
+      #reservation-number {
+        font-size: 42px;
+      }
 
-  .ticket-info {
-    padding:
-      32px
-      0;
-  }
 
+      #status {
+        padding:
+          12px
+          18px;
 
-  .info-row {
-    gap: 28px;
+        font-size: 15px;
+      }
 
-    padding:
-      15px
-      0;
-  }
 
+      .ticket-info {
+        padding:
+          32px
+          0;
+      }
 
-  .info-label {
-    font-size: 15px;
-  }
 
+      .info-row {
+        gap: 28px;
 
-  .info-value {
-    font-size: 18px;
+        padding:
+          15px
+          0;
+      }
 
-    line-height: 1.5;
-  }
 
+      .info-label {
+        font-size: 15px;
+      }
 
-  .venue-address {
-    font-size: 14px;
-  }
 
+      .info-value {
+        font-size: 18px;
 
-  #payment-info {
-    margin:
-      12px
-      0
-      32px;
+        line-height: 1.5;
+      }
 
-    padding: 24px;
-  }
 
+      .venue-address {
+        font-size: 14px;
+      }
 
-  .payment-label {
-    margin-bottom: 10px;
 
-    font-size: 13px;
-  }
+      #payment-info {
+        margin:
+          12px
+          0
+          32px;
 
+        padding: 24px;
+      }
 
-  .payment-account {
-    font-size: 18px;
-  }
 
+      .payment-label {
+        margin-bottom: 10px;
 
-  .payment-holder {
-    font-size: 14px;
-  }
+        font-size: 13px;
+      }
 
 
-  .small-button {
-    margin-top: 18px;
+      .payment-account {
+        font-size: 18px;
+      }
 
-    padding:
-      11px
-      15px;
 
-    font-size: 13px;
-  }
+      .payment-holder {
+        font-size: 14px;
+      }
 
 
-  .notice {
-    font-size: 13px;
+      .small-button {
+        margin-top: 18px;
 
-    line-height: 1.8;
-  }
+        padding:
+          11px
+          15px;
 
+        font-size: 13px;
+      }
 
-  #save-ticket-button {
-    margin-top: 18px;
 
-    padding:
-      12px
-      17px;
+      .notice {
+        font-size: 13px;
 
-    font-size: 14px;
-  }
+        line-height: 1.8;
+      }
 
 
-  .footer {
-    margin-top: 66px;
+      #save-ticket-button {
+        margin-top: 18px;
 
-    padding-top: 22px;
+        padding:
+          12px
+          17px;
 
-    font-size: 12px;
-  }
+        font-size: 14px;
+      }
 
-}
+
+      .footer {
+        margin-top: 66px;
+
+        padding-top: 22px;
+
+        font-size: 12px;
+      }
+
+    }
+
+
+
+    /* =========================================================
+       IMAGE CAPTURE MODE
+
+       저장 이미지 전체 비율:
+       노트북 저장본 기준
+
+       상단 내부 비율:
+       모바일 저장본 기준
+    ========================================================= */
+
+    .page.capture-mode {
+      width: 520px !important;
+
+      min-width: 520px !important;
+      max-width: 520px !important;
+
+      min-height: 899px !important;
+
+      margin: 0 !important;
+
+      padding:
+        48px
+        16px
+        54px !important;
+
+      background:
+        #111111 !important;
+    }
+
+
+
+    /* 상단 */
+
+    .page.capture-mode
+    .ticket-header {
+
+      gap:
+        17px !important;
+
+      margin-bottom:
+        46px !important;
+    }
+
+
+
+    /* 포스터 */
+
+    .page.capture-mode
+    .poster-placeholder {
+
+      width:
+        214px !important;
+
+      min-width:
+        214px !important;
+
+      max-width:
+        214px !important;
+
+      font-size:
+        12px !important;
+    }
+
+
+
+    /* 오른쪽 제목 영역 */
+
+    .page.capture-mode
+    .header-text {
+
+      flex:
+        1 !important;
+
+      min-width:
+        0 !important;
+
+      padding-top:
+        0 !important;
+    }
+
+
+
+    /* 제목 */
+
+    .page.capture-mode
+    .ticket-title {
+
+      width:
+        100% !important;
+
+      margin:
+        0 !important;
+
+      font-size:
+        63px !important;
+
+      line-height:
+        0.9 !important;
+
+      letter-spacing:
+        -0.07em !important;
+
+      white-space:
+        nowrap !important;
+    }
+
+
+
+    /* 소개글 */
+
+    .page.capture-mode
+    .ticket-description {
+
+      margin-top:
+        18px !important;
+
+      font-size:
+        13.5px !important;
+
+      line-height:
+        1.55 !important;
+
+      letter-spacing:
+        -0.025em !important;
+
+      white-space:
+        nowrap !important;
+    }
+
+
+
+    /* 예약번호 영역 */
+
+    .page.capture-mode
+    .ticket-top {
+
+      padding:
+        32px
+        0
+        30px !important;
+    }
+
+
+    .page.capture-mode
+    .ticket-label {
+
+      margin-bottom:
+        10px !important;
+
+      font-size:
+        13px !important;
+    }
+
+
+    .page.capture-mode
+    #reservation-number {
+
+      font-size:
+        36px !important;
+    }
+
+
+
+    /* 상태 */
+
+    .page.capture-mode
+    #status {
+
+      padding:
+        10px
+        15px !important;
+
+      font-size:
+        14px !important;
+    }
+
+
+
+    /* 정보 */
+
+    .page.capture-mode
+    .ticket-info {
+
+      padding:
+        28px
+        0 !important;
+    }
+
+
+    .page.capture-mode
+    .info-row {
+
+      gap:
+        24px !important;
+
+      padding:
+        13px
+        0 !important;
+    }
+
+
+    .page.capture-mode
+    .info-label {
+
+      font-size:
+        14px !important;
+    }
+
+
+    .page.capture-mode
+    .info-value {
+
+      font-size:
+        17px !important;
+
+      line-height:
+        1.45 !important;
+    }
+
+
+    .page.capture-mode
+    .venue-address {
+
+      font-size:
+        14px !important;
+    }
+
+
+
+    /* 입금 대기 상태 */
+
+    .page.capture-mode
+    #payment-info {
+
+      margin:
+        10px
+        0
+        26px !important;
+
+      padding:
+        20px !important;
+    }
+
+
+    .page.capture-mode
+    .payment-label {
+
+      font-size:
+        12px !important;
+    }
+
+
+    .page.capture-mode
+    .payment-account {
+
+      font-size:
+        16px !important;
+    }
+
+
+    .page.capture-mode
+    .payment-holder {
+
+      font-size:
+        13px !important;
+    }
+
+
+    .page.capture-mode
+    .small-button {
+
+      margin-top:
+        15px !important;
+
+      padding:
+        9px
+        13px !important;
+
+      font-size:
+        12px !important;
+    }
+
+
+
+    /* 푸터 */
+
+    .page.capture-mode
+    .footer {
+
+      margin-top:
+        56px !important;
+
+      padding-top:
+        18px !important;
+
+      font-size:
+        11px !important;
+    }
 
   </style>
 
@@ -799,11 +1100,6 @@
 
     <header class="ticket-header">
 
-
-      <!--
-        실제 포스터 완성 후
-        이 div를 img로 교체하면 됨.
-      -->
 
       <div class="poster-placeholder">
         POSTER
@@ -860,8 +1156,6 @@
     >
 
 
-
-      <!-- 예약번호 / 상태 -->
 
       <div class="ticket-top">
 
@@ -1094,7 +1388,7 @@
 
 
       <!-- =========================
-           SAVE IMAGE
+           SAVE
       ========================== -->
 
       <button
@@ -1221,8 +1515,6 @@
 
 
 
-        /* 예약번호 */
-
         document
           .getElementById(
             'reservation-number'
@@ -1234,8 +1526,6 @@
 
 
 
-        /* 예매자 */
-
         document
           .getElementById(
             'name'
@@ -1245,8 +1535,6 @@
           reservation.name;
 
 
-
-        /* 연락처 */
 
         document
           .getElementById(
@@ -1258,8 +1546,6 @@
 
 
 
-        /* 매수 */
-
         document
           .getElementById(
             'quantity'
@@ -1270,8 +1556,6 @@
           + '매';
 
 
-
-        /* 결제금액 */
 
         document
           .getElementById(
@@ -1291,8 +1575,6 @@
           + '원';
 
 
-
-        /* 상태 */
 
         const statusElement =
           document.getElementById(
@@ -1377,8 +1659,6 @@
 
 
 
-        /* 입금 계좌 표시 */
-
         const paymentInfo =
           document.getElementById(
             'payment-info'
@@ -1410,8 +1690,6 @@
         }
 
 
-
-        /* 로딩 종료 */
 
         document
           .getElementById(
@@ -1517,41 +1795,46 @@
         async function () {
 
 
+          const ticketPage =
+            document.querySelector(
+              '.page'
+            );
+
+
           const notice =
-            document
-              .querySelector(
-                '.notice'
-              );
+            document.querySelector(
+              '.notice'
+            );
 
 
 
           try {
 
 
-            saveTicketButton
-              .disabled =
+            saveTicketButton.disabled =
               true;
 
 
-
-            saveTicketButton
-              .textContent =
-
+            saveTicketButton.textContent =
               '이미지 만드는 중...';
 
 
 
-            const ticketPage =
-              document
-                .querySelector(
-                  '.page'
-                );
+            /*
+              저장할 때만 전용 디자인 적용
+            */
+
+            ticketPage
+              .classList
+              .add(
+                'capture-mode'
+              );
 
 
 
             /*
               저장 이미지에서는
-              안내문 / 저장 버튼 제외
+              안내문과 저장 버튼 제외
             */
 
             saveTicketButton
@@ -1573,6 +1856,69 @@
 
 
 
+            /*
+              CSS와 폰트 적용을 기다림
+            */
+
+            if (
+              document.fonts
+              &&
+              document.fonts.ready
+            ) {
+
+
+              await document
+                .fonts
+                .ready;
+
+            }
+
+
+
+            await new Promise(
+              resolve => {
+
+
+                requestAnimationFrame(
+                  () => {
+
+
+                    requestAnimationFrame(
+                      resolve
+                    );
+
+
+                  }
+                );
+
+
+              }
+            );
+
+
+
+            /*
+              논리 폭 520px
+              scale 2
+
+              최종 저장 폭:
+              1040px
+
+              높이는 최소 약 1800px
+            */
+
+            const captureHeight =
+              Math.max(
+
+                899,
+
+                ticketPage
+                  .scrollHeight
+
+              );
+
+
+
             const canvas =
               await html2canvas(
 
@@ -1583,9 +1929,29 @@
                   backgroundColor:
                     '#111111',
 
-                  scale: 2,
+                  scale:
+                    2,
 
-                  useCORS: true
+                  useCORS:
+                    true,
+
+                  width:
+                    520,
+
+                  height:
+                    captureHeight,
+
+                  windowWidth:
+                    520,
+
+                  windowHeight:
+                    captureHeight,
+
+                  scrollX:
+                    0,
+
+                  scrollY:
+                    0
 
                 }
 
@@ -1594,8 +1960,16 @@
 
 
             /*
-              화면에서는 다시 표시
+              실제 화면 원상복구
             */
+
+            ticketPage
+              .classList
+              .remove(
+                'capture-mode'
+              );
+
+
 
             saveTicketButton
               .style
@@ -1629,135 +2003,132 @@
 
 
 
-            canvas.toBlob(
+            const blob =
+              await new Promise(
+                resolve => {
 
 
-              async function (
-                blob
-              ) {
+                  canvas.toBlob(
 
+                    resolve,
 
-                if (!blob) {
-
-
-                  throw new Error(
-                    '이미지 생성 실패'
-                  );
-
-                }
-
-
-
-                const fileName =
-
-                  `BACK_IN_TOWN_${reservationNumber}.png`;
-
-
-
-                const file =
-                  new File(
-
-                    [blob],
-
-                    fileName,
-
-                    {
-
-                      type:
-                        'image/png'
-
-                    }
+                    'image/png'
 
                   );
 
 
-
-                /*
-                  모바일:
-                  공유 / 저장
-                */
-
-                if (
-
-                  navigator.canShare
-
-                  &&
-
-                  navigator.canShare({
-
-                    files: [file]
-
-                  })
-
-                ) {
+                }
+              );
 
 
-                  await navigator
-                    .share({
 
-                      files:
-                        [file],
+            if (!blob) {
 
-                      title:
-                        'BACK IN TOWN Ticket'
 
-                    });
+              throw new Error(
+                '이미지 생성 실패'
+              );
 
+            }
+
+
+
+            const fileName =
+
+              `BACK_IN_TOWN_${reservationNumber}.png`;
+
+
+
+            const file =
+              new File(
+
+                [blob],
+
+                fileName,
+
+                {
+
+                  type:
+                    'image/png'
 
                 }
 
-
-                /*
-                  PC:
-                  PNG 다운로드
-                */
-
-                else {
-
-
-                  const link =
-                    document
-                      .createElement(
-                        'a'
-                      );
-
-
-                  link.download =
-                    fileName;
-
-
-                  link.href =
-                    canvas
-                      .toDataURL(
-                        'image/png'
-                      );
-
-
-                  link.click();
-
-
-                }
+              );
 
 
 
-                saveTicketButton
-                  .disabled =
-                  false;
+            /*
+              모바일
+            */
+
+            if (
+
+              navigator.canShare
+
+              &&
+
+              navigator.canShare({
+
+                files:
+                  [file]
+
+              })
+
+            ) {
 
 
-                saveTicketButton
-                  .textContent =
+              await navigator.share({
 
-                  '티켓 이미지 저장';
+                files:
+                  [file],
+
+                title:
+                  'BACK IN TOWN Ticket'
+
+              });
 
 
-              },
+            }
 
 
-              'image/png'
+            /*
+              PC
+            */
+
+            else {
 
 
-            );
+              const link =
+                document
+                  .createElement(
+                    'a'
+                  );
+
+
+              link.download =
+                fileName;
+
+
+              link.href =
+                canvas
+                  .toDataURL(
+                    'image/png'
+                  );
+
+
+              link.click();
+
+
+            }
+
+
+
+            saveTicketButton.disabled =
+              false;
+
+
+            saveTicketButton.textContent =
+              '티켓 이미지 저장';
 
 
 
@@ -1767,6 +2138,15 @@
             console.error(
               error
             );
+
+
+
+            ticketPage
+              .classList
+              .remove(
+                'capture-mode'
+              );
+
 
 
             saveTicketButton
@@ -1788,14 +2168,11 @@
 
 
 
-            saveTicketButton
-              .disabled =
+            saveTicketButton.disabled =
               false;
 
 
-            saveTicketButton
-              .textContent =
-
+            saveTicketButton.textContent =
               '티켓 이미지 저장';
 
 
