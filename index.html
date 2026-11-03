@@ -662,11 +662,12 @@
 
 </label>
         <button
-          class="submit-button"
-          type="submit"
-        >
-          예매 신청
-        </button>
+  class="submit-button"
+  type="submit"
+  id="submit-reservation-button"
+>
+  예매 신청
+</button>
 
 
         <p class="notice">
@@ -746,6 +747,20 @@ function copyAccount() {
   });
 
 }
+    const submitReservationButton =
+  document.getElementById('submit-reservation-button');
+
+const reservationForm =
+  submitReservationButton.closest('form');
+
+reservationForm.addEventListener('submit', function () {
+
+  submitReservationButton.disabled = true;
+  submitReservationButton.textContent = '처리 중...';
+  submitReservationButton.style.opacity = '0.6';
+  submitReservationButton.style.cursor = 'not-allowed';
+
+});
   </script>
 
 </body>
