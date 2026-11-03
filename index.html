@@ -266,7 +266,7 @@
 
 
     /* =========================
-       SOLD OUT
+       RESERVATION STATUS
     ========================= */
 
     #open-reservation-button:disabled {
@@ -1063,8 +1063,9 @@
           class="submit-button"
           id="open-reservation-button"
           onclick="openReservation()"
+          disabled
         >
-          예매하기
+          확인 중...
         </button>
 
 
@@ -1760,6 +1761,13 @@
           );
 
 
+      const section =
+        document
+          .getElementById(
+            'reservation-section'
+          );
+
+
       try {
 
         const response =
@@ -1797,7 +1805,39 @@
 
 
 
-        /* 매진 */
+        /* =========================
+           예매 미오픈 / 닫힘
+        ========================= */
+
+        if (
+          !salesStatus.isOpen
+        ) {
+
+          button.textContent =
+            '예매 준비 중';
+
+
+          button.disabled =
+            true;
+
+
+          button.dataset.state =
+            'closed';
+
+
+          section.style.display =
+            'none';
+
+
+          return false;
+
+        }
+
+
+
+        /* =========================
+           매진
+        ========================= */
 
         if (
           salesStatus.soldOut
@@ -1811,16 +1851,11 @@
             true;
 
 
-          button.dataset.soldOut =
-            'true';
+          button.dataset.state =
+            'sold-out';
 
 
-          document
-            .getElementById(
-              'reservation-section'
-            )
-            .style
-            .display =
+          section.style.display =
             'none';
 
 
@@ -1830,7 +1865,9 @@
 
 
 
-        /* 예매 가능 */
+        /* =========================
+           예매 가능
+        ========================= */
 
         button.textContent =
           '예매하기';
@@ -1840,8 +1877,8 @@
           false;
 
 
-        button.dataset.soldOut =
-          'false';
+        button.dataset.state =
+          'open';
 
 
         return true;
@@ -1857,14 +1894,28 @@
 
 
         /*
-          판매현황 조회에 오류가 나도
-          예매 자체는 막지 않음.
-
-          실제 313장 제한은
-          Apps Script에서 다시 검사함.
+          상태 확인에 실패하면
+          안전하게 예매 버튼을 막음.
+          실제 예매 데이터에는 영향 없음.
         */
 
-        return true;
+        button.textContent =
+          '예매 상태 확인 실패';
+
+
+        button.disabled =
+          true;
+
+
+        button.dataset.state =
+          'error';
+
+
+        section.style.display =
+          'none';
+
+
+        return false;
 
       }
 
@@ -1881,7 +1932,7 @@
 
       /*
         클릭 순간 한 번 더
-        매진 여부 확인
+        오픈 / 매진 여부 확인
       */
 
       const available =
