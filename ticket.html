@@ -695,6 +695,93 @@ function copyAccount() {
     });
 
 }
+    const saveTicketButton =
+  document.getElementById('save-ticket-button');
+
+saveTicketButton.addEventListener('click', async function () {
+
+  try {
+
+    saveTicketButton.disabled = true;
+    saveTicketButton.textContent = '이미지 만드는 중...';
+
+    const ticketPage =
+      document.querySelector('.page');
+
+    // 저장 버튼은 이미지에 나오지 않도록 잠시 숨김
+    saveTicketButton.style.display = 'none';
+
+    const canvas =
+      await html2canvas(ticketPage, {
+        backgroundColor: '#111111',
+        scale: 2,
+        useCORS: true
+      });
+
+    saveTicketButton.style.display = '';
+
+    const reservationNumber =
+      document.getElementById('reservation-number').textContent.trim();
+
+    canvas.toBlob(async function (blob) {
+
+      if (!blob) {
+        throw new Error('이미지 생성 실패');
+      }
+
+      const fileName =
+        `BACK_IN_TOWN_${reservationNumber}.png`;
+
+      const file =
+        new File(
+          [blob],
+          fileName,
+          { type: 'image/png' }
+        );
+
+
+      // 아이폰 등 모바일에서 공유/저장 창 사용
+      if (
+        navigator.canShare &&
+        navigator.canShare({ files: [file] })
+      ) {
+
+        await navigator.share({
+          files: [file],
+          title: 'BACK IN TOWN Ticket'
+        });
+
+      } else {
+
+        // PC 등에서는 PNG 다운로드
+        const link =
+          document.createElement('a');
+
+        link.download = fileName;
+        link.href = canvas.toDataURL('image/png');
+
+        link.click();
+
+      }
+
+      saveTicketButton.disabled = false;
+      saveTicketButton.textContent = '티켓 이미지 저장';
+
+    }, 'image/png');
+
+  } catch (error) {
+
+    console.error(error);
+
+    saveTicketButton.style.display = '';
+    saveTicketButton.disabled = false;
+    saveTicketButton.textContent = '티켓 이미지 저장';
+
+    alert('티켓 이미지 저장에 실패했습니다.');
+
+  }
+
+});
     loadTicket();
 
   </script>
