@@ -507,7 +507,23 @@
   입금 확인 후 예매 상태가 변경됩니다.<br>
   본 티켓 링크는 공연 당일까지 보관해 주세요.
 </p>
-
+<button
+  type="button"
+  id="save-ticket-button"
+  style="
+    margin-top: 14px;
+    padding: 10px 14px;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    background: transparent;
+    color: #f4f1eb;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  "
+>
+  티켓 이미지 저장
+</button>
     </section>
 
 
@@ -682,6 +698,6 @@ function copyAccount() {
     loadTicket();
 
   </script>
-
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </body>
 </html>
