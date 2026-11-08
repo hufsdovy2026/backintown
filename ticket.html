@@ -306,15 +306,21 @@
     }
 
 
+    /* 일시 / 장소 동일 폭 */
+
     .info-pair.event-pair
     .info-item:first-child {
-      flex: 0.9;
+      flex: 1;
     }
 
 
+    /* 장소 영역만 살짝 오른쪽으로 */
+
     .info-pair.event-pair
     .info-item:last-child {
-      flex: 1.1;
+      flex: 1;
+
+      padding-left: 10px;
     }
 
 
@@ -633,6 +639,12 @@
         padding:
           10px
           0;
+      }
+
+
+      .info-pair.event-pair
+      .info-item:last-child {
+        padding-left: 6px;
       }
 
 
@@ -1273,10 +1285,6 @@
       </div>
 
 
-
-      <!-- =========================
-           TICKET INFO
-      ========================== -->
 
       <div class="ticket-info">
 
