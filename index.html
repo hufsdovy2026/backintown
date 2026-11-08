@@ -77,11 +77,9 @@
     .poster-placeholder {
       width: 100%;
 
-      aspect-ratio: 2 / 3;
+      aspect-ratio: 3 / 4;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
 
       flex-shrink: 0;
 
@@ -89,14 +87,6 @@
 
       border:
         1px solid #393939;
-
-      background: #181818;
-      color: #55534f;
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: 0.1em;
 
       object-fit: cover;
     }
@@ -967,16 +957,15 @@
   <main class="page">
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
     <section class="hero">
 
 
-      <div class="poster-placeholder">
-        POSTER
-      </div>
+      <img
+        src="backintown1440.png"
+        alt="BACK IN TOWN 포스터"
+        class="poster-placeholder"
+        loading="eager"
+      >
 
 
 
@@ -999,8 +988,6 @@
         </p>
 
 
-
-        <!-- EVENT INFO -->
 
         <section class="event-info">
 
@@ -1056,8 +1043,6 @@
 
 
 
-        <!-- 예매 -->
-
         <button
           type="button"
           class="submit-button"
@@ -1069,10 +1054,6 @@
         </button>
 
 
-
-        <!-- =========================
-             LOOKUP
-        ========================== -->
 
         <section class="lookup-section">
 
@@ -1141,10 +1122,6 @@
     </section>
 
 
-
-    <!-- =========================
-         RESERVATION FORM
-    ========================== -->
 
     <section
       id="reservation-section"
@@ -1358,10 +1335,6 @@
 
 
 
-    /* =========================================================
-       TITLE / DESCRIPTION AUTO FIT
-    ========================================================= */
-
     function measureTextWidth(
       element,
       fontSize
@@ -1547,10 +1520,6 @@
 
 
 
-    /* =========================================================
-       PHONE FORMAT
-    ========================================================= */
-
     function formatPhoneInput(
       input
     ) {
@@ -1660,10 +1629,6 @@
 
 
 
-    /* =========================================================
-       PRICE
-    ========================================================= */
-
     const quantityInput =
       document
         .getElementById(
@@ -1711,10 +1676,6 @@
 
 
 
-    /* =========================================================
-       ACCOUNT COPY
-    ========================================================= */
-
     function copyAccount() {
 
       const accountNumber =
@@ -1747,10 +1708,6 @@
     }
 
 
-
-    /* =========================================================
-       SALES STATUS
-    ========================================================= */
 
     async function checkSalesStatus() {
 
@@ -1804,11 +1761,6 @@
           data.salesStatus;
 
 
-
-        /* =========================
-           예매 미오픈 / 닫힘
-        ========================= */
-
         if (
           !salesStatus.isOpen
         ) {
@@ -1833,11 +1785,6 @@
 
         }
 
-
-
-        /* =========================
-           매진
-        ========================= */
 
         if (
           salesStatus.soldOut
@@ -1864,11 +1811,6 @@
         }
 
 
-
-        /* =========================
-           예매 가능
-        ========================= */
-
         button.textContent =
           '예매하기';
 
@@ -1892,12 +1834,6 @@
           error
         );
 
-
-        /*
-          상태 확인에 실패하면
-          안전하게 예매 버튼을 막음.
-          실제 예매 데이터에는 영향 없음.
-        */
 
         button.textContent =
           '예매 상태 확인 실패';
@@ -1923,17 +1859,8 @@
 
 
 
-    /* =========================================================
-       OPEN RESERVATION
-    ========================================================= */
-
     async function openReservation() {
 
-
-      /*
-        클릭 순간 한 번 더
-        오픈 / 매진 여부 확인
-      */
 
       const available =
         await checkSalesStatus();
@@ -1983,10 +1910,6 @@
     }
 
 
-
-    /* =========================================================
-       LOOKUP RESERVATION
-    ========================================================= */
 
     const lookupForm =
       document
@@ -2188,10 +2111,6 @@
 
 
 
-    /* =========================================================
-       SAFE HTML
-    ========================================================= */
-
     function escapeHtml(
       value
     ) {
@@ -2241,10 +2160,6 @@
 
 
 
-    /* =========================================================
-       PREVENT DOUBLE SUBMIT
-    ========================================================= */
-
     const submitReservationButton =
       document
         .getElementById(
@@ -2293,10 +2208,6 @@
       );
 
 
-
-    /* =========================================================
-       INITIAL SALES STATUS
-    ========================================================= */
 
     checkSalesStatus();
 
