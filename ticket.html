@@ -2,6 +2,7 @@
 <html lang="ko">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -29,8 +30,8 @@
     body {
       min-height: 100vh;
 
-      background: #111111;
-      color: #f4f1eb;
+      background: #12100e;
+      color: #e7e1d6;
 
       font-family:
         -apple-system,
@@ -42,6 +43,10 @@
     }
 
 
+
+    /* =========================
+       PAGE
+    ========================= */
 
     .page {
       width: 100%;
@@ -56,6 +61,10 @@
     }
 
 
+
+    /* =========================
+       HEADER
+    ========================= */
 
     .ticket-header {
       display: flex;
@@ -77,10 +86,13 @@
 
       flex-shrink: 0;
 
-      border:
-        1px solid #393939;
+      border: none;
 
       object-fit: cover;
+
+      box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.3);
     }
 
 
@@ -95,6 +107,8 @@
 
     .ticket-title {
       margin: 0;
+
+      color: #eee8dc;
 
       font-size: 44px;
       font-weight: 900;
@@ -111,7 +125,7 @@
         0
         0;
 
-      color: #a9a7a2;
+      color: #9d978d;
 
       font-size: 12px;
       font-weight: 500;
@@ -121,15 +135,19 @@
 
 
 
+    /* =========================
+       LOADING
+    ========================= */
+
     #loading {
       padding:
         24px
         0;
 
       border-top:
-        1px solid #393939;
+        1px solid #39342e;
 
-      color: #8f8d88;
+      color: #918b81;
 
       font-size: 13px;
 
@@ -138,9 +156,13 @@
 
 
 
+    /* =========================
+       TICKET
+    ========================= */
+
     #ticket {
       border-top:
-        1px solid #393939;
+        1px solid #39342e;
     }
 
 
@@ -151,19 +173,19 @@
         26px;
 
       border-bottom:
-        1px solid #393939;
+        1px solid #39342e;
     }
 
 
     .ticket-label {
       margin-bottom: 9px;
 
-      color: #777570;
+      color: #9a3c38;
 
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
 
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
     }
 
 
@@ -182,6 +204,8 @@
     #reservation-number {
       display: block;
 
+      color: #eee8dc;
+
       font-size: 32px;
       font-weight: 800;
 
@@ -189,6 +213,10 @@
     }
 
 
+
+    /* =========================
+       STATUS
+    ========================= */
 
     #status {
       display: inline-block;
@@ -200,13 +228,13 @@
         14px;
 
       border:
-        1px solid #444444;
+        1px solid #454039;
 
       border-radius: 999px;
 
-      background: #191919;
+      background: #191612;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       font-size: 13px;
       font-weight: 700;
@@ -216,13 +244,15 @@
 
 
     #status.status-pending {
-      border-color: #5a5a5a;
+      border-color: #575149;
 
-      background: #2a2a2a;
+      background: #292622;
 
-      color: #d8d8d8;
+      color: #d3ccc1;
     }
 
+
+    /* 예매 확정 파란색 유지 */
 
     #status.status-confirmed {
       border-color: #2f6fed;
@@ -243,13 +273,17 @@
 
 
 
+    /* =========================
+       INFO
+    ========================= */
+
     .ticket-info {
       padding:
         24px
         0;
 
       border-bottom:
-        1px solid #393939;
+        1px solid #39342e;
     }
 
 
@@ -273,14 +307,14 @@
     .info-label {
       flex-shrink: 0;
 
-      color: #777570;
+      color: #777168;
 
       font-size: 12px;
     }
 
 
     .info-value {
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       text-align: right;
 
@@ -292,13 +326,17 @@
 
 
     .venue-address {
-      color: #777570;
+      color: #777168;
 
       font-size: 12px;
       font-weight: 500;
     }
 
 
+
+    /* =========================
+       PAYMENT
+    ========================= */
 
     #payment-info {
       display: none;
@@ -311,18 +349,18 @@
       padding: 18px;
 
       border:
-        1px solid #393939;
+        1px solid #39342e;
 
       border-radius: 4px;
 
-      background: #181818;
+      background: #191612;
     }
 
 
     .payment-label {
       margin-bottom: 8px;
 
-      color: #777570;
+      color: #918b81;
 
       font-size: 11px;
       font-weight: 600;
@@ -330,7 +368,7 @@
 
 
     .payment-account {
-      color: #f4f1eb;
+      color: #eee8dc;
 
       font-size: 14px;
       font-weight: 700;
@@ -340,7 +378,7 @@
 
 
     .payment-holder {
-      color: #a9a7a2;
+      color: #aaa397;
 
       font-size: 12px;
 
@@ -356,13 +394,13 @@
         12px;
 
       border:
-        1px solid #555555;
+        1px solid #514a42;
 
       border-radius: 4px;
 
       background: transparent;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       font-size: 11px;
       font-weight: 700;
@@ -371,11 +409,20 @@
     }
 
 
+    .small-button:hover {
+      background: #211c17;
+    }
+
+
+
+    /* =========================
+       NOTICE
+    ========================= */
 
     .notice {
       margin-top: 6px;
 
-      color: #74726e;
+      color: #746e66;
 
       font-size: 11px;
 
@@ -391,21 +438,36 @@
         14px;
 
       border:
-        1px solid #555555;
+        1px solid #514a42;
 
       border-radius: 4px;
 
       background: transparent;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       font-size: 12px;
       font-weight: 700;
 
       cursor: pointer;
+
+      transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
     }
 
 
+    #save-ticket-button:hover {
+      background: #211c17;
+
+      border-color: #695f55;
+    }
+
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer {
       margin-top: 54px;
@@ -413,9 +475,9 @@
       padding-top: 18px;
 
       border-top:
-        1px solid #272727;
+        1px solid #29251f;
 
-      color: #55534f;
+      color: #575149;
 
       font-size: 10px;
 
@@ -423,6 +485,10 @@
     }
 
 
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
     @media (max-width: 480px) {
 
@@ -513,6 +579,10 @@
     }
 
 
+
+    /* =========================================================
+       LAPTOP / DESKTOP
+    ========================================================= */
 
     @media (min-width: 769px) {
 
@@ -745,7 +815,7 @@
         54px !important;
 
       background:
-        #111111 !important;
+        #12100e !important;
     }
 
 
@@ -1090,16 +1160,12 @@
 
 
           <span class="info-label">
-
             일시
-
           </span>
 
 
           <strong class="info-value">
-
             2026년 11월 21일 (토) 오후 6:00
-
           </strong>
 
 
@@ -1111,24 +1177,17 @@
 
 
           <span class="info-label">
-
             장소
-
           </span>
 
 
           <strong class="info-value">
-
 
             예림당 아트홀<br>
 
-
             <span class="venue-address">
-
               서울특별시 강남구 언주로 337
-
             </span>
-
 
           </strong>
 
@@ -1141,9 +1200,7 @@
 
 
           <span class="info-label">
-
             예매자
-
           </span>
 
 
@@ -1161,9 +1218,7 @@
 
 
           <span class="info-label">
-
             연락처
-
           </span>
 
 
@@ -1181,9 +1236,7 @@
 
 
           <span class="info-label">
-
             예매 매수
-
           </span>
 
 
@@ -1201,9 +1254,7 @@
 
 
           <span class="info-label">
-
             결제 금액
-
           </span>
 
 
@@ -1224,23 +1275,17 @@
 
 
         <div class="payment-label">
-
           입금 계좌
-
         </div>
 
 
         <div class="payment-account">
-
           토스뱅크 1002-7972-6507
-
         </div>
 
 
         <div class="payment-holder">
-
           예금주 진성재
-
         </div>
 
 
@@ -1249,9 +1294,7 @@
           class="small-button"
           onclick="copyAccount()"
         >
-
           계좌번호 복사
-
         </button>
 
 
@@ -1273,9 +1316,7 @@
         type="button"
         id="save-ticket-button"
       >
-
         티켓 이미지 저장
-
       </button>
 
 
@@ -1766,7 +1807,7 @@
                 {
 
                   backgroundColor:
-                    '#111111',
+                    '#12100e',
 
                   scale:
                     2,
