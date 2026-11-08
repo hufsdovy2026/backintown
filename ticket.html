@@ -252,8 +252,6 @@
     }
 
 
-    /* 예매 확정 파란색 유지 */
-
     #status.status-confirmed {
       border-color: #2f6fed;
 
@@ -279,24 +277,21 @@
 
     .ticket-info {
       padding:
-        24px
-        0;
+        21px
+        0
+        22px;
 
       border-bottom:
         1px solid #39342e;
     }
 
 
-    .info-row {
+    .info-pair {
       display: flex;
 
-      justify-content:
-        space-between;
+      align-items: flex-start;
 
-      align-items:
-        flex-start;
-
-      gap: 20px;
+      gap: 28px;
 
       padding:
         11px
@@ -304,32 +299,89 @@
     }
 
 
+    .info-item {
+      flex: 1;
+
+      min-width: 0;
+    }
+
+
+    .info-pair.event-pair
+    .info-item:first-child {
+      flex: 0.9;
+    }
+
+
+    .info-pair.event-pair
+    .info-item:last-child {
+      flex: 1.1;
+    }
+
+
     .info-label {
-      flex-shrink: 0;
+      display: block;
 
-      color: #777168;
+      margin-bottom: 7px;
 
-      font-size: 12px;
+      color: #827b72;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      line-height: 1.2;
     }
 
 
     .info-value {
-      color: #e7e1d6;
+      display: block;
 
-      text-align: right;
+      color: #eee8dc;
+
+      text-align: left;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      line-height: 1.42;
+
+      letter-spacing: -0.025em;
+    }
+
+
+    .date-main {
+      white-space: nowrap;
 
       font-size: 14px;
-      font-weight: 600;
+    }
 
-      line-height: 1.4;
+
+    .date-time {
+      display: block;
+
+      margin-top: 2px;
+    }
+
+
+    .venue-name {
+      display: block;
     }
 
 
     .venue-address {
-      color: #777168;
+      display: block;
 
-      font-size: 12px;
+      margin-top: 2px;
+
+      color: #827b72;
+
+      font-size: 11px;
       font-weight: 500;
+
+      line-height: 1.4;
+
+      letter-spacing: -0.04em;
+
+      white-space: nowrap;
     }
 
 
@@ -342,7 +394,7 @@
       display: none;
 
       margin:
-        6px
+        8px
         0
         24px;
 
@@ -567,13 +619,58 @@
       }
 
 
+      .ticket-info {
+        padding:
+          18px
+          0
+          20px;
+      }
+
+
+      .info-pair {
+        gap: 17px;
+
+        padding:
+          10px
+          0;
+      }
+
+
       .info-label {
-        font-size: 12px;
+        margin-bottom: 6px;
+
+        font-size: 10.5px;
       }
 
 
       .info-value {
-        font-size: 14px;
+        font-size: 15px;
+
+        line-height: 1.42;
+      }
+
+
+      .date-main {
+        font-size:
+          clamp(
+            12px,
+            3.15vw,
+            14px
+          );
+
+        letter-spacing: -0.04em;
+      }
+
+
+      .venue-address {
+        font-size:
+          clamp(
+            9.5px,
+            2.5vw,
+            11px
+          );
+
+        letter-spacing: -0.055em;
       }
 
     }
@@ -696,13 +793,14 @@
 
       .ticket-info {
         padding:
-          32px
-          0;
+          26px
+          0
+          28px;
       }
 
 
-      .info-row {
-        gap: 28px;
+      .info-pair {
+        gap: 46px;
 
         padding:
           15px
@@ -711,19 +809,28 @@
 
 
       .info-label {
-        font-size: 15px;
+        margin-bottom: 8px;
+
+        font-size: 13px;
       }
 
 
       .info-value {
-        font-size: 18px;
+        font-size: 19px;
 
-        line-height: 1.5;
+        line-height: 1.45;
+      }
+
+
+      .date-main {
+        font-size: 18px;
       }
 
 
       .venue-address {
-        font-size: 14px;
+        margin-top: 3px;
+
+        font-size: 13px;
       }
 
 
@@ -946,19 +1053,20 @@
     .ticket-info {
 
       padding:
-        28px
-        0 !important;
+        23px
+        0
+        25px !important;
     }
 
 
     .page.capture-mode
-    .info-row {
+    .info-pair {
 
       gap:
-        24px !important;
+        28px !important;
 
       padding:
-        13px
+        12px
         0 !important;
     }
 
@@ -966,8 +1074,11 @@
     .page.capture-mode
     .info-label {
 
+      margin-bottom:
+        7px !important;
+
       font-size:
-        14px !important;
+        12px !important;
     }
 
 
@@ -978,7 +1089,15 @@
         17px !important;
 
       line-height:
-        1.45 !important;
+        1.42 !important;
+    }
+
+
+    .page.capture-mode
+    .date-main {
+
+      font-size:
+        15px !important;
     }
 
 
@@ -986,7 +1105,10 @@
     .venue-address {
 
       font-size:
-        14px !important;
+        11px !important;
+
+      letter-spacing:
+        -0.05em !important;
     }
 
 
@@ -1152,116 +1274,129 @@
 
 
 
+      <!-- =========================
+           TICKET INFO
+      ========================== -->
+
       <div class="ticket-info">
 
 
-
-        <div class="info-row">
-
-
-          <span class="info-label">
-            일시
-          </span>
+        <div class="info-pair event-pair">
 
 
-          <strong class="info-value">
-            2026년 11월 21일 (토) 오후 6:00
-          </strong>
+          <div class="info-item">
 
-
-        </div>
-
-
-
-        <div class="info-row">
-
-
-          <span class="info-label">
-            장소
-          </span>
-
-
-          <strong class="info-value">
-
-            예림당 아트홀<br>
-
-            <span class="venue-address">
-              서울특별시 강남구 언주로 337
+            <span class="info-label">
+              일시
             </span>
 
-          </strong>
+            <strong class="info-value">
+
+              <span class="date-main">
+                2026년 11월 21일 (토)
+              </span>
+
+              <span class="date-time">
+                오후 6:00
+              </span>
+
+            </strong>
+
+          </div>
+
+
+
+          <div class="info-item">
+
+            <span class="info-label">
+              장소
+            </span>
+
+            <strong class="info-value">
+
+              <span class="venue-name">
+                예림당 아트홀
+              </span>
+
+              <span class="venue-address">
+                서울특별시 강남구 언주로 337
+              </span>
+
+            </strong>
+
+          </div>
 
 
         </div>
 
 
 
-        <div class="info-row">
+        <div class="info-pair">
 
 
-          <span class="info-label">
-            예매자
-          </span>
+          <div class="info-item">
 
+            <span class="info-label">
+              예매자
+            </span>
 
-          <strong
-            class="info-value"
-            id="name"
-          ></strong>
+            <strong
+              class="info-value"
+              id="name"
+            ></strong>
 
-
-        </div>
-
-
-
-        <div class="info-row">
-
-
-          <span class="info-label">
-            연락처
-          </span>
-
-
-          <strong
-            class="info-value"
-            id="phone"
-          ></strong>
-
-
-        </div>
+          </div>
 
 
 
-        <div class="info-row">
+          <div class="info-item">
 
+            <span class="info-label">
+              연락처
+            </span>
 
-          <span class="info-label">
-            예매 매수
-          </span>
+            <strong
+              class="info-value"
+              id="phone"
+            ></strong>
 
-
-          <strong
-            class="info-value"
-            id="quantity"
-          ></strong>
+          </div>
 
 
         </div>
 
 
 
-        <div class="info-row">
+        <div class="info-pair">
 
 
-          <span class="info-label">
-            결제 금액
-          </span>
+          <div class="info-item">
+
+            <span class="info-label">
+              예매 매수
+            </span>
+
+            <strong
+              class="info-value"
+              id="quantity"
+            ></strong>
+
+          </div>
 
 
-          <strong
-            class="info-value"
-            id="total-price"
-          ></strong>
+
+          <div class="info-item">
+
+            <span class="info-label">
+              결제 금액
+            </span>
+
+            <strong
+              class="info-value"
+              id="total-price"
+            ></strong>
+
+          </div>
 
 
         </div>
