@@ -291,10 +291,10 @@
 
       align-items: flex-start;
 
-      gap: 28px;
+      gap: 20px;
 
       padding:
-        11px
+        12px
         0;
     }
 
@@ -306,7 +306,8 @@
     }
 
 
-    /* 왼쪽 열 */
+    /* 왼쪽 열:
+       일시 / 예매자 / 예매 매수 */
 
     .info-pair
     .info-item:first-child {
@@ -314,8 +315,9 @@
     }
 
 
-    /* 오른쪽 열
-       장소 / 연락처 / 결제 금액 모두 같은 위치 */
+    /* 오른쪽 열:
+       장소 / 연락처 / 결제 금액
+       전부 동일한 X축 */
 
     .info-pair
     .info-item:last-child {
@@ -339,6 +341,10 @@
     }
 
 
+    /* =========================
+       6개 핵심 값 공통 스타일
+    ========================= */
+
     .info-value {
       display: block;
 
@@ -346,19 +352,28 @@
 
       text-align: left;
 
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 19px;
+      font-weight: 800;
 
-      line-height: 1.42;
+      line-height: 1.32;
 
-      letter-spacing: -0.025em;
+      letter-spacing: -0.045em;
     }
 
 
-    .date-main {
-      white-space: nowrap;
+    /* 날짜도 다른 5개 값과 같은 크기 */
 
-      font-size: 14px;
+    .date-main {
+      display: block;
+
+      font-size: inherit;
+      font-weight: inherit;
+
+      line-height: inherit;
+
+      letter-spacing: inherit;
+
+      white-space: nowrap;
     }
 
 
@@ -366,18 +381,26 @@
       display: block;
 
       margin-top: 2px;
+
+      font-size: inherit;
+      font-weight: inherit;
     }
 
 
     .venue-name {
       display: block;
+
+      font-size: inherit;
+      font-weight: inherit;
     }
 
+
+    /* 주소는 장소의 보조 정보 */
 
     .venue-address {
       display: block;
 
-      margin-top: 2px;
+      margin-top: 4px;
 
       color: #827b72;
 
@@ -386,7 +409,7 @@
 
       line-height: 1.4;
 
-      letter-spacing: -0.04em;
+      letter-spacing: -0.055em;
 
       white-space: nowrap;
     }
@@ -635,15 +658,17 @@
 
 
       .info-pair {
-        gap: 17px;
+        gap: 12px;
 
         padding:
-          10px
+          11px
           0;
       }
 
 
-      /* 모바일에서도 오른쪽 열 전부 동일 정렬 */
+      /* 모바일에서도
+         장소 / 연락처 / 결제 금액
+         동일한 세로축 */
 
       .info-pair
       .info-item:last-child {
@@ -658,34 +683,42 @@
       }
 
 
-      .info-value {
-        font-size: 15px;
+      /* 6개 핵심 값 모두 동일 */
 
-        line-height: 1.42;
+      .info-value {
+        font-size:
+          clamp(
+            15.5px,
+            4vw,
+            17px
+          );
+
+        font-weight: 800;
+
+        line-height: 1.32;
+
+        letter-spacing: -0.055em;
       }
 
 
       .date-main {
-        font-size:
-          clamp(
-            12px,
-            3.15vw,
-            14px
-          );
+        font-size: inherit;
 
-        letter-spacing: -0.04em;
+        letter-spacing: inherit;
       }
 
 
       .venue-address {
+        margin-top: 3px;
+
         font-size:
           clamp(
             9.5px,
-            2.5vw,
+            2.55vw,
             11px
           );
 
-        letter-spacing: -0.055em;
+        letter-spacing: -0.065em;
       }
 
     }
@@ -815,10 +848,10 @@
 
 
       .info-pair {
-        gap: 46px;
+        gap: 38px;
 
         padding:
-          15px
+          16px
           0;
       }
 
@@ -830,20 +863,25 @@
       }
 
 
-      .info-value {
-        font-size: 19px;
+      /* 데스크톱도 6개 동일 */
 
-        line-height: 1.45;
+      .info-value {
+        font-size: 23px;
+        font-weight: 800;
+
+        line-height: 1.3;
+
+        letter-spacing: -0.045em;
       }
 
 
       .date-main {
-        font-size: 18px;
+        font-size: inherit;
       }
 
 
       .venue-address {
-        margin-top: 3px;
+        margin-top: 4px;
 
         font-size: 13px;
       }
@@ -1078,10 +1116,10 @@
     .info-pair {
 
       gap:
-        28px !important;
+        20px !important;
 
       padding:
-        12px
+        13px
         0 !important;
     }
 
@@ -1097,14 +1135,23 @@
     }
 
 
+    /* 저장 이미지도
+       6개 핵심 값 전부 동일 */
+
     .page.capture-mode
     .info-value {
 
       font-size:
-        17px !important;
+        20px !important;
+
+      font-weight:
+        800 !important;
 
       line-height:
-        1.42 !important;
+        1.3 !important;
+
+      letter-spacing:
+        -0.05em !important;
     }
 
 
@@ -1112,18 +1159,27 @@
     .date-main {
 
       font-size:
-        15px !important;
+        inherit !important;
+
+      font-weight:
+        inherit !important;
+
+      letter-spacing:
+        inherit !important;
     }
 
 
     .page.capture-mode
     .venue-address {
 
+      margin-top:
+        4px !important;
+
       font-size:
-        11px !important;
+        12px !important;
 
       letter-spacing:
-        -0.05em !important;
+        -0.06em !important;
     }
 
 
@@ -1292,7 +1348,7 @@
       <div class="ticket-info">
 
 
-        <div class="info-pair event-pair">
+        <div class="info-pair">
 
 
           <div class="info-item">
