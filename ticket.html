@@ -43,10 +43,6 @@
 
 
 
-    /* =========================
-       PAGE
-    ========================= */
-
     .page {
       width: 100%;
       max-width: 520px;
@@ -60,10 +56,6 @@
     }
 
 
-
-    /* =========================
-       HEADER
-    ========================= */
 
     .ticket-header {
       display: flex;
@@ -79,26 +71,14 @@
     .poster-placeholder {
       width: 145px;
 
-      aspect-ratio: 2 / 3;
+      aspect-ratio: 3 / 4;
 
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
+      display: block;
 
       flex-shrink: 0;
 
       border:
         1px solid #393939;
-
-      background: #181818;
-
-      color: #55534f;
-
-      font-size: 10px;
-      font-weight: 600;
-
-      letter-spacing: 0.1em;
 
       object-fit: cover;
     }
@@ -141,10 +121,6 @@
 
 
 
-    /* =========================
-       LOADING
-    ========================= */
-
     #loading {
       padding:
         24px
@@ -161,10 +137,6 @@
     }
 
 
-
-    /* =========================
-       TICKET
-    ========================= */
 
     #ticket {
       border-top:
@@ -218,10 +190,6 @@
 
 
 
-    /* =========================
-       STATUS
-    ========================= */
-
     #status {
       display: inline-block;
 
@@ -274,10 +242,6 @@
     }
 
 
-
-    /* =========================
-       INFO
-    ========================= */
 
     .ticket-info {
       padding:
@@ -335,10 +299,6 @@
     }
 
 
-
-    /* =========================
-       PAYMENT
-    ========================= */
 
     #payment-info {
       display: none;
@@ -412,10 +372,6 @@
 
 
 
-    /* =========================
-       NOTICE
-    ========================= */
-
     .notice {
       margin-top: 6px;
 
@@ -451,10 +407,6 @@
 
 
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     .footer {
       margin-top: 54px;
 
@@ -471,10 +423,6 @@
     }
 
 
-
-    /* =========================================================
-       MOBILE
-    ========================================================= */
 
     @media (max-width: 480px) {
 
@@ -566,10 +514,6 @@
 
 
 
-    /* =========================================================
-       LAPTOP / DESKTOP
-    ========================================================= */
-
     @media (min-width: 769px) {
 
       .page {
@@ -598,8 +542,6 @@
 
         max-width: 300px;
         min-width: 240px;
-
-        font-size: 13px;
       }
 
 
@@ -785,12 +727,6 @@
 
     /* =========================================================
        IMAGE CAPTURE MODE
-
-       저장 이미지 전체 비율:
-       노트북 저장본 기준
-
-       상단 내부 비율:
-       모바일 저장본 기준
     ========================================================= */
 
     .page.capture-mode {
@@ -813,9 +749,6 @@
     }
 
 
-
-    /* 상단 */
-
     .page.capture-mode
     .ticket-header {
 
@@ -826,9 +759,6 @@
         46px !important;
     }
 
-
-
-    /* 포스터 */
 
     .page.capture-mode
     .poster-placeholder {
@@ -841,14 +771,8 @@
 
       max-width:
         214px !important;
-
-      font-size:
-        12px !important;
     }
 
-
-
-    /* 오른쪽 제목 영역 */
 
     .page.capture-mode
     .header-text {
@@ -863,9 +787,6 @@
         0 !important;
     }
 
-
-
-    /* 제목 */
 
     .page.capture-mode
     .ticket-title {
@@ -890,9 +811,6 @@
     }
 
 
-
-    /* 소개글 */
-
     .page.capture-mode
     .ticket-description {
 
@@ -912,9 +830,6 @@
         nowrap !important;
     }
 
-
-
-    /* 예약번호 영역 */
 
     .page.capture-mode
     .ticket-top {
@@ -945,9 +860,6 @@
     }
 
 
-
-    /* 상태 */
-
     .page.capture-mode
     #status {
 
@@ -959,9 +871,6 @@
         14px !important;
     }
 
-
-
-    /* 정보 */
 
     .page.capture-mode
     .ticket-info {
@@ -1010,9 +919,6 @@
         14px !important;
     }
 
-
-
-    /* 입금 대기 상태 */
 
     .page.capture-mode
     #payment-info {
@@ -1066,9 +972,6 @@
     }
 
 
-
-    /* 푸터 */
-
     .page.capture-mode
     .footer {
 
@@ -1094,16 +997,15 @@
   <main class="page">
 
 
-    <!-- =========================
-         HEADER
-    ========================== -->
-
     <header class="ticket-header">
 
 
-      <div class="poster-placeholder">
-        POSTER
-      </div>
+      <img
+        src="backintown1440.png"
+        alt="BACK IN TOWN 포스터"
+        class="poster-placeholder"
+        loading="eager"
+      >
 
 
       <div class="header-text">
@@ -1134,10 +1036,6 @@
 
 
 
-    <!-- =========================
-         LOADING
-    ========================== -->
-
     <p id="loading">
 
       티켓 정보를 불러오는 중...
@@ -1145,10 +1043,6 @@
     </p>
 
 
-
-    <!-- =========================
-         TICKET
-    ========================== -->
 
     <section
       id="ticket"
@@ -1187,10 +1081,6 @@
       </div>
 
 
-
-      <!-- =========================
-           TICKET INFO
-      ========================== -->
 
       <div class="ticket-info">
 
@@ -1330,10 +1220,6 @@
 
 
 
-      <!-- =========================
-           PAYMENT
-      ========================== -->
-
       <div id="payment-info">
 
 
@@ -1373,10 +1259,6 @@
 
 
 
-      <!-- =========================
-           NOTICE
-      ========================== -->
-
       <p class="notice">
 
         입금 확인 후 예매 상태가 변경됩니다.<br>
@@ -1386,10 +1268,6 @@
       </p>
 
 
-
-      <!-- =========================
-           SAVE
-      ========================== -->
 
       <button
         type="button"
@@ -1416,10 +1294,6 @@
 
 
 
-  <!-- =========================
-       IMAGE LIBRARY
-  ========================== -->
-
   <script
     src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
   ></script>
@@ -1433,10 +1307,6 @@
       'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
 
 
-
-    /* =========================
-       TICKET LOAD
-    ========================== */
 
     async function loadTicket() {
 
@@ -1734,10 +1604,6 @@
 
 
 
-    /* =========================
-       ACCOUNT COPY
-    ========================== */
-
     function copyAccount() {
 
 
@@ -1775,10 +1641,6 @@
     }
 
 
-
-    /* =========================
-       SAVE TICKET IMAGE
-    ========================== */
 
     const saveTicketButton =
       document.getElementById(
@@ -1820,10 +1682,6 @@
 
 
 
-            /*
-              저장할 때만 전용 디자인 적용
-            */
-
             ticketPage
               .classList
               .add(
@@ -1831,11 +1689,6 @@
               );
 
 
-
-            /*
-              저장 이미지에서는
-              안내문과 저장 버튼 제외
-            */
 
             saveTicketButton
               .style
@@ -1855,10 +1708,6 @@
             }
 
 
-
-            /*
-              CSS와 폰트 적용을 기다림
-            */
 
             if (
               document.fonts
@@ -1896,16 +1745,6 @@
             );
 
 
-
-            /*
-              논리 폭 520px
-              scale 2
-
-              최종 저장 폭:
-              1040px
-
-              높이는 최소 약 1800px
-            */
 
             const captureHeight =
               Math.max(
@@ -1958,10 +1797,6 @@
               );
 
 
-
-            /*
-              실제 화면 원상복구
-            */
 
             ticketPage
               .classList
@@ -2057,10 +1892,6 @@
 
 
 
-            /*
-              모바일
-            */
-
             if (
 
               navigator.canShare
@@ -2090,10 +1921,6 @@
 
             }
 
-
-            /*
-              PC
-            */
 
             else {
 
@@ -2190,10 +2017,6 @@
       );
 
 
-
-    /* =========================
-       START
-    ========================== */
 
     loadTicket();
 
