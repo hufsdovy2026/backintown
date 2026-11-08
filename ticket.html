@@ -306,17 +306,18 @@
     }
 
 
-    /* 일시 / 장소 동일 폭 */
+    /* 왼쪽 열 */
 
-    .info-pair.event-pair
+    .info-pair
     .info-item:first-child {
       flex: 1;
     }
 
 
-    /* 장소 영역만 살짝 오른쪽으로 */
+    /* 오른쪽 열
+       장소 / 연락처 / 결제 금액 모두 같은 위치 */
 
-    .info-pair.event-pair
+    .info-pair
     .info-item:last-child {
       flex: 1;
 
@@ -642,7 +643,9 @@
       }
 
 
-      .info-pair.event-pair
+      /* 모바일에서도 오른쪽 열 전부 동일 정렬 */
+
+      .info-pair
       .info-item:last-child {
         padding-left: 6px;
       }
