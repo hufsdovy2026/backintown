@@ -10,10 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    BACK IN TOWN
-  </title>
-
+  <title>BACK IN TOWN</title>
 
   <style>
 
@@ -21,19 +18,17 @@
       box-sizing: border-box;
     }
 
-
     html,
     body {
       margin: 0;
       padding: 0;
     }
 
-
     body {
       min-height: 100vh;
 
-      background: #111111;
-      color: #f4f1eb;
+      background: #12100e;
+      color: #e7e1d6;
 
       font-family:
         -apple-system,
@@ -83,12 +78,15 @@
 
       flex-shrink: 0;
 
-      margin-bottom: 28px;
+      margin-bottom: 26px;
 
-      border:
-        1px solid #393939;
+      border: none;
 
       object-fit: cover;
+
+      box-shadow:
+        0 16px 42px
+        rgba(0, 0, 0, 0.32);
     }
 
 
@@ -107,6 +105,8 @@
       width: 100%;
 
       margin: 0;
+
+      color: #eee8dc;
 
       font-size: 60px;
       font-weight: 900;
@@ -127,7 +127,7 @@
         0
         0;
 
-      color: #a9a7a2;
+      color: #9d978d;
 
       font-size: 13px;
       font-weight: 500;
@@ -154,10 +154,10 @@
         0;
 
       border-top:
-        1px solid #393939;
+        1px solid #39342e;
 
       border-bottom:
-        1px solid #393939;
+        1px solid #39342e;
     }
 
 
@@ -186,7 +186,7 @@
     .info-label {
       flex-shrink: 0;
 
-      color: #777570;
+      color: #777168;
 
       font-size: 14px;
     }
@@ -195,7 +195,7 @@
     .info-value {
       min-width: 0;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       text-align: right;
 
@@ -205,7 +205,7 @@
 
 
     .info-address {
-      color: #777570;
+      color: #777168;
 
       font-size: 12px;
     }
@@ -223,8 +223,8 @@
       border: none;
       border-radius: 3px;
 
-      background: #f1eee7;
-      color: #111111;
+      background: #8b302d;
+      color: #eee8dc;
 
       cursor: pointer;
 
@@ -235,12 +235,12 @@
 
       transition:
         transform 0.08s ease,
-        opacity 0.15s ease;
+        background-color 0.15s ease;
     }
 
 
     .submit-button:hover {
-      opacity: 0.9;
+      background: #a03a36;
     }
 
 
@@ -260,8 +260,8 @@
     ========================= */
 
     #open-reservation-button:disabled {
-      background: #292929;
-      color: #777570;
+      background: #292622;
+      color: #756f67;
 
       cursor: not-allowed;
 
@@ -270,7 +270,7 @@
 
 
     #open-reservation-button:disabled:hover {
-      opacity: 1;
+      background: #292622;
     }
 
 
@@ -290,7 +290,7 @@
       padding-top: 28px;
 
       border-top:
-        1px solid #272727;
+        1px solid #29251f;
     }
 
 
@@ -299,6 +299,8 @@
         0
         0
         8px;
+
+      color: #e7e1d6;
 
       font-size: 20px;
       font-weight: 800;
@@ -313,7 +315,7 @@
         0
         22px;
 
-      color: #777570;
+      color: #777168;
 
       font-size: 12px;
 
@@ -339,23 +341,29 @@
       margin-top: 12px;
 
       border:
-        1px solid #555555;
+        1px solid #514a42;
 
       border-radius: 3px;
 
       background: transparent;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       cursor: pointer;
 
       font-size: 14px;
       font-weight: 700;
+
+      transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
     }
 
 
     .lookup-button:hover {
-      background: #181818;
+      background: #191612;
+
+      border-color: #6a5e53;
     }
 
 
@@ -365,7 +373,7 @@
 
 
     .lookup-message {
-      color: #8f8d88;
+      color: #918b81;
 
       font-size: 12px;
 
@@ -379,13 +387,13 @@
         0;
 
       border-top:
-        1px solid #303030;
+        1px solid #302b25;
     }
 
 
     .reservation-card:first-child {
       border-top:
-        1px solid #393939;
+        1px solid #39342e;
     }
 
 
@@ -402,6 +410,8 @@
 
 
     .lookup-reservation-number {
+      color: #e7e1d6;
+
       font-size: 18px;
       font-weight: 800;
     }
@@ -410,7 +420,7 @@
     .lookup-status {
       flex-shrink: 0;
 
-      color: #a9a7a2;
+      color: #a39c91;
 
       font-size: 12px;
       font-weight: 700;
@@ -420,7 +430,7 @@
     .lookup-detail {
       margin-top: 7px;
 
-      color: #777570;
+      color: #777168;
 
       font-size: 12px;
 
@@ -441,16 +451,27 @@
         14px;
 
       border:
-        1px solid #555555;
+        1px solid #514a42;
 
       border-radius: 3px;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       text-decoration: none;
 
       font-size: 12px;
       font-weight: 700;
+
+      transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+    }
+
+
+    .ticket-link:hover {
+      background: #191612;
+
+      border-color: #6a5e53;
     }
 
 
@@ -472,6 +493,8 @@
         0
         28px;
 
+      color: #e7e1d6;
+
       font-size: 22px;
       font-weight: 700;
 
@@ -489,7 +512,7 @@
 
       margin-bottom: 9px;
 
-      color: #b9b6b0;
+      color: #b9b2a7;
 
       font-size: 12px;
       font-weight: 600;
@@ -505,33 +528,38 @@
         14px;
 
       border:
-        1px solid #3b3b3b;
+        1px solid #39342e;
 
       border-radius: 3px;
 
       outline: none;
 
-      background: #181818;
+      background: #191612;
 
-      color: #f4f1eb;
+      color: #eee8dc;
 
       font-size: 16px;
 
       transition:
         border-color 0.15s ease,
-        background-color 0.15s ease;
+        background-color 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
 
     input::placeholder {
-      color: #5f5f5f;
+      color: #635d55;
     }
 
 
     input:focus {
-      border-color: #efede7;
+      border-color: #8b302d;
 
-      background: #1c1c1c;
+      background: #1d1915;
+
+      box-shadow:
+        0 0 0 1px
+        rgba(139, 48, 45, 0.16);
     }
 
 
@@ -571,18 +599,18 @@
         18px;
 
       border:
-        1px solid #4a4a4a;
+        1px solid #484038;
 
       border-radius: 6px;
 
-      background: #181818;
+      background: #191612;
     }
 
 
     .payment-label {
       margin-bottom: 10px;
 
-      color: #8f8d88;
+      color: #918b81;
 
       font-size: 12px;
       font-weight: 600;
@@ -590,7 +618,7 @@
 
 
     .account-number {
-      color: #f4f1eb;
+      color: #eee8dc;
 
       font-size: 18px;
       font-weight: 800;
@@ -602,7 +630,7 @@
     .account-holder {
       margin-top: 2px;
 
-      color: #a9a7a2;
+      color: #aaa397;
 
       font-size: 13px;
     }
@@ -611,7 +639,7 @@
     .payment-total {
       margin-top: 24px;
 
-      color: #b9b6b0;
+      color: #b9b2a7;
 
       font-size: 14px;
     }
@@ -620,7 +648,7 @@
     #total-price {
       margin-left: 4px;
 
-      color: #f4f1eb;
+      color: #eee8dc;
 
       font-size: 22px;
       font-weight: 800;
@@ -635,18 +663,23 @@
         14px;
 
       border:
-        1px solid #555555;
+        1px solid #514a42;
 
       border-radius: 4px;
 
       background: transparent;
 
-      color: #f4f1eb;
+      color: #e7e1d6;
 
       font-size: 12px;
       font-weight: 700;
 
       cursor: pointer;
+    }
+
+
+    .copy-button:hover {
+      background: #211c17;
     }
 
 
@@ -656,7 +689,7 @@
         0
         22px;
 
-      color: #8f8d88;
+      color: #918b81;
 
       font-size: 12px;
 
@@ -673,7 +706,7 @@
 
       margin-bottom: 28px;
 
-      color: #d0cdc6;
+      color: #cec7bb;
 
       font-size: 13px;
 
@@ -691,7 +724,7 @@
 
       flex-shrink: 0;
 
-      accent-color: #f1eee7;
+      accent-color: #8b302d;
     }
 
 
@@ -703,7 +736,7 @@
     .notice {
       margin-top: 20px;
 
-      color: #74726e;
+      color: #746e66;
 
       font-size: 11px;
 
@@ -722,9 +755,9 @@
       padding-top: 18px;
 
       border-top:
-        1px solid #272727;
+        1px solid #29251f;
 
-      color: #55534f;
+      color: #575149;
 
       font-size: 10px;
 
@@ -829,12 +862,6 @@
         padding:
           28px
           0;
-
-        border-top:
-          1px solid #393939;
-
-        border-bottom:
-          1px solid #393939;
       }
 
 
@@ -1069,9 +1096,7 @@
 
 
 
-          <form
-            id="lookup-form"
-          >
+          <form id="lookup-form">
 
 
             <div class="lookup-fields">
@@ -1341,10 +1366,7 @@
     ) {
 
       const clone =
-        element.cloneNode(
-          true
-        );
-
+        element.cloneNode(true);
 
       clone.style.position =
         'absolute';
@@ -1375,9 +1397,7 @@
 
 
       document.body
-        .appendChild(
-          clone
-        );
+        .appendChild(clone);
 
 
       const width =
@@ -1422,8 +1442,7 @@
       ) {
 
         const middle =
-          (low + high)
-          / 2;
+          (low + high) / 2;
 
 
         const textWidth =
@@ -1461,17 +1480,15 @@
     function fitHeroText() {
 
       const title =
-        document
-          .getElementById(
-            'main-title'
-          );
+        document.getElementById(
+          'main-title'
+        );
 
 
       const description =
-        document
-          .getElementById(
-            'main-description'
-          );
+        document.getElementById(
+          'main-description'
+        );
 
 
       fitTextToWidth(
@@ -1526,19 +1543,12 @@
 
       let value =
         input.value
-          .replace(
-            /\D/g,
-            ''
-          )
-          .slice(
-            0,
-            11
-          );
+          .replace(/\D/g, '')
+          .slice(0, 11);
 
 
       if (
-        value.length <=
-        3
+        value.length <= 3
       ) {
 
         input.value =
@@ -1547,39 +1557,24 @@
       }
 
       else if (
-        value.length <=
-        7
+        value.length <= 7
       ) {
 
         input.value =
-          value.slice(
-            0,
-            3
-          )
+          value.slice(0, 3)
           + '-'
-          + value.slice(
-            3
-          );
+          + value.slice(3);
 
       }
 
       else {
 
         input.value =
-          value.slice(
-            0,
-            3
-          )
+          value.slice(0, 3)
           + '-'
-          + value.slice(
-            3,
-            7
-          )
+          + value.slice(3, 7)
           + '-'
-          + value.slice(
-            7,
-            11
-          );
+          + value.slice(7, 11);
 
       }
 
@@ -1588,10 +1583,9 @@
 
 
     const phoneInput =
-      document
-        .getElementById(
-          'phone'
-        );
+      document.getElementById(
+        'phone'
+      );
 
 
     phoneInput
@@ -1599,9 +1593,7 @@
         'input',
         function () {
 
-          formatPhoneInput(
-            this
-          );
+          formatPhoneInput(this);
 
         }
       );
@@ -1609,10 +1601,9 @@
 
 
     const lookupPhoneInput =
-      document
-        .getElementById(
-          'lookup-phone'
-        );
+      document.getElementById(
+        'lookup-phone'
+      );
 
 
     lookupPhoneInput
@@ -1620,9 +1611,7 @@
         'input',
         function () {
 
-          formatPhoneInput(
-            this
-          );
+          formatPhoneInput(this);
 
         }
       );
@@ -1630,17 +1619,15 @@
 
 
     const quantityInput =
-      document
-        .getElementById(
-          'quantity'
-        );
+      document.getElementById(
+        'quantity'
+      );
 
 
     const totalPriceElement =
-      document
-        .getElementById(
-          'total-price'
-        );
+      document.getElementById(
+        'total-price'
+      );
 
 
     function updateTotalPrice() {
@@ -1712,17 +1699,15 @@
     async function checkSalesStatus() {
 
       const button =
-        document
-          .getElementById(
-            'open-reservation-button'
-          );
+        document.getElementById(
+          'open-reservation-button'
+        );
 
 
       const section =
-        document
-          .getElementById(
-            'reservation-section'
-          );
+        document.getElementById(
+          'reservation-section'
+        );
 
 
       try {
@@ -1861,32 +1846,25 @@
 
     async function openReservation() {
 
-
       const available =
         await checkSalesStatus();
 
 
-      if (
-        !available
-      ) {
-
+      if (!available) {
         return;
-
       }
 
 
       const section =
-        document
-          .getElementById(
-            'reservation-section'
-          );
+        document.getElementById(
+          'reservation-section'
+        );
 
 
       const button =
-        document
-          .getElementById(
-            'open-reservation-button'
-          );
+        document.getElementById(
+          'open-reservation-button'
+        );
 
 
       section.style.display =
@@ -1912,10 +1890,9 @@
 
 
     const lookupForm =
-      document
-        .getElementById(
-          'lookup-form'
-        );
+      document.getElementById(
+        'lookup-form'
+      );
 
 
     lookupForm
@@ -1927,22 +1904,19 @@
           event
         ) {
 
-
           event.preventDefault();
 
 
           const button =
-            document
-              .getElementById(
-                'lookup-button'
-              );
+            document.getElementById(
+              'lookup-button'
+            );
 
 
           const result =
-            document
-              .getElementById(
-                'lookup-result'
-              );
+            document.getElementById(
+              'lookup-result'
+            );
 
 
           const name =
@@ -1973,24 +1947,17 @@
 
           try {
 
-
             const url =
               API_URL
               + '?action=lookupReservations'
               + '&name='
-              + encodeURIComponent(
-                name
-              )
+              + encodeURIComponent(name)
               + '&phone='
-              + encodeURIComponent(
-                phone
-              );
+              + encodeURIComponent(phone);
 
 
             const response =
-              await fetch(
-                url
-              );
+              await fetch(url);
 
 
             const data =
@@ -2115,9 +2082,7 @@
       value
     ) {
 
-      return String(
-        value
-      )
+      return String(value)
 
         .replaceAll(
           '&',
@@ -2152,26 +2117,21 @@
       value
     ) {
 
-      return escapeHtml(
-        value
-      );
+      return escapeHtml(value);
 
     }
 
 
 
     const submitReservationButton =
-      document
-        .getElementById(
-          'submit-reservation-button'
-        );
+      document.getElementById(
+        'submit-reservation-button'
+      );
 
 
     const reservationForm =
       submitReservationButton
-        .closest(
-          'form'
-        );
+        .closest('form');
 
 
     reservationForm
