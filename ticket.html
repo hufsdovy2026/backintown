@@ -194,8 +194,7 @@
 
       align-items: center;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
       gap: 16px;
     }
@@ -286,12 +285,24 @@
     }
 
 
+    /*
+      모든 행이 완전히 동일한 열 구조를 사용한다.
+
+      왼쪽:
+      일시 / 예매자 / 예매 매수
+
+      오른쪽:
+      장소 / 연락처 / 결제 금액
+    */
+
     .info-pair {
       display: flex;
 
       align-items: flex-start;
 
-      gap: 20px;
+      gap: 10px;
+
+      width: 100%;
 
       padding:
         12px
@@ -300,39 +311,52 @@
 
 
     .info-item {
-      flex: 1;
-
       min-width: 0;
     }
 
 
-    /* 왼쪽 열:
-       일시 / 예매자 / 예매 매수 */
+    /*
+      왼쪽 열의 폭을 모든 행에서 동일하게 고정.
+      따라서 오른쪽 열 시작점도 전부 동일해짐.
+    */
 
     .info-pair
     .info-item:first-child {
-      flex: 1;
+      flex:
+        0
+        0
+        52%;
     }
 
 
-    /* 오른쪽 열:
-       장소 / 연락처 / 결제 금액
-       전부 동일한 X축 */
+    /*
+      장소 / 연락처 / 결제 금액은
+      모두 정확히 같은 X축에서 시작.
+    */
 
     .info-pair
     .info-item:last-child {
-      flex: 1;
+      flex:
+        1
+        1
+        auto;
 
-      padding-left: 10px;
+      min-width: 0;
+
+      padding-left: 0;
     }
 
 
     .info-label {
       display: block;
 
+      width: 100%;
+
       margin-bottom: 7px;
 
       color: #827b72;
+
+      text-align: left;
 
       font-size: 11px;
       font-weight: 600;
@@ -341,27 +365,33 @@
     }
 
 
+
     /* =========================
-       6개 핵심 값 공통 스타일
+       6개 핵심 내용 공통
     ========================= */
 
     .info-value {
       display: block;
 
+      width: 100%;
+
       color: #eee8dc;
 
       text-align: left;
 
-      font-size: 19px;
+      font-size: 20px;
       font-weight: 800;
 
-      line-height: 1.32;
+      line-height: 1.28;
 
-      letter-spacing: -0.045em;
+      letter-spacing: -0.055em;
     }
 
 
-    /* 날짜도 다른 5개 값과 같은 크기 */
+    /*
+      날짜도 예외 없이
+      다른 5개 핵심 내용과 동일 크기
+    */
 
     .date-main {
       display: block;
@@ -380,10 +410,14 @@
     .date-time {
       display: block;
 
-      margin-top: 2px;
+      margin-top: 3px;
 
       font-size: inherit;
       font-weight: inherit;
+
+      line-height: inherit;
+
+      letter-spacing: inherit;
     }
 
 
@@ -392,10 +426,17 @@
 
       font-size: inherit;
       font-weight: inherit;
+
+      line-height: inherit;
+
+      letter-spacing: inherit;
+
+      white-space: nowrap;
     }
 
 
-    /* 주소는 장소의 보조 정보 */
+
+    /* 장소 주소는 보조 정보 */
 
     .venue-address {
       display: block;
@@ -404,12 +445,12 @@
 
       color: #827b72;
 
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 500;
 
       line-height: 1.4;
 
-      letter-spacing: -0.055em;
+      letter-spacing: -0.06em;
 
       white-space: nowrap;
     }
@@ -577,7 +618,7 @@
       .page {
         padding:
           42px
-          12px
+          8px
           70px;
       }
 
@@ -657,68 +698,109 @@
       }
 
 
+      /*
+        모바일도 모든 행이
+        정확히 같은 열 폭 / 같은 세로축
+      */
+
       .info-pair {
-        gap: 12px;
+        gap: 8px;
 
         padding:
-          11px
+          12px
           0;
       }
 
 
-      /* 모바일에서도
-         장소 / 연락처 / 결제 금액
-         동일한 세로축 */
+      .info-pair
+      .info-item:first-child {
+        flex:
+          0
+          0
+          52%;
+      }
+
 
       .info-pair
       .info-item:last-child {
-        padding-left: 6px;
+        flex:
+          1
+          1
+          auto;
+
+        padding-left: 0;
       }
 
 
       .info-label {
-        margin-bottom: 6px;
+        margin-bottom: 7px;
 
         font-size: 10.5px;
       }
 
 
-      /* 6개 핵심 값 모두 동일 */
+      /*
+        모바일 6개 핵심 값
+        모두 완전히 동일한 크기
+      */
 
       .info-value {
         font-size:
           clamp(
-            15.5px,
-            4vw,
-            17px
+            17px,
+            5vw,
+            19px
           );
 
         font-weight: 800;
 
-        line-height: 1.32;
+        line-height: 1.28;
 
-        letter-spacing: -0.055em;
+        letter-spacing: -0.065em;
       }
 
 
       .date-main {
         font-size: inherit;
+        font-weight: inherit;
+
+        line-height: inherit;
+
+        letter-spacing: inherit;
+      }
+
+
+      .date-time {
+        font-size: inherit;
+        font-weight: inherit;
+
+        line-height: inherit;
+
+        letter-spacing: inherit;
+      }
+
+
+      .venue-name {
+        font-size: inherit;
+        font-weight: inherit;
+
+        line-height: inherit;
 
         letter-spacing: inherit;
       }
 
 
       .venue-address {
-        margin-top: 3px;
+        margin-top: 4px;
 
         font-size:
           clamp(
-            9.5px,
-            2.55vw,
-            11px
+            10px,
+            2.8vw,
+            11.5px
           );
 
-        letter-spacing: -0.065em;
+        letter-spacing: -0.07em;
       }
 
     }
@@ -848,11 +930,31 @@
 
 
       .info-pair {
-        gap: 38px;
+        gap: 22px;
 
         padding:
           16px
           0;
+      }
+
+
+      .info-pair
+      .info-item:first-child {
+        flex:
+          0
+          0
+          50%;
+      }
+
+
+      .info-pair
+      .info-item:last-child {
+        flex:
+          1
+          1
+          auto;
+
+        padding-left: 0;
       }
 
 
@@ -863,27 +965,37 @@
       }
 
 
-      /* 데스크톱도 6개 동일 */
+      /*
+        데스크톱도 6개 핵심 값
+        전부 동일
+      */
 
       .info-value {
-        font-size: 23px;
+        font-size: 24px;
         font-weight: 800;
 
-        line-height: 1.3;
+        line-height: 1.28;
 
-        letter-spacing: -0.045em;
+        letter-spacing: -0.05em;
       }
 
 
-      .date-main {
+      .date-main,
+      .date-time,
+      .venue-name {
         font-size: inherit;
+        font-weight: inherit;
+
+        line-height: inherit;
+
+        letter-spacing: inherit;
       }
 
 
       .venue-address {
-        margin-top: 4px;
+        margin-top: 5px;
 
-        font-size: 13px;
+        font-size: 14px;
       }
 
 
@@ -1112,14 +1224,44 @@
     }
 
 
+    /*
+      저장 이미지에서도
+      모든 행의 열 축 고정
+    */
+
     .page.capture-mode
     .info-pair {
 
       gap:
-        20px !important;
+        12px !important;
 
       padding:
         13px
+        0 !important;
+    }
+
+
+    .page.capture-mode
+    .info-pair
+    .info-item:first-child {
+
+      flex:
+        0
+        0
+        52% !important;
+    }
+
+
+    .page.capture-mode
+    .info-pair
+    .info-item:last-child {
+
+      flex:
+        1
+        1
+        auto !important;
+
+      padding-left:
         0 !important;
     }
 
@@ -1135,33 +1277,44 @@
     }
 
 
-    /* 저장 이미지도
-       6개 핵심 값 전부 동일 */
+    /*
+      저장 이미지 역시
+      6개 핵심 값 동일 크기
+    */
 
     .page.capture-mode
     .info-value {
 
       font-size:
-        20px !important;
+        21px !important;
 
       font-weight:
         800 !important;
 
       line-height:
-        1.3 !important;
+        1.28 !important;
 
       letter-spacing:
-        -0.05em !important;
+        -0.055em !important;
     }
 
 
     .page.capture-mode
-    .date-main {
+    .date-main,
+
+    .page.capture-mode
+    .date-time,
+
+    .page.capture-mode
+    .venue-name {
 
       font-size:
         inherit !important;
 
       font-weight:
+        inherit !important;
+
+      line-height:
         inherit !important;
 
       letter-spacing:
@@ -1179,7 +1332,7 @@
         12px !important;
 
       letter-spacing:
-        -0.06em !important;
+        -0.065em !important;
     }
 
 
@@ -1348,6 +1501,8 @@
       <div class="ticket-info">
 
 
+        <!-- 1행: 일시 / 장소 -->
+
         <div class="info-pair">
 
 
@@ -1398,6 +1553,8 @@
 
 
 
+        <!-- 2행: 예매자 / 연락처 -->
+
         <div class="info-pair">
 
 
@@ -1433,6 +1590,8 @@
         </div>
 
 
+
+        <!-- 3행: 예매 매수 / 결제 금액 -->
 
         <div class="info-pair">
 
@@ -1573,7 +1732,6 @@
             'loading'
           )
           .textContent =
-
           '유효하지 않은 티켓 주소입니다.';
 
 
@@ -1633,9 +1791,7 @@
             'reservation-number'
           )
           .textContent =
-
-          reservation
-            .reservationNumber;
+          reservation.reservationNumber;
 
 
 
@@ -1644,7 +1800,6 @@
             'name'
           )
           .textContent =
-
           reservation.name;
 
 
@@ -1654,7 +1809,6 @@
             'phone'
           )
           .textContent =
-
           reservation.phone;
 
 
@@ -1664,7 +1818,6 @@
             'quantity'
           )
           .textContent =
-
           reservation.quantity
           + '매';
 
@@ -1676,11 +1829,9 @@
           )
           .textContent =
 
-
           Number(
             reservation.totalPrice
           )
-
           .toLocaleString(
             'ko-KR'
           )
@@ -1727,7 +1878,6 @@
           '입금 확인 중'
         ) {
 
-
           statusElement
             .classList
             .add(
@@ -1744,7 +1894,6 @@
           '예매 확정'
         ) {
 
-
           statusElement
             .classList
             .add(
@@ -1760,7 +1909,6 @@
           ===
           '예매 취소'
         ) {
-
 
           statusElement
             .classList
@@ -1785,15 +1933,14 @@
           '입금 확인 중'
         ) {
 
-
           paymentInfo
             .style
             .display =
             'block';
 
+        }
 
-        } else {
-
+        else {
 
           paymentInfo
             .style
@@ -1824,7 +1971,9 @@
 
 
 
-      } catch (error) {
+      }
+
+      catch (error) {
 
 
         console.error(
@@ -1837,9 +1986,7 @@
             'loading'
           )
           .textContent =
-
           '티켓 정보를 불러오지 못했습니다.';
-
 
       }
 
@@ -1863,21 +2010,17 @@
 
         .then(() => {
 
-
           alert(
             '계좌번호가 복사되었습니다.'
           );
-
 
         })
 
         .catch(() => {
 
-
           alert(
             '계좌번호 복사에 실패했습니다.'
           );
-
 
         });
 
@@ -1942,7 +2085,6 @@
 
             if (notice) {
 
-
               notice
                 .style
                 .display =
@@ -1958,7 +2100,6 @@
               document.fonts.ready
             ) {
 
-
               await document
                 .fonts
                 .ready;
@@ -1970,19 +2111,15 @@
             await new Promise(
               resolve => {
 
-
                 requestAnimationFrame(
                   () => {
-
 
                     requestAnimationFrame(
                       resolve
                     );
 
-
                   }
                 );
-
 
               }
             );
@@ -2058,7 +2195,6 @@
 
             if (notice) {
 
-
               notice
                 .style
                 .display =
@@ -2085,7 +2221,6 @@
               await new Promise(
                 resolve => {
 
-
                   canvas.toBlob(
 
                     resolve,
@@ -2094,14 +2229,12 @@
 
                   );
 
-
                 }
               );
 
 
 
             if (!blob) {
-
 
               throw new Error(
                 '이미지 생성 실패'
@@ -2112,7 +2245,6 @@
 
 
             const fileName =
-
               `BACK_IN_TOWN_${reservationNumber}.png`;
 
 
@@ -2164,7 +2296,6 @@
 
             }
 
-
             else {
 
 
@@ -2202,7 +2333,9 @@
 
 
 
-          } catch (error) {
+          }
+
+          catch (error) {
 
 
             console.error(
@@ -2227,7 +2360,6 @@
 
 
             if (notice) {
-
 
               notice
                 .style
