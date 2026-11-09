@@ -658,7 +658,7 @@
 
         letter-spacing: -0.02em;
 
-        white-space: nowrap;
+        white-space: normal;
       }
 
       .ticket-top,
@@ -737,6 +737,11 @@
           );
       }
 
+      /*
+        긴 주소는 작은 화면에서
+        자연스럽게 줄바꿈 허용
+      */
+
       .venue-address {
         font-size:
           clamp(
@@ -744,6 +749,10 @@
             2.55vw,
             10.5px
           );
+
+        white-space: normal;
+
+        word-break: keep-all;
       }
 
       #payment-info {
@@ -1158,6 +1167,9 @@
 
       letter-spacing:
         -0.065em !important;
+
+      white-space:
+        nowrap !important;
     }
 
     .page.capture-mode
@@ -1188,6 +1200,9 @@
 
       letter-spacing:
         -0.05em !important;
+
+      white-space:
+        nowrap !important;
     }
 
 
@@ -1649,10 +1664,10 @@
 
 
         /*
-          입금 계좌:
-          - 입금 확인 중일 때 웹에서 표시
-          - 예매 확정 / 취소 시 숨김
-          - 저장 이미지에서는 항상 제외
+          입금 계좌
+          - 입금 확인 중: 웹 화면에서 노출
+          - 예매 확정/취소: 웹 화면에서 숨김
+          - 저장 이미지: 상태와 관계없이 항상 숨김
         */
 
         if (
@@ -1763,12 +1778,10 @@
               '.page'
             );
 
-
           try {
 
             saveTicketButton.disabled =
               true;
-
 
             saveTicketButton.textContent =
               '이미지 만드는 중...';
@@ -1968,9 +1981,21 @@
               '티켓 이미지 저장';
 
 
-            alert(
-              '티켓 이미지 저장에 실패했습니다.'
-            );
+            /*
+              사용자가 모바일 공유창을 직접 닫은 경우에는
+              오류 안내를 띄우지 않음
+            */
+
+            if (
+              error.name !==
+              'AbortError'
+            ) {
+
+              alert(
+                '티켓 이미지 저장에 실패했습니다.'
+              );
+
+            }
 
           }
 
