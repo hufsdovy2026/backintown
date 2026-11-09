@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -196,6 +197,21 @@
 
 
     /* =========================
+       SHARED INNER CARD STYLE
+    ========================= */
+
+    .ticket-top,
+    .ticket-info {
+      border:
+        1px solid #d5d1cb;
+
+      border-radius: 10px;
+
+      background: #ffffff;
+    }
+
+
+    /* =========================
        RESERVATION CARD
     ========================= */
 
@@ -205,13 +221,6 @@
       padding:
         16px
         17px;
-
-      border:
-        1px solid #d5d1cb;
-
-      border-radius: 10px;
-
-      background: #ffffff;
     }
 
     .reservation-block {
@@ -328,13 +337,6 @@
       padding:
         11px
         17px;
-
-      border:
-        1px solid #ddd9d3;
-
-      border-radius: 10px;
-
-      background: transparent;
     }
 
     .info-pair {
@@ -547,7 +549,7 @@
 
 
     /* =========================
-       FOOTER / WATERMARK
+       FOOTER
     ========================= */
 
     .footer {
@@ -935,7 +937,7 @@
 
     /* =========================================================
        IMAGE CAPTURE MODE
-       540 × 720 = 3:4
+       540 × 720 = 정확한 3:4
     ========================================================= */
 
     .page.capture-mode {
@@ -1082,8 +1084,14 @@
         13px
         14px !important;
 
+      border:
+        1px solid #d5d1cb !important;
+
       border-radius:
         9px !important;
+
+      background:
+        #ffffff !important;
     }
 
     .page.capture-mode
@@ -1120,8 +1128,14 @@
         7px
         14px !important;
 
+      border:
+        1px solid #d5d1cb !important;
+
       border-radius:
         9px !important;
+
+      background:
+        #ffffff !important;
     }
 
     .page.capture-mode
@@ -1206,8 +1220,14 @@
         11px
         13px !important;
 
+      border:
+        1.5px solid #b84a4a !important;
+
       border-radius:
         9px !important;
+
+      background:
+        #fff6f3 !important;
     }
 
     .page.capture-mode
@@ -1275,10 +1295,12 @@
     }
 
   </style>
+
 </head>
 
 
 <body>
+
 
   <main class="page">
 
@@ -1312,11 +1334,9 @@
       </header>
 
 
-
       <p id="loading">
         티켓 정보를 불러오는 중...
       </p>
-
 
 
       <section
@@ -1324,8 +1344,6 @@
         style="display: none;"
       >
 
-
-        <!-- 예약 정보 카드 -->
 
         <div class="ticket-top">
 
@@ -1352,9 +1370,6 @@
 
         </div>
 
-
-
-        <!-- 세부 정보 카드 -->
 
         <div class="ticket-info">
 
@@ -1405,7 +1420,6 @@
           </div>
 
 
-
           <div class="info-pair">
 
             <div class="info-item">
@@ -1436,7 +1450,6 @@
             </div>
 
           </div>
-
 
 
           <div class="info-pair">
@@ -1474,9 +1487,6 @@
         </div>
 
 
-
-        <!-- 입금 확인 중일 때만 표시 -->
-
         <div id="payment-info">
 
           <div class="payment-label">
@@ -1502,7 +1512,6 @@
         </div>
 
 
-
         <p class="notice">
           입금 확인 후 예매 상태가 변경됩니다.<br>
           본 티켓 링크는 공연 당일까지 보관해 주세요.
@@ -1512,14 +1521,12 @@
       </section>
 
 
-
       <footer class="footer">
         HUFS DOVY · BACK IN TOWN
       </footer>
 
 
     </section>
-
 
 
     <button
@@ -1531,7 +1538,6 @@
 
 
   </main>
-
 
 
   <script
@@ -1631,7 +1637,6 @@
           + '원';
 
 
-
         const statusElement =
           document.getElementById(
             'status'
@@ -1702,7 +1707,6 @@
         }
 
 
-
         const paymentInfo =
           document.getElementById(
             'payment-info'
@@ -1728,7 +1732,6 @@
             'none';
 
         }
-
 
 
         document
@@ -1769,7 +1772,6 @@
     }
 
 
-
     function copyAccount() {
 
       const accountNumber =
@@ -1777,11 +1779,9 @@
 
 
       navigator.clipboard
-
         .writeText(
           accountNumber
         )
-
         .then(() => {
 
           alert(
@@ -1789,7 +1789,6 @@
           );
 
         })
-
         .catch(() => {
 
           alert(
@@ -1799,7 +1798,6 @@
         });
 
     }
-
 
 
     const saveTicketButton =
