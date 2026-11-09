@@ -3,13 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>BACK IN TOWN</title>
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
+
 
     html,
     body {
@@ -17,10 +25,12 @@
       padding: 0;
     }
 
+
     body {
       min-height: 100vh;
-      background: #eee8de;
-      color: #181613;
+
+      background: #f7f5f1;
+      color: #171513;
 
       font-family:
         -apple-system,
@@ -31,121 +41,236 @@
         sans-serif;
     }
 
+
+
+    /* =========================
+       PAGE
+    ========================= */
+
     .page {
       width: 100%;
       max-width: 700px;
+
       margin: 0 auto;
-      padding: 42px 22px 70px;
+
+      padding:
+        42px
+        22px
+        70px;
     }
 
-    /* HERO */
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       display: flex;
       flex-direction: column;
     }
 
+
     .poster-placeholder {
       width: 100%;
+
       aspect-ratio: 3 / 4;
+
       display: block;
+
       flex-shrink: 0;
+
       margin-bottom: 26px;
+
       border: none;
+
       object-fit: cover;
 
       box-shadow:
         0 16px 42px
-        rgba(54, 40, 28, 0.18);
+        rgba(42, 35, 30, 0.16);
     }
+
 
     .hero-content {
       width: 100%;
       min-width: 0;
     }
 
-    /* TITLE */
+
+
+    /* =========================
+       TITLE
+    ========================= */
 
     .ticket-title {
       width: 100%;
+
       margin: 0;
 
-      color: #181613;
+      color: #171513;
 
       font-size: 60px;
       font-weight: 900;
+
       line-height: 0.95;
+
       letter-spacing: -0.06em;
 
       white-space: nowrap;
     }
 
+
     .ticket-description {
       width: 100%;
-      margin: 16px 0 0;
 
-      color: #70685f;
+      margin:
+        16px
+        0
+        0;
+
+      color: #746e67;
 
       font-size: 13px;
       font-weight: 500;
+
       line-height: 1.4;
 
       letter-spacing: normal;
       word-spacing: normal;
+
       white-space: nowrap;
     }
 
-    /* EVENT INFO */
+
+
+    /* =========================
+       EVENT INFO
+    ========================= */
 
     .event-info {
-      margin-top: 44px;
-      padding: 24px 0;
+      margin-top: 42px;
 
-      border-top: 1px solid #c9c0b4;
-      border-bottom: 1px solid #c9c0b4;
+      padding: 0;
+
+      border: none;
     }
 
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
 
-      gap: 24px;
-      margin-bottom: 14px;
+    /*
+      일시 / 장소
+    */
 
-      line-height: 1.5;
+    .event-primary {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      column-gap: 24px;
+
+      width: 100%;
     }
 
-    .info-row:last-child {
-      margin-bottom: 0;
-    }
 
-    .info-label {
-      flex-shrink: 0;
-
-      color: #756d64;
-
-      font-size: 14px;
-    }
-
-    .info-value {
+    .event-item {
       min-width: 0;
 
-      color: #181613;
-
-      text-align: right;
-
-      font-size: 16px;
-      font-weight: 600;
+      text-align: left;
     }
 
-    .info-address {
-      color: #756d64;
+
+    .event-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #746e67;
 
       font-size: 12px;
+      font-weight: 700;
+
+      line-height: 1.2;
     }
 
-    /* MAIN BUTTON */
+
+    .event-value {
+      display: block;
+
+      color: #171513;
+
+      font-size: 20px;
+      font-weight: 800;
+
+      line-height: 1.34;
+
+      letter-spacing: -0.04em;
+    }
+
+
+    .event-date {
+      display: block;
+
+      white-space: nowrap;
+
+      letter-spacing: -0.06em;
+    }
+
+
+    .event-time {
+      display: block;
+
+      margin-top: 2px;
+    }
+
+
+    .event-venue {
+      display: block;
+
+      white-space: nowrap;
+    }
+
+
+    .event-address {
+      display: block;
+
+      margin-top: 3px;
+
+      color: #746e67;
+
+      font-size: 11px;
+      font-weight: 500;
+
+      line-height: 1.4;
+
+      letter-spacing: -0.05em;
+
+      white-space: nowrap;
+    }
+
+
+    /*
+      가격
+    */
+
+    .event-price {
+      margin-top: 29px;
+    }
+
+
+    .event-price
+    .event-value {
+      font-size: 21px;
+
+      letter-spacing: -0.045em;
+    }
+
+
+
+    /* =========================
+       MAIN BUTTON
+    ========================= */
 
     .submit-button {
       width: 100%;
@@ -155,7 +280,7 @@
       border-radius: 3px;
 
       background: #9a3c38;
-      color: #fffaf3;
+      color: #fffdf9;
 
       cursor: pointer;
 
@@ -169,61 +294,89 @@
         background-color 0.15s ease;
     }
 
+
     .submit-button:hover {
       background: #ad4842;
     }
+
 
     .submit-button:active {
       transform: scale(0.99);
     }
 
+
     #open-reservation-button {
-      margin-top: 34px;
+      margin-top: 36px;
     }
 
+
+
+    /* =========================
+       RESERVATION STATUS
+    ========================= */
+
     #open-reservation-button:disabled {
-      background: #d8d0c4;
-      color: #8e867d;
+      background: #dedbd5;
+      color: #918b84;
 
       cursor: not-allowed;
+
       opacity: 1;
     }
 
+
     #open-reservation-button:disabled:hover {
-      background: #d8d0c4;
+      background: #dedbd5;
     }
+
 
     #open-reservation-button:disabled:active {
       transform: none;
     }
 
-    /* LOOKUP */
+
+
+    /* =========================
+       LOOKUP
+    ========================= */
 
     .lookup-section {
       margin-top: 50px;
-      padding-top: 28px;
 
-      border-top: 1px solid #d5cdc1;
+      padding-top: 0;
+
+      border: none;
     }
 
-    .lookup-title {
-      margin: 0 0 8px;
 
-      color: #181613;
+    .lookup-title {
+      margin:
+        0
+        0
+        8px;
+
+      color: #171513;
 
       font-size: 20px;
       font-weight: 800;
+
       letter-spacing: -0.03em;
     }
 
-    .lookup-description {
-      margin: 0 0 22px;
 
-      color: #756d64;
+    .lookup-description {
+      margin:
+        0
+        0
+        22px;
+
+      color: #746e67;
 
       font-size: 12px;
+
       line-height: 1.6;
     }
+
 
     .lookup-fields {
       display: grid;
@@ -235,16 +388,20 @@
       gap: 10px;
     }
 
+
     .lookup-button {
       width: 100%;
       height: 50px;
 
       margin-top: 12px;
 
-      border: 1px solid #8e8479;
+      border:
+        1px solid #aaa49c;
+
       border-radius: 3px;
 
       background: transparent;
+
       color: #211e1a;
 
       cursor: pointer;
@@ -257,74 +414,100 @@
         border-color 0.15s ease;
     }
 
+
     .lookup-button:hover {
-      background: #e5ddd1;
-      border-color: #625a52;
+      background: #eeebe6;
+
+      border-color: #77716a;
     }
+
 
     #lookup-result {
       margin-top: 20px;
     }
 
+
     .lookup-message {
-      color: #756d64;
+      color: #746e67;
 
       font-size: 12px;
+
       line-height: 1.6;
     }
 
-    .reservation-card {
-      padding: 17px 0;
 
-      border-top: 1px solid #d5cdc1;
+    .reservation-card {
+      padding:
+        17px
+        0;
+
+      border-top:
+        1px solid #dedad4;
     }
+
 
     .reservation-card:first-child {
-      border-top: 1px solid #c9c0b4;
+      border-top:
+        1px solid #d4d0ca;
     }
+
 
     .reservation-card-top {
       display: flex;
+
       align-items: center;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
 
       gap: 12px;
     }
 
+
     .lookup-reservation-number {
-      color: #181613;
+      color: #171513;
 
       font-size: 18px;
       font-weight: 800;
     }
 
+
     .lookup-status {
       flex-shrink: 0;
 
-      color: #70685f;
+      color: #746e67;
 
       font-size: 12px;
       font-weight: 700;
     }
 
+
     .lookup-detail {
       margin-top: 7px;
 
-      color: #756d64;
+      color: #746e67;
 
       font-size: 12px;
+
       line-height: 1.5;
     }
 
+
     .ticket-link {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
       margin-top: 13px;
-      padding: 9px 14px;
 
-      border: 1px solid #8e8479;
+      padding:
+        9px
+        14px;
+
+      border:
+        1px solid #aaa49c;
+
       border-radius: 3px;
 
       color: #211e1a;
@@ -339,12 +522,18 @@
         border-color 0.15s ease;
     }
 
+
     .ticket-link:hover {
-      background: #e5ddd1;
-      border-color: #625a52;
+      background: #eeebe6;
+
+      border-color: #77716a;
     }
 
-    /* RESERVATION FORM */
+
+
+    /* =========================
+       RESERVATION FORM
+    ========================= */
 
     #reservation-section {
       margin-top: 54px;
@@ -352,44 +541,57 @@
       scroll-margin-top: 30px;
     }
 
-    .section-title {
-      margin: 0 0 28px;
 
-      color: #181613;
+    .section-title {
+      margin:
+        0
+        0
+        28px;
+
+      color: #171513;
 
       font-size: 22px;
       font-weight: 700;
+
       letter-spacing: -0.03em;
     }
+
 
     .field {
       margin-bottom: 25px;
     }
+
 
     .field label {
       display: block;
 
       margin-bottom: 9px;
 
-      color: #5f5851;
+      color: #59544f;
 
       font-size: 12px;
       font-weight: 600;
     }
 
+
     input {
       width: 100%;
       height: 51px;
 
-      padding: 0 14px;
+      padding:
+        0
+        14px;
 
-      border: 1px solid #c9c0b4;
+      border:
+        1px solid #d9d5cf;
+
       border-radius: 3px;
 
       outline: none;
 
-      background: #f8f4ed;
-      color: #181613;
+      background: #fcfbf8;
+
+      color: #171513;
 
       font-size: 16px;
 
@@ -399,44 +601,66 @@
         box-shadow 0.15s ease;
     }
 
+
     input::placeholder {
-      color: #aaa197;
+      color: #aaa59f;
     }
+
 
     input:focus {
       border-color: #9a3c38;
 
-      background: #fffaf3;
+      background: #ffffff;
 
       box-shadow:
         0 0 0 2px
-        rgba(154, 60, 56, 0.12);
+        rgba(154, 60, 56, 0.10);
     }
+
+
+
+    /* =========================
+       NUMBER INPUT
+    ========================= */
 
     input[type="number"] {
       appearance: textfield;
-      -moz-appearance: textfield;
+
+      -moz-appearance:
+        textfield;
     }
+
 
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
+
       -webkit-appearance: none;
+
       margin: 0;
     }
 
-    /* PAYMENT */
+
+
+    /* =========================
+       PAYMENT
+    ========================= */
 
     .payment-box {
       margin-top: 38px;
       margin-bottom: 18px;
 
-      padding: 22px 18px;
+      padding:
+        22px
+        18px;
 
-      border: 1.5px solid #b84a4a;
+      border:
+        1.5px solid #b84a4a;
+
       border-radius: 6px;
 
-      background: #f5e8e2;
+      background: #fff6f3;
     }
+
 
     .payment-label {
       margin-bottom: 10px;
@@ -447,8 +671,9 @@
       font-weight: 800;
     }
 
+
     .account-number {
-      color: #181613;
+      color: #171513;
 
       font-size: 18px;
       font-weight: 800;
@@ -456,21 +681,24 @@
       line-height: 1.5;
     }
 
+
     .account-holder {
       margin-top: 2px;
 
-      color: #6e625b;
+      color: #6d6560;
 
       font-size: 13px;
     }
 
+
     .payment-total {
       margin-top: 24px;
 
-      color: #655d56;
+      color: #625c56;
 
       font-size: 14px;
     }
+
 
     #total-price {
       margin-left: 4px;
@@ -481,15 +709,21 @@
       font-weight: 800;
     }
 
+
     .copy-button {
       margin-top: 18px;
 
-      padding: 10px 14px;
+      padding:
+        10px
+        14px;
 
-      border: 1px solid #b84a4a;
+      border:
+        1px solid #b84a4a;
+
       border-radius: 4px;
 
       background: transparent;
+
       color: #9a3c38;
 
       font-size: 12px;
@@ -502,34 +736,44 @@
         color 0.15s ease;
     }
 
+
     .copy-button:hover {
-      background: #ead7d1;
+      background: #f5e6e2;
     }
 
-    .payment-notice {
-      margin: 0 0 22px;
 
-      color: #756d64;
+    .payment-notice {
+      margin:
+        0
+        0
+        22px;
+
+      color: #746e67;
 
       font-size: 12px;
+
       line-height: 1.7;
     }
 
+
     .payment-confirmation {
       display: flex;
+
       align-items: center;
 
       gap: 10px;
 
       margin-bottom: 28px;
 
-      color: #4d4741;
+      color: #494540;
 
       font-size: 13px;
+
       line-height: 1.5;
 
       cursor: pointer;
     }
+
 
     .payment-confirmation input {
       width: 18px;
@@ -542,71 +786,152 @@
       accent-color: #9a3c38;
     }
 
-    /* NOTICE */
+
+
+    /* =========================
+       NOTICE
+    ========================= */
 
     .notice {
       margin-top: 20px;
 
-      color: #756d64;
+      color: #746e67;
 
       font-size: 11px;
+
       line-height: 1.65;
     }
 
-    /* FOOTER */
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     .footer {
       margin-top: 58px;
+
       padding-top: 18px;
 
-      border-top: 1px solid #d5cdc1;
+      border-top:
+        1px solid #dedad4;
 
-      color: #91887e;
+      color: #969089;
 
       font-size: 10px;
+
       letter-spacing: 0.06em;
     }
 
-    /* MOBILE */
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
 
     @media (max-width: 480px) {
 
       .page {
         max-width: 520px;
-        padding: 42px 22px 70px;
+
+        padding:
+          42px
+          22px
+          70px;
       }
+
 
       .poster-placeholder {
         margin-bottom: 24px;
       }
 
+
       .event-info {
-        margin-top: 42px;
-        padding: 22px 0;
+        margin-top: 38px;
       }
 
-      .info-label {
-        font-size: 14px;
+
+      .event-primary {
+        column-gap: 14px;
       }
 
-      .info-value {
-        font-size: 16px;
+
+      .event-label {
+        margin-bottom: 7px;
+
+        font-size: 11.5px;
       }
+
+
+      .event-value {
+        font-size:
+          clamp(
+            17px,
+            4.7vw,
+            19px
+          );
+
+        line-height: 1.32;
+      }
+
+
+      .event-date {
+        letter-spacing: -0.065em;
+      }
+
+
+      .event-address {
+        font-size:
+          clamp(
+            9.5px,
+            2.6vw,
+            10.5px
+          );
+
+        letter-spacing: -0.06em;
+      }
+
+
+      .event-price {
+        margin-top: 25px;
+      }
+
+
+      .event-price
+      .event-value {
+        font-size:
+          clamp(
+            17px,
+            4.6vw,
+            19px
+          );
+      }
+
 
       .lookup-fields {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+          1fr;
       }
 
     }
 
-    /* WIDE DESKTOP */
+
+
+    /* =========================================================
+       WIDE DESKTOP
+    ========================================================= */
 
     @media (min-width: 900px) {
 
       .page {
         max-width: 1280px;
-        padding: 48px 40px 90px;
+
+        padding:
+          48px
+          40px
+          90px;
       }
+
 
       .hero {
         display: grid;
@@ -620,65 +945,85 @@
         align-items: start;
       }
 
+
       .poster-placeholder {
         width: 100%;
+
         margin-bottom: 0;
       }
+
 
       .hero-content {
         padding-top: 6px;
       }
 
+
       .event-info {
-        margin-top: 68px;
-        padding: 28px 0;
+        margin-top: 64px;
       }
 
-      .info-row {
-        justify-content: flex-start;
 
-        gap: 34px;
-        margin-bottom: 22px;
+      .event-primary {
+        column-gap: 34px;
       }
 
-      .info-label {
-        width: 72px;
-        font-size: 16px;
+
+      .event-label {
+        margin-bottom: 10px;
+
+        font-size: 13px;
       }
 
-      .info-value {
-        flex: 1;
 
-        text-align: left;
+      .event-value {
+        font-size: 23px;
 
-        font-size: 20px;
-        line-height: 1.5;
+        line-height: 1.35;
       }
 
-      .info-address {
-        font-size: 15px;
+
+      .event-address {
+        margin-top: 4px;
+
+        font-size: 13px;
       }
+
+
+      .event-price {
+        margin-top: 34px;
+      }
+
+
+      .event-price
+      .event-value {
+        font-size: 24px;
+      }
+
 
       #open-reservation-button {
         width: 220px;
         height: 64px;
 
-        margin-top: 34px;
+        margin-top: 38px;
 
         font-size: 18px;
       }
+
 
       .lookup-section {
         margin-top: 54px;
       }
 
+
       .lookup-title {
         font-size: 23px;
       }
 
+
       .lookup-description {
         font-size: 13px;
       }
+
 
       #reservation-section {
         max-width: 760px;
@@ -689,44 +1034,60 @@
           0;
       }
 
+
       .section-title {
         margin-bottom: 34px;
+
         font-size: 27px;
       }
+
 
       .field {
         margin-bottom: 28px;
       }
 
+
       .field label {
         margin-bottom: 10px;
+
         font-size: 14px;
       }
 
+
       input {
         height: 58px;
-        padding: 0 17px;
+
+        padding:
+          0
+          17px;
 
         font-size: 17px;
       }
 
+
       #reservation-section
       .submit-button {
+
         height: 62px;
 
         font-size: 17px;
       }
 
     }
+
   </style>
 
 </head>
+
+
 
 <body>
 
   <main class="page">
 
+
     <section class="hero">
+
 
       <img
         src="backintown1440.png"
@@ -735,7 +1096,10 @@
         loading="eager"
       >
 
+
+
       <div class="hero-content">
+
 
         <h1
           class="ticket-title"
@@ -744,6 +1108,7 @@
           BACK IN TOWN
         </h1>
 
+
         <p
           class="ticket-description"
           id="main-description"
@@ -751,43 +1116,77 @@
           한국외국어대학교 중앙힙합동아리 HUFS DOVY 2026년 정기공연
         </p>
 
+
+
         <section class="event-info">
 
-          <div class="info-row">
-            <span class="info-label">
-              일시
-            </span>
 
-            <span class="info-value">
-              2026년 11월 21일 (토) 오후 6:00
-            </span>
-          </div>
+          <div class="event-primary">
 
-          <div class="info-row">
-            <span class="info-label">
-              장소
-            </span>
 
-            <span class="info-value">
-              예림당 아트홀<br>
+            <div class="event-item">
 
-              <span class="info-address">
-                서울특별시 강남구 언주로 337
+              <span class="event-label">
+                일시
               </span>
-            </span>
+
+              <strong class="event-value">
+
+                <span class="event-date">
+                  2026년 11월 21일 (토)
+                </span>
+
+                <span class="event-time">
+                  오후 6:00
+                </span>
+
+              </strong>
+
+            </div>
+
+
+
+            <div class="event-item">
+
+              <span class="event-label">
+                장소
+              </span>
+
+              <strong class="event-value">
+
+                <span class="event-venue">
+                  예림당 아트홀
+                </span>
+
+                <span class="event-address">
+                  서울특별시 강남구 언주로 337
+                </span>
+
+              </strong>
+
+            </div>
+
+
           </div>
 
-          <div class="info-row">
-            <span class="info-label">
+
+
+          <div class="event-price">
+
+            <span class="event-label">
               가격
             </span>
 
-            <span class="info-value">
+            <strong class="event-value">
               사전예매 7,000원 · 현장예매 10,000원
-            </span>
+            </strong>
+
           </div>
 
+
         </section>
+
+
 
         <button
           type="button"
@@ -799,19 +1198,27 @@
           확인 중...
         </button>
 
+
+
         <section class="lookup-section">
+
 
           <h2 class="lookup-title">
             내 예매 내역 확인
           </h2>
 
+
           <p class="lookup-description">
             예매 시 입력한 예매자명과 연락처로 티켓을 다시 확인할 수 있습니다.
           </p>
 
+
+
           <form id="lookup-form">
 
+
             <div class="lookup-fields">
+
 
               <input
                 type="text"
@@ -820,6 +1227,7 @@
                 maxlength="50"
                 required
               >
+
 
               <input
                 type="tel"
@@ -830,7 +1238,9 @@
                 required
               >
 
+
             </div>
+
 
             <button
               type="submit"
@@ -840,35 +1250,46 @@
               티켓 확인
             </button>
 
+
           </form>
+
 
           <div id="lookup-result"></div>
 
+
         </section>
+
 
       </div>
 
     </section>
+
+
 
     <section
       id="reservation-section"
       style="display:none;"
     >
 
+
       <h2 class="section-title">
         사전예매
       </h2>
+
 
       <form
         action="https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec"
         method="POST"
       >
 
+
         <input
           type="hidden"
           name="action"
           value="createReservation"
         >
+
+
 
         <div class="field">
 
@@ -886,6 +1307,8 @@
           >
 
         </div>
+
+
 
         <div class="field">
 
@@ -906,6 +1329,8 @@
 
         </div>
 
+
+
         <div class="field">
 
           <label for="depositorName">
@@ -921,6 +1346,8 @@
           >
 
         </div>
+
+
 
         <div class="field">
 
@@ -940,19 +1367,25 @@
 
         </div>
 
+
+
         <div class="payment-box">
+
 
           <div class="payment-label">
             입금 계좌
           </div>
 
+
           <div class="account-number">
             토스뱅크 1002-7972-6507
           </div>
 
+
           <div class="account-holder">
             예금주 진성재
           </div>
+
 
           <div class="payment-total">
 
@@ -964,6 +1397,7 @@
 
           </div>
 
+
           <button
             type="button"
             class="copy-button"
@@ -972,12 +1406,20 @@
             계좌번호 복사
           </button>
 
+
         </div>
 
+
+
         <p class="payment-notice">
+
           예매자명과 입금자명은 동일하게 해주세요.<br>
+
           입금이 확인되지 않을 경우 예매가 취소될 수 있습니다.
+
         </p>
+
+
 
         <label class="payment-confirmation">
 
@@ -993,6 +1435,8 @@
 
         </label>
 
+
+
         <button
           class="submit-button"
           type="submit"
@@ -1001,19 +1445,26 @@
           예매 신청
         </button>
 
+
+
         <p class="notice">
           예매 완료 후 발급되는 티켓 링크는 공연 당일까지 보관해 주세요.
         </p>
+
 
       </form>
 
     </section>
 
+
+
     <footer class="footer">
       HUFS DOVY · BACK IN TOWN
     </footer>
 
+
   </main>
+
 
 
   <script>
@@ -1021,8 +1472,10 @@
     const API_URL =
       'https://script.google.com/macros/s/AKfycbz2gv1DUwDrpzkgV9UeRPZ4STgenRMLA5EFEJH6F6menoiAhsoYB0nfLhQOf5K_5duEFw/exec';
 
+
     const UNIT_PRICE =
       7000;
+
 
 
     function measureTextWidth(
@@ -1060,19 +1513,24 @@
       clone.style.top =
         '-99999px';
 
+
       document.body
         .appendChild(clone);
+
 
       const width =
         clone
           .getBoundingClientRect()
           .width;
 
+
       clone.remove();
+
 
       return width;
 
     }
+
 
 
     function fitTextToWidth(
@@ -1086,11 +1544,14 @@
           .parentElement
           .clientWidth;
 
+
       let low =
         minimum;
 
+
       let high =
         maximum;
+
 
       for (
         let i = 0;
@@ -1101,11 +1562,13 @@
         const middle =
           (low + high) / 2;
 
+
         const textWidth =
           measureTextWidth(
             element,
             middle
           );
+
 
         if (
           textWidth <=
@@ -1124,10 +1587,12 @@
 
       }
 
+
       element.style.fontSize =
         low + 'px';
 
     }
+
 
 
     function fitHeroText() {
@@ -1137,16 +1602,19 @@
           'main-title'
         );
 
+
       const description =
         document.getElementById(
           'main-description'
         );
+
 
       fitTextToWidth(
         title,
         36,
         120
       );
+
 
       fitTextToWidth(
         description,
@@ -1155,6 +1623,7 @@
       );
 
     }
+
 
 
     window.addEventListener(
@@ -1185,6 +1654,7 @@
     }
 
 
+
     function formatPhoneInput(
       input
     ) {
@@ -1193,6 +1663,7 @@
         input.value
           .replace(/\D/g, '')
           .slice(0, 11);
+
 
       if (
         value.length <= 3
@@ -1228,10 +1699,12 @@
     }
 
 
+
     const phoneInput =
       document.getElementById(
         'phone'
       );
+
 
     phoneInput
       .addEventListener(
@@ -1244,10 +1717,12 @@
       );
 
 
+
     const lookupPhoneInput =
       document.getElementById(
         'lookup-phone'
       );
+
 
     lookupPhoneInput
       .addEventListener(
@@ -1260,15 +1735,18 @@
       );
 
 
+
     const quantityInput =
       document.getElementById(
         'quantity'
       );
 
+
     const totalPriceElement =
       document.getElementById(
         'total-price'
       );
+
 
 
     function updateTotalPrice() {
@@ -1278,9 +1756,11 @@
           quantityInput.value
         ) || 0;
 
+
       const total =
         UNIT_PRICE
         * quantity;
+
 
       totalPriceElement
         .textContent =
@@ -1302,10 +1782,12 @@
       );
 
 
+
     function copyAccount() {
 
       const accountNumber =
         '1002-7972-6507';
+
 
       navigator.clipboard
         .writeText(
@@ -1333,6 +1815,7 @@
     }
 
 
+
     async function checkSalesStatus() {
 
       const button =
@@ -1340,10 +1823,12 @@
           'open-reservation-button'
         );
 
+
       const section =
         document.getElementById(
           'reservation-section'
         );
+
 
       try {
 
@@ -1357,8 +1842,10 @@
 
           );
 
+
         const data =
           await response.json();
+
 
         if (
           !data.success
@@ -1374,8 +1861,10 @@
 
         }
 
+
         const salesStatus =
           data.salesStatus;
+
 
         if (
           !salesStatus.isOpen
@@ -1384,18 +1873,23 @@
           button.textContent =
             '예매 준비 중';
 
+
           button.disabled =
             true;
+
 
           button.dataset.state =
             'closed';
 
+
           section.style.display =
             'none';
+
 
           return false;
 
         }
+
 
         if (
           salesStatus.soldOut
@@ -1404,48 +1898,63 @@
           button.textContent =
             'SOLD OUT';
 
+
           button.disabled =
             true;
+
 
           button.dataset.state =
             'sold-out';
 
+
           section.style.display =
             'none';
+
 
           return false;
 
         }
 
+
         button.textContent =
           '예매하기';
+
 
         button.disabled =
           false;
 
+
         button.dataset.state =
           'open';
 
+
         return true;
 
+
       } catch (error) {
+
 
         console.error(
           '판매 현황 확인 실패:',
           error
         );
 
+
         button.textContent =
           '예매 상태 확인 실패';
+
 
         button.disabled =
           true;
 
+
         button.dataset.state =
           'error';
 
+
         section.style.display =
           'none';
+
 
         return false;
 
@@ -1454,30 +1963,37 @@
     }
 
 
+
     async function openReservation() {
 
       const available =
         await checkSalesStatus();
 
+
       if (!available) {
         return;
       }
+
 
       const section =
         document.getElementById(
           'reservation-section'
         );
 
+
       const button =
         document.getElementById(
           'open-reservation-button'
         );
 
+
       section.style.display =
         'block';
 
+
       button.style.display =
         'none';
+
 
       section.scrollIntoView({
 
@@ -1490,6 +2006,7 @@
       });
 
     }
+
 
 
     const lookupForm =
@@ -1509,15 +2026,18 @@
 
           event.preventDefault();
 
+
           const button =
             document.getElementById(
               'lookup-button'
             );
 
+
           const result =
             document.getElementById(
               'lookup-result'
             );
+
 
           const name =
             document
@@ -1527,6 +2047,7 @@
               .value
               .trim();
 
+
           const phone =
             document
               .getElementById(
@@ -1535,11 +2056,14 @@
               .value
               .trim();
 
+
           result.innerHTML =
             '<p class="lookup-message">예매 내역을 확인하는 중...</p>';
 
+
           button.disabled =
             true;
+
 
           try {
 
@@ -1551,11 +2075,14 @@
               + '&phone='
               + encodeURIComponent(phone);
 
+
             const response =
               await fetch(url);
 
+
             const data =
               await response.json();
+
 
             if (
               !data.success
@@ -1569,9 +2096,11 @@
 
             }
 
+
             const reservations =
               data.reservations
               || [];
+
 
             if (
               reservations.length
@@ -1581,9 +2110,11 @@
               result.innerHTML =
                 '<p class="lookup-message">일치하는 예매 내역이 없습니다. 예매자명과 연락처를 다시 확인해 주세요.</p>';
 
+
               return;
 
             }
+
 
             result.innerHTML =
               reservations
@@ -1638,18 +2169,23 @@
                 )
                 .join('');
 
+
           } catch (
             error
           ) {
+
 
             console.error(
               error
             );
 
+
             result.innerHTML =
               '<p class="lookup-message">예매 내역을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</p>';
 
+
           } finally {
+
 
             button.disabled =
               false;
@@ -1659,6 +2195,7 @@
         }
 
       );
+
 
 
     function escapeHtml(
@@ -1695,6 +2232,7 @@
     }
 
 
+
     function escapeAttribute(
       value
     ) {
@@ -1702,6 +2240,7 @@
       return escapeHtml(value);
 
     }
+
 
 
     const submitReservationButton =
@@ -1722,18 +2261,22 @@
 
         function () {
 
+
           submitReservationButton
             .disabled =
             true;
+
 
           submitReservationButton
             .textContent =
             '처리 중...';
 
+
           submitReservationButton
             .style
             .opacity =
             '0.6';
+
 
           submitReservationButton
             .style
@@ -1745,7 +2288,9 @@
       );
 
 
+
     checkSalesStatus();
+
 
   </script>
 
